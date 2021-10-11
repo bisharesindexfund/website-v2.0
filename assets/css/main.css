@@ -123,6 +123,7 @@ section .container-fluid{
   font-size: 3.2rem;
   line-height: 4rem;
   margin-bottom:15px;
+  font-weight: 400;
 }
 .banner-text h1 span{
   font-size:3.2rem;
@@ -162,12 +163,17 @@ section .container-fluid{
   text-align: center;
   margin-top: 80px;
   margin-bottom: 30px;
+  font-weight: 400;
+}
+.eco-heading h1 span {
+  font-weight: 700;
+  font-size: inherit;
 }
 .eco-block{
   margin-top:30px;
   border: 0.75px solid #4D4D4D;
   border-radius: 32px;
-  padding:20px;
+  padding:32px;
 }
 .eco-icon{
   margin-top: 55px;
@@ -188,8 +194,9 @@ section .container-fluid{
   font-weight: 500;
 }
 .eco-block article p{
-  margin:20px 0px;
+  margin: 8px 0px 32px 0px;
   min-height: 72px;
+  color: #CACACA;
 }
 .btn-disabled{
   opacity: 0.4;
@@ -283,6 +290,7 @@ section .container-fluid{
 }
 .analytic-heading h4 i img{
   width:24px;
+  vertical-align: top;
 }
 .analytic-block{
   margin-top:25px;
@@ -325,6 +333,7 @@ section .container-fluid{
   font-size: 15px;
   border-radius: 100%;
   color: #CACACA;
+  text-decoration: underline;
 }
 
 .ctmtooltip:before,
@@ -376,32 +385,42 @@ section .container-fluid{
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);
   border-radius: 32px;
   margin-bottom:30px;
+  height: 300px;
+}
+.farm-block h1{
+  font-weight: 400;
 }
 .farm-lblock{
-  padding:25px;
+  padding:60px 40px;
 }
 .farm-rblock{
-  text-align: center;
-  padding:25px 25px 0px 25px;
+  display: flex;
+  justify-content: center;
+  position: relative;
 }
 .farm-lblock p{
   color:#CACACA;
-  margin:20px 0px;
+  margin:10px 0px 32px 0px;
 }
 .farm-rblock img{
-  width:205px;
+  position: absolute;
+  bottom: 0px;
+  width: 280px;
 }
 .farm-align{
   align-items: center;
+  height: 100%;
 }
 .arbx-rblock, .farm-rblock{
   text-align:center;
+  height: 100%;
 }
 .arbx-rblock{
-  padding:25px;
+  display: flex;
+  justify-content: center;
 }
 .arbx-rblock img{
-  width: 130px;
+  width: 200px;
 }
 /*-----Footer CSS----- */
 .footer-sec{
@@ -416,6 +435,7 @@ section .container-fluid{
 .footer-menu h5{
   margin-bottom:20px;
   text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 .footer-menu ul li a{
   text-decoration:none;
