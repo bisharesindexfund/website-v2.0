@@ -509,6 +509,7 @@ section .container-fluid{
 }
 .heading-center h6, .governance-details h6, .stake-head h6, .team-banner h6, .detf-wrap h6{
   color:#DAA10E;
+  font-family: 'DM Mono', sans-serif;
 }
 .heading-center p{
   font-size: 16px;
