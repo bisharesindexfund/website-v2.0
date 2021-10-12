@@ -124,7 +124,7 @@ section .container-fluid{
 .banner-text h1{
   font-size: 3.2rem;
   line-height: 4rem;
-  margin-bottom:15px;
+  /*margin-bottom:15px;*/
   font-weight: 400;
 }
 .banner-text h1 span{
@@ -137,6 +137,11 @@ section .container-fluid{
 }
 .banner-text p:nth-last-child(2){
   margin-bottom:16px;
+  margin-top: 16px;
+}
+.banner-text p span{
+  font-family: 'DM Mono', sans-serif;
+  font-size: 1.15rem;
 }
 .banner-img{
   text-align:center;
@@ -712,6 +717,7 @@ section .container-fluid{
 }
 .block-lsec h5{
   line-height: 28px;
+  margin-bottom: 0px;
 }
 .block-lsec{
   display: flex;
@@ -724,6 +730,9 @@ section .container-fluid{
 .block-rsec div h6 span, .block-rsec p, .caddress p, .caddress p span i, .caddress p span a, .faddress p, .faddress p span a, .faddress span i{
   color:#9F9F9F;
 }
+.caddress p{
+  margin-bottom: 0px;
+}
 .caddress p span a, .faddress span a{
   text-decoration:none;
 }
@@ -732,8 +741,8 @@ section .container-fluid{
   transition: 300ms ease-in-out;
 }
 .caddress span, .faddress span{
-  margin-right:5px;
-  margin-left:5px;
+  margin-right:4px;
+  margin-left:16px;
 }
 .caddress span:last-child, .faddress span:last-child{
   margin-right:0px;
@@ -752,6 +761,7 @@ section .container-fluid{
 }
 .fund-details h3 span{
   margin-left:10px;
+  font-size: 1.25rem;
 }
 .fund-details h3 span, .fund-details p, .fund-idetails h5, .fund-idetails p, .fund-idetails p span, .fund-ivalue p, .btn-morefund, .team-banner p, .team-banner-sm h6, .team-heading-disc p, .team-block p, .production-date, #git-block p{
   color: #9f9f9f;
@@ -780,7 +790,7 @@ section .container-fluid{
 .fund-item-block{
   display:flex;
   align-items: center;
-  margin: 35px 15px 15px 15px;
+  margin: 35px 15px 5px 15px;
 }
 .fund-bicon{
   width:8%;
@@ -802,7 +812,7 @@ section .container-fluid{
   margin-bottom:5px;
 }
 .faddress{
-  margin:15px 15px 0px 15px;
+  margin:5px 15px 0px 15px;
 }
 /* Team Page */
 .team-banner{
