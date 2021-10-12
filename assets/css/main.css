@@ -16,6 +16,9 @@ ul, li, a{
 p{
   line-height: 24px;
 }
+h1, h2, h3, h4{
+  font-weight: 400;
+}
 section .container-fluid{
   padding-right: var(--bs-gutter-x,1.75rem);
   padding-left: var(--bs-gutter-x,1.75rem);
@@ -66,7 +69,7 @@ section .container-fluid{
   #menu-toggle {
     width: 55px;
     height: 55px;
-    background: #DAA10E;
+    /*background: #DAA10E;*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -92,7 +95,7 @@ section .container-fluid{
   .bar {
     width: 25px;
     height: 2px;
-    background: #fff;
+    background: #DAA10E;
     transition: 0.3s ease-in-out;
   }
   .bar:nth-child(2) {
@@ -207,8 +210,9 @@ section .container-fluid{
   color: #CACACA;
 }
 .btn-disabled{
-  opacity: 0.4;
+  opacity: 0.35;
   cursor: default;
+  box-shadow: none;
 }
 .btn-disabled:hover{
   background: rgba(218, 161, 14, 0.15);
@@ -459,8 +463,10 @@ section .container-fluid{
   margin:0 auto;
 }
 .flogo{
+  display: flex;
+  justify-content: center;
   text-align: center;
-  margin-top:20px;
+  margin-top: 50px;
 }
 .footer-txtlink li, .footer-copy div, .sub-footer ul li{
   display: inline-block;
@@ -788,6 +794,7 @@ section .container-fluid{
   right:8px;
   background:none;
   border:0;
+  color: #DAA10E;
 }
 #text{
   display: none;
@@ -814,6 +821,7 @@ section .container-fluid{
 }
 .fund-ivalue{
   width: 20%;
+  text-align: right;
 }
 .fund-item-block p{
   margin-bottom:0px;
@@ -1567,9 +1575,19 @@ z-index: 125;
     }
     .footer-txtlink, .footer-copy {
       margin-top: 15px;
+      text-align: center;
     }
     .footer-copy{
-      text-align: left;
+      text-align: center;
+    }
+    .sub-footer ul {
+      text-align: center;
+    }
+    .footer-menu {
+      text-align: center;
+    }
+    .sub-footer ul li a i {
+      font-size: 24px;
     }
     .community-bar, .ido-bar, .treasury-bar, .founder-bar, .advisor-bar{
       width:100%!important;
@@ -1623,16 +1641,20 @@ z-index: 125;
     }
     .fund-details-right{
       text-align: left;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 24px;
     }
     .btn-morefund{
       position: unset;
-      margin-top: 20px;
+      margin-top: 0px;
     }
     .fund-item-block {
       margin: 35px 0px 15px 0px;
    }
    .fund-block-wrap{
-     padding:15px;
+     padding:32px 24px;
    }
    .fund-idetails {
     width: 66%;
