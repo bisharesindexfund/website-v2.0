@@ -51,11 +51,12 @@ section .container-fluid{
   border-radius: 100px;
   color:#DAA10E;
   margin-left:15px;
-  font-weight: 500;
+  font-weight: 400;
+  padding: 6px 16px;
 }
 .tpnav-rsec button:hover, .btn-ctm:hover{
-  background: #DAA10E;
-  color:#191919;
+  background: rgba(218, 161, 14, 0.25);
+  color:#DAA10E;
 }
   /*** Menu Styles ***/
   #menu {
@@ -114,6 +115,7 @@ section .container-fluid{
   }
   .bi-value{
     color:#DAA10E;
+    margin-top: 4px;
 }
 /* Banner Section CSS */
 .banner-text, .banner-img{
@@ -134,7 +136,7 @@ section .container-fluid{
   color:#CACACA;
 }
 .banner-text p:nth-last-child(2){
-  margin-bottom:30px;
+  margin-bottom:16px;
 }
 .banner-img{
   text-align:center;
@@ -186,12 +188,12 @@ section .container-fluid{
   box-sizing: border-box;
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);
   border-radius: 100px;
-  padding: 8px 18px;
+  padding: 6px 20px;
   color: #DAA10E;
   text-decoration: none;
   transition: 300ms ease-in-out;
   display: inline-block;
-  font-weight: 500;
+  font-weight: 400;
 }
 .eco-block article p{
   margin: 8px 0px 32px 0px;
@@ -200,7 +202,7 @@ section .container-fluid{
 }
 .btn-disabled{
   opacity: 0.4;
-  cursor: unset;
+  cursor: default;
 }
 .btn-disabled:hover{
   background: rgba(218, 161, 14, 0.15);
@@ -286,7 +288,7 @@ section .container-fluid{
   margin-top:85px;
 }
 .analytic-heading h4 i{
-  margin-left:12px;
+  margin-left:4px;
 }
 .analytic-heading h4 i img{
   width:24px;
@@ -332,7 +334,7 @@ section .container-fluid{
   position: relative;
   font-size: 15px;
   border-radius: 100%;
-  color: #CACACA;
+  color: #9F9F9F;
   text-decoration: underline;
 }
 
