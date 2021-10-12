@@ -493,7 +493,6 @@ section .container-fluid{
 }
 .heading-center h6, .governance-details h6, .stake-head h6, .team-banner h6{
   text-transform:uppercase;
-  margin-bottom:15px;
   letter-spacing: 0.2rem;
 }
 .heading-center h6, .governance-details h6, .stake-head h6, .team-banner h6{
@@ -622,12 +621,14 @@ section .container-fluid{
 }
 .distribution-details p{
   margin-bottom: 25px;
+  color: #CACACA;
 }
 .governance-sec{
   background:#1E1F20;
 }
 .governance-details p{
-  margin:20px 0px;
+  margin:8px 0px 32px 0px;
+  color: #CACACA;
 }
 .govern-block div{
   background: #1E1F20;
@@ -647,6 +648,9 @@ section .container-fluid{
   border-radius: 32px;
   padding:30px;
   margin-top:30px;
+}
+.stake-block p{
+  color: #CACACA;
 }
 .stake-block div article{
   margin-top:20px;
