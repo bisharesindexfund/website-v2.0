@@ -1741,11 +1741,12 @@ z-index: 125;
     line-height: 34px;
     margin-bottom: 18px;
   }
-}
-.team-section-menu ul{
+  .team-section-menu ul{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
 }
 
   /* @media screen and (max-width: 767px) {
