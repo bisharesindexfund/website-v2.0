@@ -819,6 +819,11 @@ section .container-fluid{
   display: none;
   transition: 300ms ease-in-out;
 }
+.fund-img-block {
+  max-width: 100px;
+  min-width: 25px;
+  padding-bottom: 24px;
+}
 .fund-item-block{
   display:flex;
   align-items: center;
@@ -1480,7 +1485,7 @@ z-index: 125;
       margin: 35px 0px 15px 0px;
    }
    .fund-block-wrap{
-     padding:15px;
+     padding:24px 15px;
    }
    .fund-idetails {
     width: 66%;
