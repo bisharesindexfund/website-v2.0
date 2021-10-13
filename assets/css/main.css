@@ -19,6 +19,18 @@ p{
 h1, h2, h3, h4{
   font-weight: 400;
 }
+h1 {
+  font-size: 3.157rem;
+}
+h2 {
+  font-size: 2.369rem;
+}
+h3 {
+  font-size: 1.777rem;
+}
+h4 {
+  font-size: 1.25rem;
+}
 section .container-fluid{
   padding-right: var(--bs-gutter-x,1.75rem);
   padding-left: var(--bs-gutter-x,1.75rem);
@@ -34,7 +46,7 @@ section .container-fluid{
   background:#191919;
 }
 .banner-sec, .ecosystem-sec, .tab-sec, .analytics-sec, .detf-sec, .footer-sec, .utility-sec, .distri-sec, .governance-sec, .token-sec, #podcast-sec, #audit-sec, #git-sec{
-  padding:85px 60px;
+  padding:100px 60px;
 }
 .tp-nav .navbar-nav li a{
   color:rgba(255, 255, 255, 1)!important;
@@ -140,7 +152,7 @@ section .container-fluid{
   color:#CACACA;
 }
 .banner-text p:nth-last-child(2){
-  margin-bottom:16px;
+  margin-bottom:32px;
   margin-top: 16px;
 }
 .banner-text p span{
@@ -387,8 +399,11 @@ section .container-fluid{
   opacity: 1;
   transform: translateY(-2px);
 }
-.farm-sec, .community-sec{
-  padding:85px 60px 150px 60px;
+.farm-sec {
+  padding:100px 60px 150px 60px;
+}
+.community-sec{
+  padding:150px 60px 150px 60px;
 }
 .farm-block{
   background: #191919;
@@ -526,7 +541,7 @@ section .container-fluid{
   margin:40px 0px 25px 0px;
 }
 .governance-block article p, .staking-block article p{
-  margin-top:20px;
+  margin-top:8px;
 }
 .staking-block img{
   max-height: 100px;
@@ -628,12 +643,12 @@ section .container-fluid{
 }
 .distribution-details{
   border-left:1px solid #DAA10E;
-  padding:25px;
+  padding: 16px 32px;
   margin-top:150px;
   margin-left: 15px;
 }
 .distribution-details p{
-  margin-bottom: 25px;
+  margin-bottom: 24px;
   color: #CACACA;
 }
 .governance-sec{
@@ -648,12 +663,15 @@ section .container-fluid{
   border: 0.75px solid #4D4D4D;
   box-sizing: border-box;
   border-radius: 32px;
-  margin:20px 0px 30px 20px;
-  padding:30px
+  margin: 0px 0px 30px 20px;
+  padding:32px
+}
+.govern-block h4 {
+  font-family: 'DM Mono', sans-serif;
 }
 .staking-sec{
   background:#191919;
-  padding:85px 60px 150px 60px;
+  padding:100px 60px 150px 60px;
 }
 .stake-block div{
   border: 0.75px solid #4D4D4D;
@@ -775,7 +793,7 @@ section .container-fluid{
 .fund-details h3 span, .fund-details p, .fund-idetails h5, .fund-idetails p, .fund-idetails p span, .fund-ivalue p, .btn-morefund, .team-banner p, .team-banner-sm h6, .team-heading-disc p, .team-block p, .production-date, #git-block p{
   color: #9f9f9f;
 }
-.fomono, .fund-details p span, .audio-heading span, .production-date{
+.fomono, .fund-details p span, .production-date{
   font-family: 'DM MONO';
 }
 .fund-details p span{
@@ -870,8 +888,8 @@ section .container-fluid{
 .a-center{
   align-items: center;
 }
-.team-heading h1 span, .audio-heading h1 span, .security-heading h1 span, .git-block h1 span{
-  font-size:2.5rem;
+.team-heading h1 span, .audio-heading h1 span, .security-heading h1 span, .git-block h1 span {
+  font-size: inherit;
   color:#DAA10E;
 }
 .team-heading p, .audio-heading p, .security-heading p{
@@ -883,13 +901,18 @@ section .container-fluid{
 .team-heading, .team-heading-disc{
   margin-top:30px;
 }
+.team-heading-disc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .team-block{
   background: #1E1F20;
   border: 0.75px solid #4D4D4D;
   box-sizing: border-box;
   border-radius: 32px;
-  padding:20px;
-  margin-top:30px;
+  padding: 48px 32px;
+  margin-top: 1.5rem;
 }
 .gradient-wrap {
   margin:30px 0px 20px 0px;
@@ -946,6 +969,9 @@ section .container-fluid{
 }
 .aud-wrap{
   padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .aud-wrap h2{
   line-height: 38px;
@@ -1016,7 +1042,7 @@ section .container-fluid{
 }
 #album-name
 {
-  color: #000;
+  color: #1E1F20;
   font-size: 17px;
   font-weight: bold;
 }
@@ -1030,7 +1056,7 @@ section .container-fluid{
 
 #track-time
 {
-  height: 14px;
+  /*height: 14px;*/
   margin-bottom: 3px;
   overflow: hidden;
 }
@@ -1056,7 +1082,7 @@ section .container-fluid{
 
 #track-time.activeaudio #current-time, #track-time.activeaudio #track-length
 {
-  color: rgba(129, 89, 4, 0.4);
+  color: #4D4D4D;
   background-color: transparent;
 }
 
@@ -1069,7 +1095,7 @@ section .container-fluid{
 
 #s-area
 {
-  background-color:#eaaf05;
+  background-color:#d39d00;
   cursor: pointer;
 }
 
@@ -1211,7 +1237,7 @@ section .container-fluid{
 {
   width: 250px;
   height: 100%;
-  margin: 0 5px 0 141px;
+  margin: 0 55px 0 141px;
   float: right;
   overflow: hidden;
 }
@@ -1262,7 +1288,7 @@ z-index: 125;
 .security-block article{
   background: #1E1F20;
   border-radius: 32px;
-  padding:30px;
+  padding:32px;
   margin-top:30px;
 }
 .mr-2x{
@@ -1633,6 +1659,11 @@ z-index: 125;
     }
     .fund-detail-wrap {
       display: block;
+      /*flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      text-align: center;*/
     }
     .fund-details{
       padding:0;
@@ -1672,7 +1703,7 @@ z-index: 125;
   }
   /* Team Page */
   .team-banner{
-    padding:20px;
+    padding:48px 20px 34px 20px;
   }
   .team-section-menu ul li{
     margin-right: 2px;
@@ -1681,7 +1712,10 @@ z-index: 125;
     padding:8px;
   }
   .team-banner-sm{
-    float:unset;
+    float: unset;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
   #player-track{
     padding: 8px 8px 8px 114px;
@@ -1708,6 +1742,12 @@ z-index: 125;
     margin-bottom: 18px;
   }
 }
+.team-section-menu ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
   /* @media screen and (max-width: 767px) {
     
   } */
@@ -1739,7 +1779,7 @@ z-index: 125;
   }
   .btn-ctm{
     font-size:12px;
-    padding: 8px 10px;
+    padding: 6px 20px;
   }
   .eco-icon {
     margin-top: 25px;
@@ -1765,6 +1805,13 @@ z-index: 125;
     }
     .share-block{
       padding: 20px;
+    }
+    .block-rsec div h6 span, .block-rsec p, .caddress p, .caddress p span i, .caddress p span a, .faddress p, .faddress p span a, .faddress span i{
+      font-size: 0.65rem;
+    }
+    .caddress span, .faddress span {
+      margin-right: 6px;
+      margin-left: 10px;
     }
     /* Team Page */
     .team-section-menu ul li{
@@ -1796,6 +1843,9 @@ z-index: 125;
     }
     .tab-sec{
       height: unset;
+    }
+    .block-rsec div h6 span, .block-rsec p, .caddress p, .caddress p span i, .caddress p span a, .faddress p, .faddress p span a, .faddress span i{
+      font-size: 0.9rem;
     }
 
   }
