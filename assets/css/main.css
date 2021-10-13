@@ -16,6 +16,21 @@ ul, li, a{
 p{
   line-height: 24px;
 }
+h1, h2, h3, h4{
+  font-weight: 400;
+}
+h1 {
+  font-size: 3.157rem;
+}
+h2 {
+  font-size: 2.369rem;
+}
+h3 {
+  font-size: 1.777rem;
+}
+h4 {
+  font-size: 1.25rem;
+}
 section .container-fluid{
   padding-right: var(--bs-gutter-x,1.75rem);
   padding-left: var(--bs-gutter-x,1.75rem);
@@ -31,7 +46,7 @@ section .container-fluid{
   background:#191919;
 }
 .banner-sec, .ecosystem-sec, .tab-sec, .analytics-sec, .detf-sec, .footer-sec, .utility-sec, .distri-sec, .governance-sec, .token-sec, #podcast-sec, #audit-sec, #git-sec{
-  padding:85px 60px;
+  padding:100px 60px;
 }
 .tp-nav .navbar-nav li a{
   color:rgba(255, 255, 255, 1)!important;
@@ -51,11 +66,12 @@ section .container-fluid{
   border-radius: 100px;
   color:#DAA10E;
   margin-left:15px;
-  font-weight: 500;
+  font-weight: 400;
+  padding: 6px 16px;
 }
 .tpnav-rsec button:hover, .btn-ctm:hover{
-  background: #DAA10E;
-  color:#191919;
+  background: rgba(218, 161, 14, 0.25);
+  color:#DAA10E;
 }
   /*** Menu Styles ***/
   #menu {
@@ -65,7 +81,7 @@ section .container-fluid{
   #menu-toggle {
     width: 55px;
     height: 55px;
-    background: #DAA10E;
+    /*background: #DAA10E;*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -91,7 +107,7 @@ section .container-fluid{
   .bar {
     width: 25px;
     height: 2px;
-    background: #fff;
+    background: #DAA10E;
     transition: 0.3s ease-in-out;
   }
   .bar:nth-child(2) {
@@ -103,7 +119,7 @@ section .container-fluid{
   }
   .navShadow{
     background: linear-gradient(270deg, rgba(218, 161, 14, 0.25) 0%, rgba(218, 161, 14, 0) 34.9%), #191919;
-    border-bottom: 1px solid #1e1e1e;
+    /*border-bottom: 1px solid #1e1e1e;*/
     box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.25);
     position: fixed;
     width: 100%;
@@ -111,9 +127,11 @@ section .container-fluid{
     z-index: 1;
     padding: 0px 0px;
     opacity: 1;
+    height: 80px;
   }
   .bi-value{
     color:#DAA10E;
+    margin-top: 4px;
 }
 /* Banner Section CSS */
 .banner-text, .banner-img{
@@ -122,7 +140,8 @@ section .container-fluid{
 .banner-text h1{
   font-size: 3.2rem;
   line-height: 4rem;
-  margin-bottom:15px;
+  /*margin-bottom:15px;*/
+  font-weight: 400;
 }
 .banner-text h1 span{
   font-size:3.2rem;
@@ -133,7 +152,12 @@ section .container-fluid{
   color:#CACACA;
 }
 .banner-text p:nth-last-child(2){
-  margin-bottom:30px;
+  margin-bottom:32px;
+  margin-top: 16px;
+}
+.banner-text p span{
+  font-family: 'DM Mono', sans-serif;
+  font-size: 1.15rem;
 }
 .banner-img{
   text-align:center;
@@ -162,12 +186,17 @@ section .container-fluid{
   text-align: center;
   margin-top: 80px;
   margin-bottom: 30px;
+  font-weight: 400;
+}
+.eco-heading h1 span {
+  font-weight: 700;
+  font-size: inherit;
 }
 .eco-block{
   margin-top:30px;
   border: 0.75px solid #4D4D4D;
   border-radius: 32px;
-  padding:20px;
+  padding:32px;
 }
 .eco-icon{
   margin-top: 55px;
@@ -180,20 +209,22 @@ section .container-fluid{
   box-sizing: border-box;
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);
   border-radius: 100px;
-  padding: 8px 18px;
+  padding: 6px 20px;
   color: #DAA10E;
   text-decoration: none;
   transition: 300ms ease-in-out;
   display: inline-block;
-  font-weight: 500;
+  font-weight: 400;
 }
 .eco-block article p{
-  margin:20px 0px;
+  margin: 8px 0px 32px 0px;
   min-height: 72px;
+  color: #CACACA;
 }
 .btn-disabled{
-  opacity: 0.4;
-  cursor: unset;
+  opacity: 0.35;
+  cursor: default;
+  box-shadow: none;
 }
 .btn-disabled:hover{
   background: rgba(218, 161, 14, 0.15);
@@ -279,10 +310,11 @@ section .container-fluid{
   margin-top:85px;
 }
 .analytic-heading h4 i{
-  margin-left:12px;
+  margin-left:4px;
 }
 .analytic-heading h4 i img{
   width:24px;
+  vertical-align: top;
 }
 .analytic-block{
   margin-top:25px;
@@ -324,7 +356,8 @@ section .container-fluid{
   position: relative;
   font-size: 15px;
   border-radius: 100%;
-  color: #CACACA;
+  color: #9F9F9F;
+  text-decoration: underline;
 }
 
 .ctmtooltip:before,
@@ -366,8 +399,11 @@ section .container-fluid{
   opacity: 1;
   transform: translateY(-2px);
 }
-.farm-sec, .community-sec{
-  padding:85px 60px 150px 60px;
+.farm-sec {
+  padding:100px 60px 150px 60px;
+}
+.community-sec{
+  padding:150px 60px 150px 60px;
 }
 .farm-block{
   background: #191919;
@@ -376,32 +412,42 @@ section .container-fluid{
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);
   border-radius: 32px;
   margin-bottom:30px;
+  height: 300px;
+}
+.farm-block h1{
+  font-weight: 400;
 }
 .farm-lblock{
-  padding:25px;
+  padding:60px 40px;
 }
 .farm-rblock{
-  text-align: center;
-  padding:25px 25px 0px 25px;
+  display: flex;
+  justify-content: center;
+  position: relative;
 }
 .farm-lblock p{
   color:#CACACA;
-  margin:20px 0px;
+  margin:10px 0px 32px 0px;
 }
 .farm-rblock img{
-  width:205px;
+  position: absolute;
+  bottom: 0px;
+  width: 280px;
 }
 .farm-align{
   align-items: center;
+  height: 100%;
 }
 .arbx-rblock, .farm-rblock{
   text-align:center;
+  height: 100%;
 }
 .arbx-rblock{
-  padding:25px;
+  display: flex;
+  justify-content: center;
 }
 .arbx-rblock img{
-  width: 130px;
+  width: 200px;
 }
 /*-----Footer CSS----- */
 .footer-sec{
@@ -416,6 +462,7 @@ section .container-fluid{
 .footer-menu h5{
   margin-bottom:20px;
   text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 .footer-menu ul li a{
   text-decoration:none;
@@ -431,8 +478,10 @@ section .container-fluid{
   margin:0 auto;
 }
 .flogo{
+  display: flex;
+  justify-content: center;
   text-align: center;
-  margin-top:20px;
+  margin-top: 50px;
 }
 .footer-txtlink li, .footer-copy div, .sub-footer ul li{
   display: inline-block;
@@ -469,13 +518,13 @@ section .container-fluid{
 .heading-center{
   text-align: center;
 }
-.heading-center h6, .governance-details h6, .stake-head h6, .team-banner h6{
+.heading-center h6, .governance-details h6, .stake-head h6, .team-banner h6, .detf-wrap h6{
   text-transform:uppercase;
-  margin-bottom:15px;
   letter-spacing: 0.2rem;
 }
-.heading-center h6, .governance-details h6, .stake-head h6, .team-banner h6{
+.heading-center h6, .governance-details h6, .stake-head h6, .team-banner h6, .detf-wrap h6{
   color:#DAA10E;
+  font-family: 'DM Mono', sans-serif;
 }
 .heading-center p{
   font-size: 16px;
@@ -492,7 +541,7 @@ section .container-fluid{
   margin:40px 0px 25px 0px;
 }
 .governance-block article p, .staking-block article p{
-  margin-top:20px;
+  margin-top:8px;
 }
 .staking-block img{
   max-height: 100px;
@@ -594,30 +643,35 @@ section .container-fluid{
 }
 .distribution-details{
   border-left:1px solid #DAA10E;
-  padding:25px;
+  padding: 16px 32px;
   margin-top:150px;
   margin-left: 15px;
 }
 .distribution-details p{
-  margin-bottom: 25px;
+  margin-bottom: 24px;
+  color: #CACACA;
 }
 .governance-sec{
   background:#1E1F20;
 }
 .governance-details p{
-  margin:20px 0px;
+  margin:8px 0px 32px 0px;
+  color: #CACACA;
 }
 .govern-block div{
   background: #1E1F20;
   border: 0.75px solid #4D4D4D;
   box-sizing: border-box;
   border-radius: 32px;
-  margin:20px 0px 30px 20px;
-  padding:30px
+  margin: 0px 0px 30px 20px;
+  padding:32px
+}
+.govern-block h4 {
+  font-family: 'DM Mono', sans-serif;
 }
 .staking-sec{
   background:#191919;
-  padding:85px 60px 150px 60px;
+  padding:100px 60px 150px 60px;
 }
 .stake-block div{
   border: 0.75px solid #4D4D4D;
@@ -625,6 +679,9 @@ section .container-fluid{
   border-radius: 32px;
   padding:30px;
   margin-top:30px;
+}
+.stake-block p{
+  color: #CACACA;
 }
 .stake-block div article{
   margin-top:20px;
@@ -647,6 +704,7 @@ section .container-fluid{
 .reward-dividend{
   display: flex;
   align-items:center;
+  justify-content: center;
 }
 .reward-dividend div{
   margin-left:30px;
@@ -668,7 +726,7 @@ section .container-fluid{
   border: 1px solid #2E2E2E;
   box-sizing: border-box;
   border-radius: 32px;
-  padding:30px;
+  padding:32px;
 }
 .block-rsec, .smr-rblock{
   display:flex;
@@ -686,6 +744,7 @@ section .container-fluid{
 }
 .block-lsec h5{
   line-height: 28px;
+  margin-bottom: 0px;
 }
 .block-lsec{
   display: flex;
@@ -698,6 +757,9 @@ section .container-fluid{
 .block-rsec div h6 span, .block-rsec p, .caddress p, .caddress p span i, .caddress p span a, .faddress p, .faddress p span a, .faddress span i{
   color:#9F9F9F;
 }
+.caddress p{
+  margin-bottom: 0px;
+}
 .caddress p span a, .faddress span a{
   text-decoration:none;
 }
@@ -706,8 +768,8 @@ section .container-fluid{
   transition: 300ms ease-in-out;
 }
 .caddress span, .faddress span{
-  margin-right:5px;
-  margin-left:5px;
+  margin-right:4px;
+  margin-left:16px;
 }
 .caddress span:last-child, .faddress span:last-child{
   margin-right:0px;
@@ -715,7 +777,7 @@ section .container-fluid{
 .fund-block-wrap{
   background: #1E1F20;
   border-radius: 32px;
-  padding:30px;
+  padding:32px;
   margin-top:40px
 }
 .fund-detail-wrap{
@@ -726,11 +788,12 @@ section .container-fluid{
 }
 .fund-details h3 span{
   margin-left:10px;
+  font-size: 1.25rem;
 }
 .fund-details h3 span, .fund-details p, .fund-idetails h5, .fund-idetails p, .fund-idetails p span, .fund-ivalue p, .btn-morefund, .team-banner p, .team-banner-sm h6, .team-heading-disc p, .team-block p, .production-date, #git-block p{
   color: #9f9f9f;
 }
-.fomono, .fund-details p span, .audio-heading span, .production-date{
+.fomono, .fund-details p span, .production-date{
   font-family: 'DM MONO';
 }
 .fund-details p span{
@@ -740,24 +803,34 @@ section .container-fluid{
   position:relative;
   text-align: right;
 }
+.fund-details-right .btn-ctm {
+  border: none;
+  box-shadow: none;
+}
 .btn-morefund{
   position:absolute;
   bottom:0;
   right:8px;
   background:none;
   border:0;
+  color: #DAA10E;
 }
 #text{
   display: none;
   transition: 300ms ease-in-out;
 }
+.fund-img-block {
+  max-width: 100px;
+  min-width: 25px;
+  padding-bottom: 24px;
+}
 .fund-item-block{
   display:flex;
   align-items: center;
-  margin: 35px 15px 15px 15px;
+  margin: 35px 15px 5px 15px;
 }
 .fund-bicon{
-  width:8%;
+  width:10%;
 }
 .fund-idetails{
   width: 72%;
@@ -768,15 +841,17 @@ section .container-fluid{
 }
 .fund-idetails h5 span{
   font-size:1.25rem;
+  padding-right: 0.75rem;
 }
 .fund-ivalue{
   width: 20%;
+  text-align: right;
 }
 .fund-item-block p{
-  margin-bottom:5px;
+  margin-bottom:0px;
 }
 .faddress{
-  margin:15px 15px 0px 15px;
+  margin:5px 15px 0px 15px;
 }
 /* Team Page */
 .team-banner{
@@ -818,8 +893,8 @@ section .container-fluid{
 .a-center{
   align-items: center;
 }
-.team-heading h1 span, .audio-heading h1 span, .security-heading h1 span, .git-block h1 span{
-  font-size:2.5rem;
+.team-heading h1 span, .audio-heading h1 span, .security-heading h1 span, .git-block h1 span {
+  font-size: inherit;
   color:#DAA10E;
 }
 .team-heading p, .audio-heading p, .security-heading p{
@@ -831,13 +906,18 @@ section .container-fluid{
 .team-heading, .team-heading-disc{
   margin-top:30px;
 }
+.team-heading-disc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .team-block{
   background: #1E1F20;
   border: 0.75px solid #4D4D4D;
   box-sizing: border-box;
   border-radius: 32px;
-  padding:20px;
-  margin-top:30px;
+  padding: 48px 32px;
+  margin-top: 1.5rem;
 }
 .gradient-wrap {
   margin:30px 0px 20px 0px;
@@ -894,6 +974,9 @@ section .container-fluid{
 }
 .aud-wrap{
   padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .aud-wrap h2{
   line-height: 38px;
@@ -964,7 +1047,7 @@ section .container-fluid{
 }
 #album-name
 {
-  color: #000;
+  color: #1E1F20;
   font-size: 17px;
   font-weight: bold;
 }
@@ -978,7 +1061,7 @@ section .container-fluid{
 
 #track-time
 {
-  height: 14px;
+  /*height: 14px;*/
   margin-bottom: 3px;
   overflow: hidden;
 }
@@ -1004,7 +1087,7 @@ section .container-fluid{
 
 #track-time.activeaudio #current-time, #track-time.activeaudio #track-length
 {
-  color: rgba(129, 89, 4, 0.4);
+  color: #4D4D4D;
   background-color: transparent;
 }
 
@@ -1017,7 +1100,7 @@ section .container-fluid{
 
 #s-area
 {
-  background-color:#eaaf05;
+  background-color:#d39d00;
   cursor: pointer;
 }
 
@@ -1159,7 +1242,7 @@ section .container-fluid{
 {
   width: 250px;
   height: 100%;
-  margin: 0 5px 0 141px;
+  margin: 0 55px 0 141px;
   float: right;
   overflow: hidden;
 }
@@ -1210,7 +1293,7 @@ z-index: 125;
 .security-block article{
   background: #1E1F20;
   border-radius: 32px;
-  padding:30px;
+  padding:32px;
   margin-top:30px;
 }
 .mr-2x{
@@ -1355,14 +1438,28 @@ z-index: 125;
     }
     /* DEFT */
     .faddress p, .caddress p{
-      font-size: 9px;
+      font-size: .9rem;
+      word-wrap: break-word;
     }
     .smr-detail {
       width: 75%;
-      padding-left: 8px;
+      padding: 16px 0 0 0;
+    }
+    .smr-detail p{
+      margin-bottom: 8px;
     }
     .block-rsec{
       margin-top: 20px;
+    }
+    .share-block {
+      padding: 32px 24px;
+    }
+    .block-rsec, .smr-rblock {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      flex-wrap: nowrap;
+      margin-bottom: 8px;
     }
     .fund-detail-wrap {
       display: block;
@@ -1375,16 +1472,20 @@ z-index: 125;
     }
     .fund-details-right{
       text-align: left;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 24px;
     }
     .btn-morefund{
       position: unset;
-      margin-top: 20px;
+      margin-top: 0px;
     }
     .fund-item-block {
       margin: 35px 0px 15px 0px;
    }
    .fund-block-wrap{
-     padding:15px;
+     padding:24px 15px;
    }
    .fund-idetails {
     width: 66%;
@@ -1524,9 +1625,19 @@ z-index: 125;
     }
     .footer-txtlink, .footer-copy {
       margin-top: 15px;
+      text-align: center;
     }
     .footer-copy{
-      text-align: left;
+      text-align: center;
+    }
+    .sub-footer ul {
+      text-align: center;
+    }
+    .footer-menu {
+      text-align: center;
+    }
+    .sub-footer ul li a i {
+      font-size: 24px;
     }
     .community-bar, .ido-bar, .treasury-bar, .founder-bar, .advisor-bar{
       width:100%!important;
@@ -1560,7 +1671,8 @@ z-index: 125;
     }
     /* DEFT */
     .faddress p, .caddress p{
-      font-size: 10px;
+      font-size: .75rem;
+      word-wrap: break-word;
     }
     .smr-detail {
       width: 75%;
@@ -1569,8 +1681,16 @@ z-index: 125;
     .block-rsec{
       margin-top: 20px;
     }
+    .share-block {
+      padding: 32px 24px;
+    }
     .fund-detail-wrap {
       display: block;
+      /*flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      text-align: center;*/
     }
     .fund-details{
       padding:0;
@@ -1580,16 +1700,20 @@ z-index: 125;
     }
     .fund-details-right{
       text-align: left;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 24px;
     }
     .btn-morefund{
       position: unset;
-      margin-top: 20px;
+      margin-top: 0px;
     }
     .fund-item-block {
       margin: 35px 0px 15px 0px;
    }
    .fund-block-wrap{
-     padding:15px;
+     padding: 32px;
    }
    .fund-idetails {
     width: 66%;
@@ -1606,7 +1730,7 @@ z-index: 125;
   }
   /* Team Page */
   .team-banner{
-    padding:20px;
+    padding:48px 20px 34px 20px;
   }
   .team-section-menu ul li{
     margin-right: 2px;
@@ -1615,7 +1739,10 @@ z-index: 125;
     padding:8px;
   }
   .team-banner-sm{
-    float:unset;
+    float: unset;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
   #player-track{
     padding: 8px 8px 8px 114px;
@@ -1641,7 +1768,14 @@ z-index: 125;
     line-height: 34px;
     margin-bottom: 18px;
   }
+  .team-section-menu ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
+
+}
+
   /* @media screen and (max-width: 767px) {
     
   } */
@@ -1673,7 +1807,7 @@ z-index: 125;
   }
   .btn-ctm{
     font-size:12px;
-    padding: 8px 10px;
+    padding: 6px 20px;
   }
   .eco-icon {
     margin-top: 25px;
@@ -1694,11 +1828,19 @@ z-index: 125;
     font-size: 16px;
   }
     /* DEFT Page */
-    .faddress p, .caddress p{
-      font-size: 9px;
-    }
     .share-block{
-      padding: 20px;
+      padding: 32px;
+    }
+    .block-rsec div h6 span, .block-rsec p, .caddress p, .caddress p span i, .caddress p span a, .faddress p, .faddress p span a, .faddress span i{
+      font-size: .9rem;
+      word-wrap: break-word;
+    }
+    .caddress span, .faddress span {
+      margin-right: 6px;
+      margin-left: 10px;
+    }
+    .fund-block-wrap {
+      padding: 32px;
     }
     /* Team Page */
     .team-section-menu ul li{
@@ -1730,6 +1872,9 @@ z-index: 125;
     }
     .tab-sec{
       height: unset;
+    }
+    .block-rsec div h6 span, .block-rsec p, .caddress p, .caddress p span i, .caddress p span a, .faddress p, .faddress p span a, .faddress span i{
+      font-size: 0.9rem;
     }
 
   }
