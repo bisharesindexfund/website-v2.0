@@ -166,6 +166,10 @@ section .container-fluid{
 .ecosystem-sec, .utility-sec{
   background: radial-gradient(50% 40% at 50% 40%, rgba(218, 161, 14, 0.10) 15%, rgba(25, 25, 25, 0) 100%), #191919;
 }
+.bi-yield-block{
+  display: flex;
+  justify-content: space-between;
+}
 .bi-yield-block h2, .bi-yield-block h2 span, .analytic-block h4{
   font-family: 'DM Mono';
   font-weight: 500;
@@ -181,6 +185,10 @@ section .container-fluid{
   font-size: 18px;
   color:#9F9F9F;
   font-weight: bold;
+}
+.bi-yield-inner{
+  display: flex;
+  flex-direction: column;
 }
 .eco-heading h1{
   text-align: center;
@@ -309,8 +317,13 @@ section .container-fluid{
 .analytic-heading{
   margin-top:85px;
 }
+.analytic-heading h4{
+  display: flex;
+  align-items: center;
+}
 .analytic-heading h4 i{
-  margin-left:4px;
+  margin-left: 8px;
+  display: flex;
 }
 .analytic-heading h4 i img{
   width:24px;
@@ -784,7 +797,7 @@ section .container-fluid{
   display: flex;
 }
 .fund-details{
-  padding:0px 15px;
+  padding:0px 24px;
 }
 .fund-details h3 span{
   margin-left:10px;
@@ -1404,6 +1417,14 @@ z-index: 125;
     .tab-sec{
       height: unset;
     }
+    .bi-yield-block{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .bi-yield-inner {
+      margin-top: 32px;
+    }
     .detf-img-block img{
       position: unset;
     }
@@ -1438,7 +1459,7 @@ z-index: 125;
     }
     /* DEFT */
     .faddress p, .caddress p{
-      font-size: .9rem;
+      font-size: .55rem;
       word-wrap: break-word;
     }
     .smr-detail {
@@ -1482,7 +1503,7 @@ z-index: 125;
       margin-top: 0px;
     }
     .fund-item-block {
-      margin: 35px 0px 15px 0px;
+      margin: 35px 0px 0px 0px;
    }
    .fund-block-wrap{
      padding:24px 15px;
@@ -1492,8 +1513,20 @@ z-index: 125;
     padding: 0px 10px;
   }
   .fund-idetails h5, .fund-idetails h5 span, .fund-ivalue h5 {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
+  .fund-idetails p, .fund-ivalue p {
+    font-size: 0.75rem;
+  }
+  .faddress .far, .faddress .fas {
+    font-size: 10px;
+  }
+  .fund-ivalue {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: space-between;
+   }
   .fund-idetails p span{
     font-size: 11px;
   }
@@ -1583,7 +1616,12 @@ z-index: 125;
       line-height: 3rem;
     }
     .bi-yield-block{
-      margin-top:20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .bi-yield-inner {
+      margin-top: 32px;
     }
     .eco-heading h1{
       text-align: left;
@@ -1671,9 +1709,16 @@ z-index: 125;
     }
     /* DEFT */
     .faddress p, .caddress p{
-      font-size: .75rem;
+      font-size: 0.7rem;
       word-wrap: break-word;
     }
+    .faddress .far, .faddress .fas {
+    font-size: 10px;
+   }
+   .caddress span, .faddress span {
+    margin-right: 4px;
+    margin-left: 8px;
+   }
     .smr-detail {
       width: 75%;
       padding-left: 8px;
@@ -1710,20 +1755,33 @@ z-index: 125;
       margin-top: 0px;
     }
     .fund-item-block {
-      margin: 35px 0px 15px 0px;
+      margin: 32px 0px 8px 0px;
+      align-items: unset;
+   }
+   .fund-ivalue {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: space-between;
    }
    .fund-block-wrap{
-     padding: 32px;
+     padding: 32px 24px;
    }
    .fund-idetails {
     width: 66%;
     padding: 0px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
   }
   .fund-idetails h5, .fund-idetails h5 span, .fund-ivalue h5 {
     font-size: 1rem;
   }
   .fund-idetails p span{
     font-size: 11px;
+  }
+  .fund-bicon {
+    width: 15%;
   }
   .faddress{
     margin:0;
