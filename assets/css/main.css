@@ -726,7 +726,7 @@ section .container-fluid{
   border: 1px solid #2E2E2E;
   box-sizing: border-box;
   border-radius: 32px;
-  padding:30px;
+  padding:32px;
 }
 .block-rsec, .smr-rblock{
   display:flex;
@@ -777,7 +777,7 @@ section .container-fluid{
 .fund-block-wrap{
   background: #1E1F20;
   border-radius: 32px;
-  padding:30px;
+  padding:32px;
   margin-top:40px
 }
 .fund-detail-wrap{
@@ -1433,14 +1433,28 @@ z-index: 125;
     }
     /* DEFT */
     .faddress p, .caddress p{
-      font-size: 9px;
+      font-size: .9rem;
+      word-wrap: break-word;
     }
     .smr-detail {
       width: 75%;
-      padding-left: 8px;
+      padding: 16px 0 0 0;
+    }
+    .smr-detail p{
+      margin-bottom: 8px;
     }
     .block-rsec{
       margin-top: 20px;
+    }
+    .share-block {
+      padding: 32px 24px;
+    }
+    .block-rsec, .smr-rblock {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      flex-wrap: nowrap;
+      margin-bottom: 8px;
     }
     .fund-detail-wrap {
       display: block;
@@ -1453,10 +1467,14 @@ z-index: 125;
     }
     .fund-details-right{
       text-align: left;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 24px;
     }
     .btn-morefund{
       position: unset;
-      margin-top: 20px;
+      margin-top: 0px;
     }
     .fund-item-block {
       margin: 35px 0px 15px 0px;
@@ -1648,7 +1666,8 @@ z-index: 125;
     }
     /* DEFT */
     .faddress p, .caddress p{
-      font-size: 10px;
+      font-size: .75rem;
+      word-wrap: break-word;
     }
     .smr-detail {
       width: 75%;
@@ -1656,6 +1675,9 @@ z-index: 125;
     }
     .block-rsec{
       margin-top: 20px;
+    }
+    .share-block {
+      padding: 32px 24px;
     }
     .fund-detail-wrap {
       display: block;
@@ -1686,7 +1708,7 @@ z-index: 125;
       margin: 35px 0px 15px 0px;
    }
    .fund-block-wrap{
-     padding:32px 24px;
+     padding: 32px;
    }
    .fund-idetails {
     width: 66%;
@@ -1801,18 +1823,19 @@ z-index: 125;
     font-size: 16px;
   }
     /* DEFT Page */
-    .faddress p, .caddress p{
-      font-size: 9px;
-    }
     .share-block{
-      padding: 20px;
+      padding: 32px;
     }
     .block-rsec div h6 span, .block-rsec p, .caddress p, .caddress p span i, .caddress p span a, .faddress p, .faddress p span a, .faddress span i{
-      font-size: 0.65rem;
+      font-size: .9rem;
+      word-wrap: break-word;
     }
     .caddress span, .faddress span {
       margin-right: 6px;
       margin-left: 10px;
+    }
+    .fund-block-wrap {
+      padding: 32px;
     }
     /* Team Page */
     .team-section-menu ul li{
