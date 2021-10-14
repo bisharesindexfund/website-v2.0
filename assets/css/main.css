@@ -55,7 +55,6 @@ section .container-fluid{
   border-radius: 10px;
 }
 .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
-  color: #daa10e;
   background-color: #1E1F20;
   border-radius: 10px;
 }
@@ -243,7 +242,7 @@ section .container-fluid{
   box-sizing: border-box;
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);
   border-radius: 100px;
-  padding: 6px 20px;
+  padding: 8px 20px;
   color: #DAA10E;
   text-decoration: none;
   transition: 300ms ease-in-out;
@@ -858,6 +857,9 @@ section .container-fluid{
 .fomono, .fund-details p span, .production-date{
   font-family: 'DM MONO';
 }
+p.fomono {
+  font-size: 1rem;
+}
 .fund-details p span{
   color:#DAA10E;
 }
@@ -909,11 +911,15 @@ section .container-fluid{
   width: 20%;
   text-align: right;
 }
-.fund-item-block p{
+.fund-item-block p, .fund-item-block p span{
   margin-bottom:0px;
+  font-size: 1.125rem;
 }
 .faddress{
   margin:5px 15px 0px 15px;
+}
+.faddress p {
+  font-size: 1rem;
 }
 /* Team Page */
 .team-banner{
@@ -1915,10 +1921,10 @@ z-index: 125;
     justify-content: space-around;
   }
   .fund-idetails h5, .fund-idetails h5 span, .fund-ivalue h5 {
-    font-size: 0.8rem;
+    font-size: 0.875rem;
   }
   .fund-idetails p, .fund-idetails p span{
-    font-size: 0.8rem;
+    font-size: 0.875rem;
   }
   .fund-bicon {
     width: 15%;
@@ -2011,8 +2017,8 @@ z-index: 125;
     min-height: 182px;
   }
   .btn-ctm{
-    font-size:12px;
-    padding: 6px 20px;
+    font-size: 1rem;
+    padding: 8px 20px;
   }
   .eco-icon {
     margin-top: 25px;
@@ -2053,6 +2059,24 @@ z-index: 125;
     .fund-block-wrap {
       padding: 32px;
     }
+    .fund-ivalue {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    .fund-detail-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+    .fund-details {
+      padding: 0px;
+    }
+    #text .row {
+      flex-direction: column;
+    }
+    #text .col-md-6 {
+      width: 100%;
+    }
     /* Team Page */
     .team-section-menu ul li{
       margin-right: 5px;
@@ -2088,9 +2112,23 @@ z-index: 125;
       height: unset;
     }
     .block-rsec div h6 span, .block-rsec p, .caddress p, .caddress p span i, .caddress p span a, .faddress p, .faddress p span a, .faddress span i{
-      font-size: 0.9rem;
+      font-size: 0.75rem;
     }
-
+    /* dETF Funds*/
+    .fund-ivalue {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    .fund-bicon {
+      width: 14%;
+    }
+    .fund-idetails h5, .fund-idetails h5 span, .fund-ivalue h5 {
+      font-size: 1rem;
+    }
+    .fund-idetails p, .fund-idetails p span, .fund-ivalue p {
+      font-size: 0.875rem;
+    }
   }
   @media only screen and (max-width: 1920px) and (min-width: 1820px) {
     .banner-text h1{
