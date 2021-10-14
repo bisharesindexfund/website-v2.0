@@ -1089,10 +1089,10 @@ p.fomono {
   justify-content: center;
 }
 .aud-wrap h2{
-  line-height: 38px;
+  line-height: 2.875rem;
 }
 .aud-wrap h2 span{
-  font-size:2rem;
+  font-size: inherit;
   margin-right: 8px;
   font-weight: bold;
 }
@@ -1720,6 +1720,18 @@ z-index: 125;
     height: 70px;
     margin-left: 16px;
   }
+  .aud-wrap h2{
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  .aud-wrap h2 span{
+    font-size: inherit;
+    margin-right: 8px;
+    font-weight: bold;
+  }
+  p.production-date {
+    margin-bottom: 8px;
+  }
   #team-sec {
     padding: 20px 10px 45px 10px;
   }
@@ -2007,6 +2019,18 @@ z-index: 125;
   }
   #player-controls {
     margin: 10px 0px 0px 141px;
+  }
+  .aud-wrap h2{
+    font-size: 1.625rem;
+    line-height: 2rem;
+  }
+  p.production-date {
+    margin-bottom: 8px;
+  }
+  .aud-wrap h2 span{
+    font-size: inherit;
+    margin-right: 8px;
+    font-weight: bold;
   }
   #team-sec {
     padding: 20px 10px 45px 10px;
