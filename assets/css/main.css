@@ -817,6 +817,7 @@ section .container-fluid{
 }
 .block-rsec div h6 span, .block-rsec p, .caddress p, .caddress p span i, .caddress p span a, .faddress p, .faddress p span a, .faddress span i{
   color:#9F9F9F;
+  display: none;
 }
 .caddress p{
   margin-bottom: 0px;
@@ -1927,7 +1928,7 @@ z-index: 125;
     font-size: 0.875rem;
   }
   .fund-bicon {
-    width: 15%;
+    width: 14%;
   }
   .faddress{
     margin:0;
@@ -2051,22 +2052,20 @@ z-index: 125;
     .block-rsec div h6 span, .block-rsec p, .caddress p, .caddress p span i, .caddress p span a, .faddress p, .faddress p span a, .faddress span i{
       font-size: .9rem;
       word-wrap: break-word;
+      display: none;
+    }
+    .fund-ivalue h5, .fund-idetails h5 {
+      font-size: 1.15rem;
+    }
+    .fund-ivalue p, .fund-idetails p, .fund-idetails p span {
+      font-size: 1rem;
     }
     .caddress span, .faddress span {
-      margin-right: 6px;
-      margin-left: 10px;
+      margin-right: 8px;
+      margin-left: 16px;
     }
     .fund-block-wrap {
       padding: 32px;
-    }
-    .fund-ivalue {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-    }
-    .fund-detail-wrap {
-      display: flex;
-      flex-direction: column;
     }
     .fund-details {
       padding: 0px;
@@ -2074,8 +2073,37 @@ z-index: 125;
     #text .row {
       flex-direction: column;
     }
-    #text .col-md-6 {
+    #text .row .col-md-6 {
       width: 100%;
+    }
+    .fund-bicon {
+      width: 8%
+    }
+    .fund-block-wrap {
+      width: 100%;
+    }
+    .fund-block-wrap .row{
+      flex-direction: column;
+    }
+    .fund-item-block {
+      margin: 35px 0px 5px 0px;
+    }
+    .fund-detail-wrap{
+      width: 100%;
+      flex-direction: column;
+    }
+    .fund-block-wrap .row .fund-details-right{
+      margin-top: 32px;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      align-content: center;
+    }
+    .fund-ivalue {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
     }
     /* Team Page */
     .team-section-menu ul li{
@@ -2112,7 +2140,8 @@ z-index: 125;
       height: unset;
     }
     .block-rsec div h6 span, .block-rsec p, .caddress p, .caddress p span i, .caddress p span a, .faddress p, .faddress p span a, .faddress span i{
-      font-size: 0.75rem;
+      font-size: 0.875rem;
+      display: none;
     }
     /* dETF Funds*/
     .fund-ivalue {
@@ -2121,13 +2150,28 @@ z-index: 125;
       align-items: flex-end;
     }
     .fund-bicon {
-      width: 14%;
+      width: 12%;
     }
     .fund-idetails h5, .fund-idetails h5 span, .fund-ivalue h5 {
-      font-size: 1rem;
+      font-size: 1.15rem;
     }
     .fund-idetails p, .fund-idetails p span, .fund-ivalue p {
-      font-size: 0.875rem;
+      font-size: 1rem;
+    }
+    .fund-block-wrap {
+      width: 100%;
+    }
+    .fund-detail-wrap{
+      width: 100%;
+      flex-direction: row;
+    }
+    .fund-block-wrap .row .fund-details-right{
+      margin-top: 32px;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      align-content: center;
     }
   }
   @media only screen and (max-width: 1920px) and (min-width: 1820px) {
