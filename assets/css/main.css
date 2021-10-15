@@ -434,10 +434,8 @@ section .container-fluid{
   content: '';
   display: block;
   border-bottom: 10vw solid #1e1f20;
-  border-bottom-color: rgb(30, 31, 32);
   border-right: 98vw solid transparent;
   background: #191919;
-  background-image: url("../../assets/images/mesh-backdrop.jpg");
 }
 .detf-img-block{
   display: flex;
