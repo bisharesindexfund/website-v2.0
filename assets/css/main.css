@@ -556,11 +556,15 @@ section .container-fluid{
 .footer-menu{
   margin-top:20px;
 }
+.footer-menu a {
+  line-height: 2.5rem !important;
+}
 .footer-menu ul li a, .footer-menu h5{
   color:#CACACA;
 }
 .footer-menu h5{
-  margin-bottom:20px;
+  color: #fff;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
