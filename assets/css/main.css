@@ -2094,7 +2094,11 @@ z-index: 125;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-}
+  }
+  .flogo {
+    text-align: center;
+    margin-top: 30px;
+  }
 
 }
 
@@ -2233,9 +2237,12 @@ z-index: 125;
     }
     #team-sec {
       padding: 20px 10px 85px 10px;
+    }
+    .flogo img {
+    max-width: 120px;
+    }
   }
 
-  }
   @media only screen and (max-width: 1340px) and (min-width: 1024px) {
     .banner-sec, .ecosystem-sec, .tab-sec, .analytics-sec, .detf-sec, .footer-sec, .utility-sec, .distri-sec, .governance-sec, .token-sec, #podcast-sec, #audit-sec, #git-sec {
       padding: 70px 45px;
