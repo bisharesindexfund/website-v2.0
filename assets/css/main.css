@@ -180,7 +180,11 @@ section .container-fluid{
   .bi-value{
     color:#DAA10E;
     margin-top: 4px;
-}
+  }
+  .tpnav-rsec a{
+    text-decoration: none;
+    cursor: pointer;
+  }
 /* Banner Section CSS */
 .banner-text, .banner-img{
   margin-top:40px;
