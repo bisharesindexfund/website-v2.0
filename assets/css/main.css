@@ -316,7 +316,7 @@ section .container-fluid{
 .ctmtab-menu{
   margin:50px 90px 50px 0px;
 }
-.ctmtab-right {
+.ctmtab-right-wrap {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -368,7 +368,7 @@ section .container-fluid{
   padding: 3px;
   border-radius: 100%;
   font-size: 14px;
-  width: 28px;
+  min-width: 28px;
   height: 28px;
   text-align: center;
   margin-right: 16px;
@@ -1885,12 +1885,13 @@ z-index: 125;
       font-size:12px;
     }
     .ctmtooltip::before{
-      top: 5px;
-      left: 122px;
+      top: 25px;
+      left: 50px;
+      transform: rotate(180deg) !important;
     }
     .ctmtooltip::after{
-      top: -80px;
-      left: 135px;
+      top: 40px;
+      left: 0px;
     }
     .detf-img-block img{
       position: unset;
