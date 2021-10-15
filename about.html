@@ -1,0 +1,757 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta http-equiv="content-type" content="text/html" charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BiShares - BSC dETF's</title>
+    <link rel="shortcut icon" type="image/jpg" href="assets/images/favicon.png" />
+    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet"> 
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="assets/font-awesome/css/fontawesome-all.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="assets/css/main.css">
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.min.js" integrity="sha384-PsUw7Xwds7x08Ew3exXhqzbhuEYmA2xnwc8BuD6SEr+UmEHlX8/MCltYEodzWA4u" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+      
+<header>
+    <!-- Start of Navigation -->
+    <nav class="navbar navbg-ctm navbar-expand-lg navbar-light ">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/index.html"><img src="assets/images/BiShare-LogoWHITE-FINAL.png" alt="BiShare Logo"></a>
+          <div id="menu-toggle" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <div id="menu-icon">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+            </div>
+          </div>
+          <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button> -->
+          <div class="tp-nav collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto ms-5 my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/bison-token.html">Bison Token</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/funds.html">Funds</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://farms.bishares.finance/">Farms</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://arbex.bishares.finance/swap">ArbEx</a>
+              </li>
+            </ul>
+            <div class="d-flex tpnav-rsec">
+              <a href="https://charts.bogged.finance/?token=0x19A6Da6e382b85F827088092a3DBe864d9cCba73" target="_blank" title="Bogged Finance"><div class="bi-value"><img src="assets/images/bi-icon.svg" alt="Bi Shares icon" class="img-fluid">$888.88</div></a>
+              <a href="https://app.bishares.finance/"><button class="btn" type="submit">Launch App</button></a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    <!-- Start of Banner Section -->
+    <section class="banner-sec">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12 col-md-12">
+            <div class="team-banner">
+              <h6>ABOUT US</h6>
+              <h1>Graze with us in<br>the great plains of bison code</h1>
+              <p>... wallow with the herd</p>
+            </div>
+          </div>
+        </div>
+        <div class="row a-center">
+          <div class="col-sm-12 col-md-6">
+            <div class="team-section-menu">
+              <ul>
+                <li><a href="#team-sec">Team Profiles</a></li>
+                <li><a href="#podcast-sec">Podcast</a></li>
+                <li><a href="#audit-sec">Audits</a></li>
+                <li><a href="#git-sec">GitHub</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6">
+            <div class="team-banner-sm">
+              <h6>Connect with us</h6>
+              <ul>
+                <li>
+                  <a href="https://twitter.com/BiSharesFinance" target="_blank"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li>
+                    <a href="https://github.com/bisharesindexfund" target="_blank"><i class="fab fa-github"></i></a>
+                </li>
+                <li>
+                  <a href="https://t.me/bishares" target="_blank"><i class="fab fa-telegram"></i></a>
+                </li>
+                <li>
+                  <a href="https://bi-shares.medium.com" target="_blank"><i class="fab fa-medium"></i></a>
+                </li>
+                <li>
+                  <a href="https://discord.gg/w2jejq5rBP" target="_blank"><i class="fab fa-discord"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End of Banner Section -->
+    <!-- START OF BISHARE TEAM SECTION -->
+    <section id="team-sec">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12 col-md-6 team-heading">
+            <h1>BiShares <span>Team</span></h1>
+            <p>Profiles</p>
+          </div>
+          <div class="col-sm-12 col-md-6 team-heading-disc">
+            <p>The BiShares team is a global effort of DeFi visionaries across many diciplines and backgrounds. Learn more about the team behind BiShares – follow the team social media below.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-4">
+            <div class="team-block">
+              <div class="gradient-wrap">
+                <div class="imgcircle">
+                  <img src="assets/images/defivlad.jpg" alt="BiShares Team" class="img-fluid">
+                </div>
+              </div>
+              <h3>DeFi Vlad</h3>
+              <span>Co-Founder</span>
+              <ul>
+                <li><a href="https://twitter.com/defivlad" target="_blank"><img src="assets/images/twitter.svg" alt="Twitter logo" class="img-fluid"></a></li>
+                <li><a href="https://y.at/%F0%9F%A6%8D%F0%9F%92%A8%F0%9F%92%8E" target="_blank"><img src="assets/images/yat-logo.svg" alt="Yat logo" class="img-fluid"></a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-4">
+            <div class="team-block">
+              <div class="gradient-wrap">
+                <div class="imgcircle">
+                  <img src="assets/images/allthingsNFT.jpg" alt="BiShares Team" class="img-fluid">
+                </div>
+              </div>
+              <h3>allthingsNFT</h3>
+              <span>Co-Founder</span>
+              <ul>
+                <li><a href="https://twitter.com/allthingsNFT" target="_blank"><img src="assets/images/twitter.svg" alt="Twitter logo" class="img-fluid"></a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-4">
+            <div class="team-block">
+              <div class="gradient-wrap">
+                <div class="imgcircle">
+                  <img src="assets/images/Dev.jpeg" alt="BiShares Team" class="img-fluid">
+                </div>
+              </div>
+              <h3>Dev</h3>
+              <span>DevOps</span>
+              <ul>
+                <li><a href="https://twitter.com/devendra_n" target="_blank"><img src="assets/images/twitter.svg" alt="Twitter logo" class="img-fluid"></a></li>
+                <li><a href="https://www.linkedin.com/in/devendra-neupane-67683555/" target="_blank"><img src="assets/images/linkedin.svg" alt="LinkedIn logo" class="img-fluid"></a></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12 col-md-4">
+            <div class="team-block">
+              <div class="gradient-wrap">
+                <div class="imgcircle">
+                  <img src="assets/images/ollie.jpg" alt="BiShares Team" class="img-fluid">
+                </div>
+              </div>
+              <h3>Crypto_0King</h3>
+              <span>Community Manager</span>
+              <ul>
+                <li><a href="https://twitter.com/Crypto_OKing" target="_blank"><img src="assets/images/twitter.svg" alt="Twitter logo" class="img-fluid"></a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-4">
+            <div class="team-block">
+              <div class="gradient-wrap">
+                <div class="imgcircle">
+                  <img src="assets/images/eznika.png" alt="BiShares Team" class="img-fluid">
+                </div>
+              </div>
+              <h3>Eznika</h3>
+              <span>Business Development</span>
+              <ul>
+                <li><a href="https://twitter.com/imEznika" target="_blank"><img src="assets/images/twitter.svg" alt="Twitter logo" class="img-fluid"></a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-4">
+            <div class="team-block">
+              <div class="gradient-wrap">
+                <div class="imgcircle">
+                  <img src="assets/images/0xrefill.png" alt="BiShares Team" class="img-fluid">
+                </div>
+              </div>
+              <h3>0xRefill</h3>
+              <span>UX/UI Designer</span>
+              <ul>
+                <li><a href="https://twitter.com/0xRefill" target="_blank"><img src="assets/images/twitter.svg" alt="Twitter logo" class="img-fluid"></a></li>
+              </ul>
+            </div>
+          </div>
+
+      </div>
+    </section>
+    <!-- TEAM PODCAST SECTION-->
+    <section id="podcast-sec">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12 col-md-12 audio-heading">
+            <h1>Pod<span>cast</span></h1>
+            <p>Listen to learn more</p>
+          </div>
+        </div>
+        <div class="row reverse">
+          <div class="col-sm-12 col-md-5 au-player">
+              <div id="app-cover">
+                  <div id="player">
+                      <div id="player-track" class="active">
+                          <div id="album-name">BiShares brings dETFs</div>
+                          <div id="track-name">Episode 70</div>
+                          <div id="track-time" class="active">
+                              <div id="current-time">03:14</div>
+                              <div id="track-length">34:45</div>
+                          </div>
+                          <div id="s-area">
+                              <div id="ins-time" style="left: 0px; margin-left: 0px; display: none;">00:00</div>
+                              <div id="s-hover" style="width: 0px;"></div>
+                              <div id="seek-bar" style="width: 9.32204%;"></div>
+                          </div>
+                      </div>
+                      <div id="player-content">
+                          <div id="album-art" class="active">
+                              <img src="assets/images/BSC-News-Podcast-Album-Cover.jpeg" class="active" id="_1" alt="BSC News interview with DeFi Vlad, BiShares Co-Founder">
+                              <div id="buffer-box">Buffering ...</div>
+                          </div>
+                          <div id="player-controls">
+                              <div class="control">
+                                  <div class="button" id="play-previous">
+                                      <i class="fas fa-backward"></i>
+                                  </div>
+                              </div>
+                              <div class="control">
+                                  <div class="button" id="play-pause-button">
+                                      <i class="fas fa-pause"></i>
+                                  </div>
+                              </div>
+                              <div class="control">
+                                  <div class="button" id="play-next">
+                                      <i class="fas fa-forward"></i>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+          <!-- Audio Details -->
+          <div class="col-sm-12 col-md-7 aud-wrap">
+            <p class="production-date">September 16, 2021</p>
+            <h2>BiShares brings dETFs to Binance Smart Chain</h2>
+            <div class="sub-details">Featuring:<a href="https://twitter.com/DeFiVlad" target="_blank">DeFi Vlad</a></div>
+            <!-- <div>
+                <a href="#" target="_blank" class="spotify-link">
+                    <span class="btn-icon__inner fab fa-spotify custom-tooltip">
+                        <span class="custom-tooltiptext">Listen on Spotify</span>
+                    </span>
+                </a>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- START OF SECURITY SECTION -->
+    <section id="audit-sec">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12 col-md-12 security-heading">
+            <h1>Security <span>Audits</span></h1>
+            <p>Contract Code Audits</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-6 security-block">
+            <article class="mr-2x">
+              <h3>DefiYield Audit</h3>
+              <p>BiShares smart contracts have been audited by DefiYeild to make sure our users are protected.</p>
+              <a href="#" class="btn-ctm" target="_blank">Read Audit Report</a>
+            </article>
+          </div>
+
+          <div class="col-sm-12 col-md-6 security-block">
+            <article class="mr-2x">
+              <h3>Gordian Audit</h3>
+              <p>BiShares smart contracts have been audited by Gordian to make sure our users are protected.</p>
+              <a href="#" class="btn-ctm" target="_blank">Read Audit Report</a>
+            </article>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12 col-md-6 security-block">
+            <article class="mr-2x">
+              <h3>Solidity Audit</h3>
+              <p>BiShares smart contracts have been audited by Solidity to make sure our users are protected.</p>
+              <a class="btn-ctm btn-disabled">Coming Soon</a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="git-sec">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12 col-md-12 git-block">
+            <h1>Git<span>Hub</span></h1>
+            <img src="assets/images/github.svg" alt="Git Hub Logo" class="img-fluid">
+            <P>All BiShares code is open source and available for the public<br>to review – see the code behind BiShares.</P>
+            <a href="#" target="_blank" class="btn-ctm">Visit GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="community-sec">
+      <div class="row">
+        <div class="col-sm-12 col-md-12">
+          <div class="community-block">
+            <h1>Join the <span>Community</span></h1>
+            <ul class="community-sm">
+              <li>
+                  <a href="https://twitter.com/BiSharesFinance" target="_blank"><i class="fab fa-twitter"></i></a>
+              </li>
+              <li>
+                  <a href="https://github.com/bisharesindexfund" target="_blank"><i class="fab fa-github"></i></a>
+              </li>
+              <li>
+                <a href="https://t.me/bishares" target="_blank"><i class="fab fa-telegram"></i></a>
+              </li>
+              <li>
+                <a href="https://bi-shares.medium.com" target="_blank"><i class="fab fa-medium"></i></a>
+              </li>
+              <li>
+                <a href="https://discord.gg/w2jejq5rBP" target="_blank"><i class="fab fa-discord"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END OF SECURITY SECTION -->
+    
+    <!-- START OF FOOTER -->
+    <footer class="footer-sec">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12 col-md-9">
+            <div class="row">
+              <div class="col-sm-12 col-md-4 footer-menu">
+                <h5>Products</h5>
+                <ul>
+                  <li><a href="/funds.html">Funds</a></li>
+                  <li><a href="https://farms.bishares.finance/" target="_blank">Farms</a></li>
+                  <li><a href="https://arbex.bishares.finance/swap">ArbEx</a></li>
+                </ul>
+              </div>
+
+              <div class="col-sm-12 col-md-4 footer-menu">
+                <h5>About</h5>
+                <ul>
+                  <li><a href="/about.html" target="_blank">Team</a></li>
+                  <li><a href="/bison-token.html" target="_blank">BISON Token</a></li>
+                </ul>
+              </div>
+
+              <div class="col-sm-12 col-md-4 footer-menu">
+                <h5>Resources</h5>
+                <ul>
+                  <li><a href="https://coinmarketcap.com/currencies/bishares/" target="_blank">CoinMarketCap</a></li>
+                  <li><a href="https://www.coingecko.com/en/coins/bishares" target="_blank">CoinGocko</a></li>
+                  <li><a href="https://charts.bogged.finance/?token=0x19A6Da6e382b85F827088092a3DBe864d9cCba73" target="_blank">Bogged Finance</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-3 flogo">
+            <a href="/index.html">
+              <img src="assets/images/BiShare-LogoWHITE-FINAL.png" alt="BiShares Logo Icon" class="img-fluid">
+            </a>
+          </div>
+        </div>
+        <!-- START OF SUB FOOTER -->
+        <div class="row sub-footer">
+          <div class="col-sm-12 col-md-3">
+            <ul>
+              <li>
+                <a href="https://twitter.com/BiSharesFinance" target="_blank"><i class="fab fa-twitter"></i></a>
+              </li>
+              <li>
+                  <a href="https://github.com/bisharesindexfund" target="_blank"><i class="fab fa-github"></i></a>
+              </li>
+              <li>
+                <a href="https://t.me/bishares" target="_blank"><i class="fab fa-telegram"></i></a>
+              </li>
+              <li>
+                <a href="https://bi-shares.medium.com" target="_blank"><i class="fab fa-medium"></i></a>
+              </li>
+              <li>
+                <a href="https://discord.gg/w2jejq5rBP" target="_blank"><i class="fab fa-discord"></i></a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm-12 col-md-5">
+              <ul class="footer-txtlink">
+                  <li><a href="#" target="_blank">Gordian Audit</a></li>
+                  <li><a href="#" target="_blank">DefiYield Audit</a></li>
+              </ul>
+          </div>
+          <div class="col-sm-12 col-md-4 footer-copy">
+              <div>
+                  © 2021 by <a href="#" target="_blank">BiShares Finance</a>
+              </div>
+          </div>
+      </div>
+        <!-- END OF SUB FOOTER -->
+      </div>
+    </footer>
+    <!-- END OF FOOTER -->
+  </body>
+</html>
+<script type="text/javascript">
+$( () => {
+	
+	//On Scroll Functionality
+	$(window).scroll( () => {
+		var windowTop = $(window).scrollTop();
+		windowTop > 100 ? $('nav').addClass('navShadow') : $('nav').removeClass('navShadow');
+	});
+	
+	//Click Logo To Scroll To Top
+	$('#logo').on('click', () => {
+		$('html,body').animate({
+			scrollTop: 0
+		},500);
+	});
+	
+	//Smooth Scrolling Using Navigation Menu
+	$('a[href*="#"]').on('click', function(e){
+		$('html,body').animate({
+			scrollTop: $($(this).attr('href')).offset().top - 100
+		},500);
+		e.preventDefault();
+	});
+	
+	//Toggle Menu
+	$('#menu-toggle').on('click', () => {
+		$('#menu-toggle').toggleClass('closeMenu');
+		$('ul').toggleClass('showMenu');
+		
+		$('li').on('click', () => {
+			$('ul').removeClass('showMenu');
+			$('#menu-toggle').removeClass('closeMenu');
+		});
+	});
+	
+});
+</script>
+<script type="text/javascript">
+$(".accordianNav h3.dropArrow").click(function() {
+    $("h3.dropArrow").removeClass("active");
+    $(".accordianNav ul ul").slideUp();
+    if (!$(this).next().is(":visible")) {
+        $(this).next().slideDown();
+        $(this).addClass("active");
+    }
+})
+
+</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+  $("#toggle").click(function() {
+    var elem = $("#toggle").text();
+    if (elem == "View More ↓") {
+      //Stuff to do when btn is in the read more state
+      $("#toggle").text("View Less ↑");
+      $("#text").slideDown();
+    } else {
+      //Stuff to do when btn is in the read less state
+      $("#toggle").text("View More ↓");
+      $("#text").slideUp();
+    }
+  });
+});
+  
+  </script>
+
+  <!-- Audio Script -->
+  <script type="text/javascript">
+    $(function()
+        {
+            var playerTrack = $("#player-track"), bgArtwork = $('#bg-artwork'), bgArtworkUrl, albumName = $('#album-name'), trackName = $('#track-name'), albumArt = $('#album-art'), sArea = $('#s-area'), seekBar = $('#seek-bar'), trackTime = $('#track-time'), insTime = $('#ins-time'), sHover = $('#s-hover'), playPauseButton = $("#play-pause-button"),  i = playPauseButton.find('i'), tProgress = $('#current-time'), tTime = $('#track-length'), seekT, seekLoc, seekBarPos, cM, ctMinutes, ctSeconds, curMinutes, curSeconds, durMinutes, durSeconds, playProgress, bTime, nTime = 0, buffInterval = null, tFlag = false, albums = ['BSC News interview with DeFi Vlad, BiShares Co-Founder'], trackNames = [''], albumArtworks = ['_1'], trackUrl = ['https://anchor.fm/s/41a2f56c/podcast/play/40148311/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2021-8-11%2Fd1dd198d-125f-8527-7283-780ffdfe79a8.mp3'], playPreviousTrackButton = $('#play-previous'), playNextTrackButton = $('#play-next'), currIndex = -1;
+
+            function playPause()
+            {
+                setTimeout(function()
+                {
+                    if(audio.paused)
+                    {
+                        playerTrack.addClass('activeaudio');
+                        albumArt.addClass('activeaudio');
+                        checkBuffering();
+                        i.attr('class','fas fa-pause');
+                        audio.play();
+                    }
+                    else
+                    {
+                        playerTrack.removeClass('activeaudio');
+                        albumArt.removeClass('activeaudio');
+                        clearInterval(buffInterval);
+                        albumArt.removeClass('buffering');
+                        i.attr('class','fas fa-play');
+                        audio.pause();
+                    }
+                },300);
+            }
+
+                
+            function showHover(event)
+            {
+                seekBarPos = sArea.offset(); 
+                seekT = event.clientX - seekBarPos.left;
+                seekLoc = audio.duration * (seekT / sArea.outerWidth());
+                
+                sHover.width(seekT);
+                
+                cM = seekLoc / 60;
+                
+                ctMinutes = Math.floor(cM);
+                ctSeconds = Math.floor(seekLoc - ctMinutes * 60);
+                
+                if( (ctMinutes < 0) || (ctSeconds < 0) )
+                    return;
+                
+                if( (ctMinutes < 0) || (ctSeconds < 0) )
+                    return;
+                
+                if(ctMinutes < 10)
+                    ctMinutes = '0'+ctMinutes;
+                if(ctSeconds < 10)
+                    ctSeconds = '0'+ctSeconds;
+                
+                if( isNaN(ctMinutes) || isNaN(ctSeconds) )
+                    insTime.text('--:--');
+                else
+                    insTime.text(ctMinutes+':'+ctSeconds);
+                    
+                insTime.css({'left':seekT,'margin-left':'-21px'}).fadeIn(0);
+                
+            }
+
+            function hideHover()
+            {
+                sHover.width(0);
+                insTime.text('00:00').css({'left':'0px','margin-left':'0px'}).fadeOut(0);		
+            }
+            
+            function playFromClickedPos()
+            {
+                audio.currentTime = seekLoc;
+                seekBar.width(seekT);
+                hideHover();
+            }
+
+            function updateCurrTime()
+            {
+                nTime = new Date();
+                nTime = nTime.getTime();
+
+                if( !tFlag )
+                {
+                    tFlag = true;
+                    trackTime.addClass('activeaudio');
+                }
+
+                curMinutes = Math.floor(audio.currentTime / 60);
+                curSeconds = Math.floor(audio.currentTime - curMinutes * 60);
+                
+                durMinutes = Math.floor(audio.duration / 60);
+                durSeconds = Math.floor(audio.duration - durMinutes * 60);
+                
+                playProgress = (audio.currentTime / audio.duration) * 100;
+                
+                if(curMinutes < 10)
+                    curMinutes = '0'+curMinutes;
+                if(curSeconds < 10)
+                    curSeconds = '0'+curSeconds;
+                
+                if(durMinutes < 10)
+                    durMinutes = '0'+durMinutes;
+                if(durSeconds < 10)
+                    durSeconds = '0'+durSeconds;
+                
+                if( isNaN(curMinutes) || isNaN(curSeconds) )
+                    tProgress.text('00:00');
+                else
+                    tProgress.text(curMinutes+':'+curSeconds);
+                
+                if( isNaN(durMinutes) || isNaN(durSeconds) )
+                    tTime.text('00:00');
+                else
+                    tTime.text(durMinutes+':'+durSeconds);
+                
+                if( isNaN(curMinutes) || isNaN(curSeconds) || isNaN(durMinutes) || isNaN(durSeconds) )
+                    trackTime.removeClass('activeaudio');
+                else
+                    trackTime.addClass('activeaudio');
+
+                
+                seekBar.width(playProgress+'%');
+                
+                if( playProgress == 100 )
+                {
+                    i.attr('class','fa fa-play');
+                    seekBar.width(0);
+                    tProgress.text('00:00');
+                    albumArt.removeClass('buffering').removeClass('activeaudio');
+                    clearInterval(buffInterval);
+                }
+            }
+            
+            function checkBuffering()
+            {
+                clearInterval(buffInterval);
+                buffInterval = setInterval(function()
+                { 
+                    if( (nTime == 0) || (bTime - nTime) > 1000  )
+                        albumArt.addClass('buffering');
+                    else
+                        albumArt.removeClass('buffering');
+
+                    bTime = new Date();
+                    bTime = bTime.getTime();
+
+                },100);
+            }
+
+            function selectTrack(flag)
+            {
+                if( flag == 0 || flag == 1 )
+                    ++currIndex;
+                else
+                    --currIndex;
+
+                if( (currIndex > -1) && (currIndex < albumArtworks.length) )
+                {
+                    if( flag == 0 )
+                        i.attr('class','fa fa-play');
+                    else
+                    {
+                        albumArt.removeClass('buffering');
+                        i.attr('class','fa fa-pause');
+                    }
+
+                    seekBar.width(0);
+                    trackTime.removeClass('activeaudio');
+                    tProgress.text('00:00');
+                    tTime.text('00:00');
+
+                    currAlbum = albums[currIndex];
+                    currTrackName = trackNames[currIndex];
+                    currArtwork = albumArtworks[currIndex];
+
+                    audio.src = trackUrl[currIndex];
+                    
+                    nTime = 0;
+                    bTime = new Date();
+                    bTime = bTime.getTime();
+
+                    if(flag != 0)
+                    {
+                        audio.play();
+                        playerTrack.addClass('activeaudio');
+                        albumArt.addClass('activeaudio');
+                    
+                        clearInterval(buffInterval);
+                        checkBuffering();
+                    }
+
+                    albumName.text(currAlbum);
+                    trackName.text(currTrackName);
+                    albumArt.find('img.activeaudio').removeClass('activeaudio');
+                    $('#'+currArtwork).addClass('activeaudio');
+                    
+                    bgArtworkUrl = $('#'+currArtwork).attr('src');
+
+                    bgArtwork.css({'background-image':'url('+bgArtworkUrl+')'});
+                }
+                else
+                {
+                    if( flag == 0 || flag == 1 )
+                        --currIndex;
+                    else
+                        ++currIndex;
+                }
+            }
+
+            function initPlayer()
+            {	
+                audio = new Audio();
+
+                selectTrack(0);
+                
+                audio.loop = false;
+                
+                playPauseButton.on('click',playPause);
+                
+                sArea.mousemove(function(event){ showHover(event); });
+                
+                sArea.mouseout(hideHover);
+                
+                sArea.on('click',playFromClickedPos);
+                
+                $(audio).on('timeupdate',updateCurrTime);
+
+                playPreviousTrackButton.on('click',function(){ selectTrack(-1);} );
+                playNextTrackButton.on('click',function(){ selectTrack(1);});
+            }
+            
+            initPlayer();
+        });
+</script>

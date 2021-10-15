@@ -23,22 +23,22 @@ h1, h2, h3, h4{
 }
 h1 {
   font-size: 3.125rem;
-  opacity: 0.87;
+  color: #ffffffde;
 }
 h2 {
   font-size: 2.375rem;
-  opacity: 0.87;
+  color: #ffffffde;
 }
 h3 {
   font-size: 1.75rem;
-  opacity: 0.87;
+  color: #ffffffde;
 }
 h4 {
   font-size: 1.25rem;
-  opacity: 0.87;
+  color: #ffffffde;
 }
 h5 {
-  opacity: 0.87;
+  color: #ffffffde;
 }
 section .container-fluid{
   padding-right: var(--bs-gutter-x,1.75rem);
@@ -54,6 +54,13 @@ section .container-fluid{
 .navbg-ctm, .banner-sec, .token-sec, #team-sec, #audit-sec{
   background:#191919;
 }
+#audit-sec {
+  background-image: url("../../assets/images/mesh-backdrop-2.jpg");
+  background-size: cover;
+  background-position-y: bottom;
+  background-color: #191919;
+}
+}
 .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link {
   border-radius: 10px;
 }
@@ -61,15 +68,29 @@ section .container-fluid{
   background-color: #1E1F20;
   border-radius: 10px;
 }
-.ecosystem-sec, .tab-sec, .footer-sec, .utility-sec, .distri-sec, .governance-sec, .token-sec, #podcast-sec, #audit-sec, #git-sec{
+.navbar-brand img {
+  min-height: 52px;
+  max-height: 65px;
+}
+.ecosystem-sec, .tab-sec, .footer-sec, .utility-sec, .distri-sec, .governance-sec, .token-sec, #audit-sec, #git-sec{
   padding:100px 60px;
   overflow: hidden;
+}
+#podcast-sec {
+  padding:150px 60px;
+  overflow: hidden;
+}
+#team-sec h1, #podcast-sec h1, #audit-sec h1 {
+  margin-bottom: 0px;
+}
+#team-sec p, #podcast-sec p, #audit-sec p {
+  color: #ffffffde;
 }
 .banner-sec{
   padding: 50px 60px 0px 60px;
 }
 .analytics-sec{
-  padding: 0px 60px 100px 60px;
+  padding: 100px 60px 100px 60px;
 }
 .detf-sec{
   padding:50px 60px;
@@ -94,7 +115,7 @@ section .container-fluid{
   color:#DAA10E;
   margin-left:24px;
   font-weight: 400;
-  padding: 8px 16px;
+  padding: 8px 20px;
 }
 .tpnav-rsec button:hover, .btn-ctm:hover{
   background: rgba(218, 161, 14, 0.25);
@@ -159,11 +180,16 @@ section .container-fluid{
   .bi-value{
     color:#DAA10E;
     margin-top: 4px;
-}
+  }
+  .tpnav-rsec a{
+    text-decoration: none;
+    cursor: pointer;
+  }
 /* Banner Section CSS */
 .banner-text, .banner-img{
   margin-top:40px;
 }
+
 .banner-text h1{
   font-size: 3.2rem;
   line-height: 4rem;
@@ -185,12 +211,13 @@ section .container-fluid{
 .banner-text p span{
   font-family: 'DM Mono', sans-serif;
   font-size: 1.15rem;
-  opacity: 0.87;
+  color: #ffffffde;
 }
 .banner-img{
   text-align:center;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 /* Ecosystem CSS */
 .ecosystem-sec, .utility-sec{
@@ -208,6 +235,7 @@ section .container-fluid{
 .bi-yield-inner h2 span{
   font-size: 1.75rem;
   margin-left: 2px;
+  color: inherit;
 }
 .bi-yield-block h4{
   margin-bottom: 18px;
@@ -230,10 +258,11 @@ section .container-fluid{
 .eco-heading h2 span {
   font-weight: 700;
   font-size: inherit;
+  color: #ffffffde;
 }
 .eco-block{
   margin-top:30px;
-  border: 0.75px solid #4D4D4D;
+  border: 0.75px solid #DAA10E;
   border-radius: 32px;
   padding:32px;
 }
@@ -287,6 +316,11 @@ section .container-fluid{
 .ctmtab-menu{
   margin:50px 90px 50px 0px;
 }
+.ctmtab-right-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .platform-fees h1{
   color:#DAA10E;
   font-size: 42px;
@@ -301,6 +335,12 @@ section .container-fluid{
 .platform-fees #address {
   font-family: 'DM Mono', sans-serif;
   font-weight: 300;
+  font-size: 0.8rem;
+}
+.platform-fees #address i {
+  color: #CACACA;
+  margin-left: 12px;
+  font-size: 0.875rem;
 }
 .platform-fees img{
   width: 150px;
@@ -328,14 +368,17 @@ section .container-fluid{
   padding: 3px;
   border-radius: 100%;
   font-size: 14px;
-  width: 28px;
+  min-width: 28px;
   height: 28px;
   text-align: center;
   margin-right: 16px;
 }
 /*----Analytics---- */
 .analytics-sec{
-  background: linear-gradient(180deg, #191919 100%, #1a1a1a 100%);
+  background-image: url("../../assets/images/mesh-backdrop.jpg");
+  background-size: cover;
+  background-position-y: bottom;
+  background-color: #191919;
 }
 .analytic-wrap{
   border-bottom:2px solid #DAA10E;
@@ -349,6 +392,7 @@ section .container-fluid{
 }
 .analytic-wrap p{
   margin-bottom:15px;
+  color: #CACACA;
 }
 .analytic-heading{
   margin-top:85px;
@@ -393,6 +437,7 @@ section .container-fluid{
   border-bottom-color: rgb(30, 31, 32);
   border-right: 98vw solid transparent;
   background: #191919;
+  background-image: url("../../assets/images/mesh-backdrop.jpg");
 }
 .detf-img-block{
   display: flex;
@@ -434,7 +479,7 @@ section .container-fluid{
   border-width: 10px 8px 0 8px;
   border-style: solid;
   border-color: #DAA10E transparent transparent transparent;
-  top: 2px;
+  top: 5px;
   left:125px;
   transform: rotate(90deg) !important;
 }
@@ -443,7 +488,7 @@ section .container-fluid{
   content: attr(data-tooltip);
   background: #DAA10E;
   color:#191919;
-  width: 250px;
+  width: 280px;
   font-size: 14px;
   font-weight: 300;
   top: -50px;
@@ -468,7 +513,7 @@ section .container-fluid{
 }
 .farm-block{
   background: #191919;
-  border: 1px solid #4D4D4D;
+  border: 1px solid #DAA10E;
   box-sizing: border-box;
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);
   border-radius: 32px;
@@ -516,11 +561,15 @@ section .container-fluid{
 .footer-menu{
   margin-top:20px;
 }
+.footer-menu a {
+  line-height: 2.5rem !important;
+}
 .footer-menu ul li a, .footer-menu h5{
   color:#CACACA;
 }
 .footer-menu h5{
-  margin-bottom:20px;
+  color: #fff;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
@@ -533,15 +582,18 @@ section .container-fluid{
   color:#DAA10E;
 }
 .flogo a{
-  width:80%;
+  width:100%;
+  padding-right: 15px;
   display: block;
-  margin:0 auto;
+  margin:20px auto;
 }
 .flogo{
   display: flex;
-  justify-content: center;
-  text-align: center;
-  margin-top: 50px;
+  justify-content: flex-end;
+  text-align: right;
+}
+.flogo img {
+  max-width: 198px;
 }
 .footer-txtlink li, .footer-copy div, .sub-footer ul li{
   display: inline-block;
@@ -720,7 +772,7 @@ section .container-fluid{
 }
 .govern-block div{
   background: #1E1F20;
-  border: 0.75px solid #4D4D4D;
+  border: 0.75px solid #DAA10E;
   box-sizing: border-box;
   border-radius: 32px;
   margin: 0px 0px 30px 20px;
@@ -733,14 +785,16 @@ section .container-fluid{
   margin-bottom: 32px;
 }
 .staking-sec{
-  background:#191919;
+  position: relative;
   padding:100px 60px 150px 60px;
+  background-image: url("../../assets/images/mesh-backdrop.jpg");
+  background-size: cover;
 }
 .stake-block {
   display: flex;
 }
 .stake-block div{
-  border: 0.75px solid #4D4D4D;
+  border: 0.75px solid #DAA10E;
   box-sizing: border-box;
   border-radius: 32px;
   padding:32px;
@@ -790,7 +844,7 @@ section .container-fluid{
 }
 /* Share Token Page */
 .share-block{
-  border: 1px solid #2E2E2E;
+  border: 1px solid #DAA10E;
   box-sizing: border-box;
   border-radius: 32px;
   padding:32px;
@@ -818,7 +872,7 @@ section .container-fluid{
   font-size: 1.625rem;
   line-height: 2.25rem;
   margin-bottom: 0px;
-  opacity: 0.87;
+  color: #ffffffde;
 }
 .block-lsec{
   display: flex;
@@ -827,7 +881,10 @@ section .container-fluid{
 .smr-value{
   width: 20%;
   text-align: right;
-  opacity: 0.87;
+  color: #ffffffde;
+}
+.address span i{
+  color: #9F9F9F;
 }
  .faddress p, .faddress p span a, .faddress span i, .caddress p, .caddress p span i, .caddress p span a{
   color:#9F9F9F;
@@ -875,6 +932,9 @@ section .container-fluid{
 }
 .fomono, .fund-details p span, .production-date{
   font-family: 'DM MONO';
+}
+p.production-date {
+  margin-bottom: 8px;
 }
 p.fomono {
   font-size: 1rem;
@@ -959,7 +1019,7 @@ p.fomono {
   margin-right:15px;
 }
 .team-section-menu ul li a{
-  color:#fff;
+  color:#ffffffde;
   display: block;
   padding:8px 12px;
   background: #1E1F20;
@@ -988,7 +1048,7 @@ p.fomono {
   font-family:'DM MONO';
 }
 #team-sec{
-  padding:20px 60px 85px 60px;
+  padding:100px 60px 100px 60px;
 }
 .team-heading, .team-heading-disc{
   margin-top:30px;
@@ -1000,7 +1060,7 @@ p.fomono {
 }
 .team-block{
   background: #1E1F20;
-  border: 0.75px solid #4D4D4D;
+  border: 0.75px solid #DAA10E;
   box-sizing: border-box;
   border-radius: 32px;
   padding: 48px 32px;
@@ -1066,10 +1126,10 @@ p.fomono {
   justify-content: center;
 }
 .aud-wrap h2{
-  line-height: 38px;
+  line-height: 2.875rem;
 }
 .aud-wrap h2 span{
-  font-size:2rem;
+  font-size: inherit;
   margin-right: 8px;
   font-weight: bold;
 }
@@ -1084,6 +1144,7 @@ p.fomono {
 .sub-details{
   display: flex;
   align-items: center;
+  color: #9f9f9f;
 }
 .sub-details a{
   text-decoration:none;
@@ -1122,9 +1183,9 @@ p.fomono {
 
 #player-track
 {
-  padding: 13px 22px 10px 184px;
+  padding: 16px 22px 10px 184px;
   background-color: #F0B90B;
-  border-radius: 30px 30px 0 0;
+  border-radius: 32px 32px 0 0;
   transition: 0.3s ease top;
   z-index: 1;
 }
@@ -1231,10 +1292,10 @@ p.fomono {
 {
   position: relative;
   height: 100%;
-  background: #191919;
+  background: #f4f4f4;
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 32px;
+  border-bottom-right-radius: 32px;
   /* z-index: 2; */
 }
 #album-art
@@ -1246,14 +1307,14 @@ p.fomono {
   margin-left: 40px;
   transform: rotateZ(0);
   transition: 0.3s ease all;
-  box-shadow: 0 0 0 8px #191919;
+  box-shadow: 0 0 0 8px #f4f4f4;
   border-radius: 50%;
   overflow: hidden;
 }
 #album-art.activeaudio
 {
   top: -60px;
-  box-shadow: 0 0 0 4px #191919, 0 30px 50px -15px #2b2103;
+  box-shadow: 0 0 0 4px #f4f4f4, 0 30px 50px -15px #2b2103;
 }
 #album-art img
 {
@@ -1348,7 +1409,7 @@ p.fomono {
 .button i
 {
   display: block;
-  color: #d6dee7;
+  color: #9f9f9f;
   font-size: 26px;
   text-align: center;
   line-height: 1;
@@ -1359,7 +1420,7 @@ p.fomono {
 }
 .button:hover i
 {
-  color: #fff;
+  color: #1E1F20;
 }
 #ytd-url {
 display: block;
@@ -1378,7 +1439,8 @@ z-index: 125;
 }
 /* End of Audio Section */
 .security-block article{
-  background: #1E1F20;
+  border: 1px solid #DAA10E;
+  /*background: #1E1F20;*/
   border-radius: 32px;
   padding: 48px 32px;
   margin-top:30px;
@@ -1394,6 +1456,9 @@ z-index: 125;
 }
 .security-block article p:last-child{
   margin-bottom:0;
+}
+.security-block p {
+  color: #CACACA;
 }
 #git-sec{
   background: #1E1F20;
@@ -1506,6 +1571,10 @@ z-index: 125;
     .platform-fees #address{
       word-break: break-all;
       line-height: 1.2rem;
+      font-size: 0.5rem;
+    }
+    .platform-fees #address i{
+      font-size: 0.5rem;
     }
     .tab-sec{
       height: unset;
@@ -1543,12 +1612,16 @@ z-index: 125;
       position: unset;
     }
     .ctmtooltip::before{
-      top: -8px;
-      left: 47px;
+      top: 25px;
+      left: 50px;
+      transform: rotate(180deg) !important;
     }
     .ctmtooltip::after{
-      top: -140px;
-      left: 2px;
+      top: 40px;
+      left: 0px;
+    }
+    .detf-img-block {
+      margin-top: 32px;
     }
     .govern-block div{
       margin: 20px 0px 30px 0px;
@@ -1693,6 +1766,18 @@ z-index: 125;
     height: 70px;
     margin-left: 16px;
   }
+  .aud-wrap h2{
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  .aud-wrap h2 span{
+    font-size: inherit;
+    margin-right: 8px;
+    font-weight: bold;
+  }
+  p.production-date {
+    margin-bottom: 8px;
+  }
   #team-sec {
     padding: 20px 10px 45px 10px;
   }
@@ -1785,6 +1870,14 @@ z-index: 125;
     .block-swap{
       flex-direction:column-reverse;
     }
+    .platform-fees #address{
+      word-break: break-all;
+      line-height: 1.2rem;
+      font-size: 0.675rem;
+    }
+    .platform-fees #address i{
+      font-size: 0.675rem;
+    }
     .analytic-wrap{
       margin-top: 64px;
       margin-right: 0;
@@ -1796,12 +1889,13 @@ z-index: 125;
       font-size:12px;
     }
     .ctmtooltip::before{
-      top: 5px;
-      left: 122px;
+      top: 25px;
+      left: 50px;
+      transform: rotate(180deg) !important;
     }
     .ctmtooltip::after{
-      top: -80px;
-      left: 135px;
+      top: 40px;
+      left: 0px;
     }
     .detf-img-block img{
       position: unset;
@@ -1981,6 +2075,18 @@ z-index: 125;
   #player-controls {
     margin: 10px 0px 0px 141px;
   }
+  .aud-wrap h2{
+    font-size: 1.625rem;
+    line-height: 2rem;
+  }
+  p.production-date {
+    margin-bottom: 8px;
+  }
+  .aud-wrap h2 span{
+    font-size: inherit;
+    margin-right: 8px;
+    font-weight: bold;
+  }
   #team-sec {
     padding: 20px 10px 45px 10px;
   }
@@ -2002,7 +2108,11 @@ z-index: 125;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-}
+  }
+  .flogo {
+    text-align: center;
+    margin-top: 30px;
+  }
 
 }
 
@@ -2025,44 +2135,47 @@ z-index: 125;
     }
     .banner-sec, .ecosystem-sec, .tab-sec, .analytics-sec, .detf-sec, .footer-sec, .utility-sec, .distri-sec, .governance-sec, .token-sec, #podcast-sec, #audit-sec, #git-sec {
       padding: 55px 20px;
-  }
-  .ad-title {
-    left: -192%;
-  }
-  .stake-block div{
-    padding: 20px;
-  }
-  .stake-block div article {
-    min-height: 182px;
-  }
-  .btn-ctm{
-    font-size: 1rem;
-    padding: 8px 20px;
-  }
-  .eco-icon {
-    margin-top: 25px;
-  }
-  .eco-block article{
-    min-height: 232px;
-  }
-  .eco-heading h2{
-    line-height: 44px;
-  }
-  .tab-sec{
-    height: unset;
-  }
-  .ctmtab-menu {
-    margin: 50px 0px 50px 0px;
-  }
-  .sub-footer ul li a i {
-    font-size: 16px;
-  }
-  .farm-rblock img {
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
-    right: 45px;
-  }
+    }
+    .ad-title {
+      left: -192%;
+    }
+    .stake-block div{
+      padding: 20px;
+    }
+    .stake-block div article {
+      min-height: 182px;
+    }
+    .btn-ctm{
+      font-size: 1rem;
+      padding: 8px 20px;
+    }
+    .eco-icon {
+      margin-top: 25px;
+    }
+    .eco-block article{
+      min-height: 232px;
+    }
+    .eco-heading h2{
+      line-height: 44px;
+    }
+    .tab-sec{
+      height: unset;
+    }
+    .platform-fees #address {
+      font-size: 0.8rem;
+    }
+    .ctmtab-menu {
+      margin: 50px 0px 50px 0px;
+    }
+    .sub-footer ul li a i {
+      font-size: 16px;
+    }
+    .farm-rblock img {
+      position: absolute;
+      bottom: 0px;
+      width: 100%;
+      right: 45px;
+    }
     /* DEFT Page */
     .share-block{
       padding: 32px;
@@ -2138,9 +2251,12 @@ z-index: 125;
     }
     #team-sec {
       padding: 20px 10px 85px 10px;
+    }
+    .flogo img {
+    max-width: 120px;
+    }
   }
 
-  }
   @media only screen and (max-width: 1340px) and (min-width: 1024px) {
     .banner-sec, .ecosystem-sec, .tab-sec, .analytics-sec, .detf-sec, .footer-sec, .utility-sec, .distri-sec, .governance-sec, .token-sec, #podcast-sec, #audit-sec, #git-sec {
       padding: 70px 45px;
