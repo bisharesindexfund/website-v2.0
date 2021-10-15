@@ -326,6 +326,7 @@ section .container-fluid{
 .platform-fees #address {
   font-family: 'DM Mono', sans-serif;
   font-weight: 300;
+  font-size: 0.8rem;
 }
 .platform-fees #address i {
   color: #CACACA;
@@ -1557,6 +1558,10 @@ z-index: 125;
     .platform-fees #address{
       word-break: break-all;
       line-height: 1.2rem;
+      font-size: 0.5rem;
+    }
+    .platform-fees #address i{
+      font-size: 0.5rem;
     }
     .tab-sec{
       height: unset;
@@ -1848,6 +1853,14 @@ z-index: 125;
     .block-swap{
       flex-direction:column-reverse;
     }
+    .platform-fees #address{
+      word-break: break-all;
+      line-height: 1.2rem;
+      font-size: 0.675rem;
+    }
+    .platform-fees #address i{
+      font-size: 0.675rem;
+    }
     .analytic-wrap{
       margin-top: 64px;
       margin-right: 0;
@@ -2100,44 +2113,47 @@ z-index: 125;
     }
     .banner-sec, .ecosystem-sec, .tab-sec, .analytics-sec, .detf-sec, .footer-sec, .utility-sec, .distri-sec, .governance-sec, .token-sec, #podcast-sec, #audit-sec, #git-sec {
       padding: 55px 20px;
-  }
-  .ad-title {
-    left: -192%;
-  }
-  .stake-block div{
-    padding: 20px;
-  }
-  .stake-block div article {
-    min-height: 182px;
-  }
-  .btn-ctm{
-    font-size: 1rem;
-    padding: 8px 20px;
-  }
-  .eco-icon {
-    margin-top: 25px;
-  }
-  .eco-block article{
-    min-height: 232px;
-  }
-  .eco-heading h2{
-    line-height: 44px;
-  }
-  .tab-sec{
-    height: unset;
-  }
-  .ctmtab-menu {
-    margin: 50px 0px 50px 0px;
-  }
-  .sub-footer ul li a i {
-    font-size: 16px;
-  }
-  .farm-rblock img {
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
-    right: 45px;
-  }
+    }
+    .ad-title {
+      left: -192%;
+    }
+    .stake-block div{
+      padding: 20px;
+    }
+    .stake-block div article {
+      min-height: 182px;
+    }
+    .btn-ctm{
+      font-size: 1rem;
+      padding: 8px 20px;
+    }
+    .eco-icon {
+      margin-top: 25px;
+    }
+    .eco-block article{
+      min-height: 232px;
+    }
+    .eco-heading h2{
+      line-height: 44px;
+    }
+    .tab-sec{
+      height: unset;
+    }
+    .platform-fees #address {
+      font-size: 0.8rem;
+    }
+    .ctmtab-menu {
+      margin: 50px 0px 50px 0px;
+    }
+    .sub-footer ul li a i {
+      font-size: 16px;
+    }
+    .farm-rblock img {
+      position: absolute;
+      bottom: 0px;
+      width: 100%;
+      right: 45px;
+    }
     /* DEFT Page */
     .share-block{
       padding: 32px;
