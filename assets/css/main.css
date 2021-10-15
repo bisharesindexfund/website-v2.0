@@ -479,7 +479,7 @@ section .container-fluid{
   border-width: 10px 8px 0 8px;
   border-style: solid;
   border-color: #DAA10E transparent transparent transparent;
-  top: 2px;
+  top: 5px;
   left:125px;
   transform: rotate(90deg) !important;
 }
@@ -488,7 +488,7 @@ section .container-fluid{
   content: attr(data-tooltip);
   background: #DAA10E;
   color:#191919;
-  width: 250px;
+  width: 280px;
   font-size: 14px;
   font-weight: 300;
   top: -50px;
@@ -1612,12 +1612,16 @@ z-index: 125;
       position: unset;
     }
     .ctmtooltip::before{
-      top: -8px;
-      left: 47px;
+      top: 25px;
+      left: 50px;
+      transform: rotate(180deg) !important;
     }
     .ctmtooltip::after{
-      top: -140px;
-      left: 2px;
+      top: 40px;
+      left: 0px;
+    }
+    .detf-img-block {
+      margin-top: 32px;
     }
     .govern-block div{
       margin: 20px 0px 30px 0px;
