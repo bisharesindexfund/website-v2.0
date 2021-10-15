@@ -856,6 +856,7 @@ section .container-fluid{
 }
 .block-rsec, .smr-rblock{
   display:flex;
+  justify-content: space-between;
 }
 .smr-rblock{
   width:100%;
