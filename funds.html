@@ -1,75 +1,89 @@
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
 <head>
   <!-- Required meta tags -->
   <meta http-equiv="content-type" content="text/html" charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BiShares - BSC dETF's</title>
   <link rel="shortcut icon" type="image/jpg" href="assets/images/favicon.png" />
-  
+
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet"> 
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="assets/font-awesome/css/fontawesome-all.min.css">
 
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
   <link type="text/css" rel="stylesheet" href="assets/css/main.css">
   <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.min.js" integrity="sha384-PsUw7Xwds7x08Ew3exXhqzbhuEYmA2xnwc8BuD6SEr+UmEHlX8/MCltYEodzWA4u" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.min.js"
+    integrity="sha384-PsUw7Xwds7x08Ew3exXhqzbhuEYmA2xnwc8BuD6SEr+UmEHlX8/MCltYEodzWA4u"
+    crossorigin="anonymous"></script>
 
 </head>
-  <body>
-      
-<header>
+
+<body>
+
+  <header>
     <!-- Start of Navigation -->
     <nav class="navbar navbg-ctm navbar-expand-lg navbar-light ">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="./"><img src="assets/images/BiShare-LogoWHITE-FINAL.png" alt="BiShare Logo"></a>
-          <div id="menu-toggle" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-            <div id="menu-icon">
-              <div class="bar"></div>
-              <div class="bar"></div>
-              <div class="bar"></div>
-            </div>
-          </div>
-          <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button> -->
-          <div class="tp-nav collapse navbar-collapse" id="navbarScroll">
-            <ul class="navbar-nav me-auto ms-5 my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./about.html">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./bison-token.html">Bison Token</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./funds.html">Funds</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://farms.bishares.finance/">Farms</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://arbex.bishares.finance/swap">ArbEx</a>
-              </li>
-            </ul>
-            <div class="d-flex tpnav-rsec">
-              <a href="https://charts.bogged.finance/?token=0x19A6Da6e382b85F827088092a3DBe864d9cCba73" target="_blank" title="Bogged Finance"><div class="bi-value" id="bison_price"><img src="assets/images/bi-icon.svg" alt="Bi Shares icon" class="img-fluid">$00.00</div></a>
-              <a href="https://app.bishares.finance/"><button class="btn" type="submit">Launch App</button></a>
-            </div>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./"><img src="assets/images/BiShare-LogoWHITE-FINAL.png" alt="BiShare Logo"></a>
+        <div id="menu-toggle" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <div id="menu-icon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
           </div>
         </div>
-      </nav>
+        <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button> -->
+        <div class="tp-nav collapse navbar-collapse" id="navbarScroll">
+          <ul class="navbar-nav me-auto ms-5 my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./bison-token.html">Bison Token</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./funds.html">Funds</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://farms.bishares.finance/">Farms</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://arbex.bishares.finance/swap">ArbEx</a>
+            </li>
+          </ul>
+          <div class="d-flex tpnav-rsec">
+            <a href="https://charts.bogged.finance/?token=0x19A6Da6e382b85F827088092a3DBe864d9cCba73" target="_blank"
+              title="Bogged Finance">
+              <div class="bi-value" id="bison_price"><img src="assets/images/bi-icon.svg" alt="Bi Shares icon"
+                  class="img-fluid">$00.00</div>
+            </a>
+            <a href="https://app.bishares.finance/"><button class="btn" type="submit">Launch App</button></a>
+          </div>
+        </div>
+      </div>
+    </nav>
     <!-- Start of Banner Section -->
     <section class="banner-sec">
       <div class="container-fluid">
@@ -77,12 +91,13 @@
           <div class="col-sm-12 col-md-6 banner-text">
             <h1>BiShares <span>dETF Funds</span></h1>
             <p><span>Decentralized Exchange Traded Funds</span></p>
-            <p>Each BiShares dETF token is a representation of all underlying assets within its respective fund. Buy or mint any fund token to instantly get expossure to many assets in an instance.
+            <p>Each BiShares dETF token is a representation of all underlying assets within its respective fund. Buy or
+              mint any fund token to instantly get expossure to many assets in an instance.
             </p>
             <a href="https://app.bishares.finance/" class="btn-ctm">Launch App</a>
           </div>
           <div class="col-sm-12 col-md-6 banner-img">
-            <img src="assets/images/detf-mage.svg" alt="dETF Funds image" class="img-fluid"/>
+            <img src="assets/images/detf-mage.svg" alt="dETF Funds image" class="img-fluid" />
           </div>
         </div>
       </div>
@@ -112,7 +127,8 @@
                     </div>
                   </div>
                   <div class="caddress">
-                    <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                    <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a
+                          href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
                   </div>
                 </div>
               </div>
@@ -131,203 +147,20 @@
                   <div class="fund-details">
                     <h3>FOMO Fund <span>biFOMO</span></h3>
                     <p class="fomono">Total Value Locked: <span>$31,984.22</span></p>
-                    <p>A high risk/reward fund which includes micro and low cap tokens with ample room for growth. Suitable for those who seek to maximize returns.</p>
+                    <p>A high risk/reward fund which includes micro and low cap tokens with ample room for growth.
+                      Suitable for those who seek to maximize returns.</p>
                   </div>
                 </div>
                 <div class="col-sm-12 col-md-4 fund-details-right">
                   <ul>
-                    <li><a href="https://app.bishares.finance/#/funds/0xf09026225AA59D8Ab89Ec4E06aa1d6dCbe5eB1cF" target="_blank" class="btn-ctm">Launch Dashboard</a></li>
+                    <li><a href="https://app.bishares.finance/#/funds/0xf09026225AA59D8Ab89Ec4E06aa1d6dCbe5eB1cF"
+                        target="_blank" class="btn-ctm">Launch Dashboard</a></li>
                   </ul>
                   <button id="toggle" class="btn-morefund">View More ↓</button>
                 </div>
               </div>
               <!-- Show More Content -->
-              <div id="text">
-                <div class="row">
-                  <div class="col-sm-12 col-md-6">
-                    <div class="fund-item-block">
-                      <div class="fund-bicon">
-                        <img src="assets/images/eth.png" alt="ethereum icon" class="img-fluid">
-                      </div>
-                      <div class="fund-idetails">
-                        <h5><span>ETH</span>Ethereum Token</h5>
-                        <P>Mcap: <span>$65,782,497,127</span></P>
-                      </div>
-                      <div class="fund-ivalue">
-                        <h5>$3,505.74</h5>
-                        <p>15.69%</p>
-                      </div>
-                    </div>
-                    <div class="faddress">
-                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
-                    </div>
-                  </div>
-
-                  <div class="col-sm-12 col-md-6">
-                    <div class="fund-item-block">
-                      <div class="fund-bicon">
-                        <img src="assets/images/coomp.png" alt="comp icon" class="img-fluid">
-                      </div>
-                      <div class="fund-idetails">
-                        <h5><span>COMP</span>Compound Coin</h5>
-                        <P>Mcap: <span>$65,782,497,127</span></P>
-                      </div>
-                      <div class="fund-ivalue">
-                        <h5>$305.231</h5>
-                        <p>11.71%</p>
-                      </div>
-                    </div>
-                    <div class="faddress">
-                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
-                    </div>
-                  </div>
-
-                </div>
-
-                <div class="row">
-                  <div class="col-sm-12 col-md-6">
-                    <div class="fund-item-block">
-                      <div class="fund-bicon">
-                        <img src="assets/images/link.png" alt="link icon" class="img-fluid">
-                      </div>
-                      <div class="fund-idetails">
-                        <h5><span>LINK</span>ChainLink Token</h5>
-                        <P>Mcap: <span>$65,782,497,127</span></P>
-                      </div>
-                      <div class="fund-ivalue">
-                        <h5>$26.904</h5>
-                        <p>15.15%</p>
-                      </div>
-                    </div>
-                    <div class="faddress">
-                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
-                    </div>
-                  </div>
-
-                  <div class="col-sm-12 col-md-6">
-                    <div class="fund-item-block">
-                      <div class="fund-bicon">
-                        <img src="assets/images/snx.png" alt="snx icon" class="img-fluid">
-                      </div>
-                      <div class="fund-idetails">
-                        <h5><span>SNX</span>Synthetix Network Token</h5>
-                        <P>Mcap: <span>$65,782,497,127</span></P>
-                      </div>
-                      <div class="fund-ivalue">
-                        <h5>$10.37</h5>
-                        <p>11.65%</p>
-                      </div>
-                    </div>
-                    <div class="faddress">
-                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
-                    </div>
-                  </div>
-
-                </div>
-
-                <div class="row">
-                  <div class="col-sm-12 col-md-6">
-                    <div class="fund-item-block">
-                      <div class="fund-bicon">
-                        <img src="assets/images/sushi.png" alt="sushi icon" class="img-fluid">
-                      </div>
-                      <div class="fund-idetails">
-                        <h5><span>SUSHI</span>Sushi Token</h5>
-                        <P>Mcap: <span>$65,782,497,127</span></P>
-                      </div>
-                      <div class="fund-ivalue">
-                        <h5>$10.88</h5>
-                        <p>15.15%</p>
-                      </div>
-                    </div>
-                    <div class="faddress">
-                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
-                    </div>
-                  </div>
-
-                  <div class="col-sm-12 col-md-6">
-                    <div class="fund-item-block">
-                      <div class="fund-bicon">
-                        <img src="assets/images/banana.png" alt="banana icon" class="img-fluid">
-                      </div>
-                      <div class="fund-idetails">
-                        <h5><span>BANANA</span>ApeSwap Finance</h5>
-                        <P>Mcap: <span>$65,782,497,127</span></P>
-                      </div>
-                      <div class="fund-ivalue">
-                        <h5>$2.778</h5>
-                        <p>5.37%</p>
-                      </div>
-                    </div>
-                    <div class="faddress">
-                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
-                    </div>
-                  </div>
-
-                </div>
-                <div class="row">
-                  <div class="col-sm-12 col-md-6">
-                    <div class="fund-item-block">
-                      <div class="fund-bicon">
-                        <img src="assets/images/yfi.png" alt="YFI icon" class="img-fluid">
-                      </div>
-                      <div class="fund-idetails">
-                        <h5><span>YFI</span>yearn.finance</h5>
-                        <P>Mcap: <span>$65,782,497,127</span></P>
-                      </div>
-                      <div class="fund-ivalue">
-                        <h5>$31,745.763</h5>
-                        <p>11.89%</p>
-                      </div>
-                    </div>
-                    <div class="faddress">
-                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
-                    </div>
-                  </div>
-
-                  <div class="col-sm-12 col-md-6">
-                    <div class="fund-item-block">
-                      <div class="fund-bicon">
-                        <img src="assets/images/bison.png" alt="BISON icon" class="img-fluid">
-                      </div>
-                      <div class="fund-idetails">
-                        <h5><span>BISON</span>BISON</h5>
-                        <P>Mcap: <span>$65,782,497,127</span></P>
-                      </div>
-                      <div class="fund-ivalue">
-                        <h5>$5.406</h5>
-                        <p>4.68%</p>
-                      </div>
-                    </div>
-                    <div class="faddress">
-                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
-                    </div>
-                  </div>
-
-                </div>
-
-                <div class="row">
-                  <div class="col-sm-12 col-md-6">
-                    <div class="fund-item-block">
-                      <div class="fund-bicon">
-                        <img src="assets/images/aave.png" alt="AAVE icon" class="img-fluid">
-                      </div>
-                      <div class="fund-idetails">
-                        <h5><span>AAVE</span>Aave Token</h5>
-                        <P>Mcap: <span>$65,782,497,127</span></P>
-                      </div>
-                      <div class="fund-ivalue">
-                        <h5>$305.736</h5>
-                        <p>11.88%</p>
-                      </div>
-                    </div>
-                    <div class="faddress">
-                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
-                    </div>
-                  </div>
-
-                </div>
-
+              <div id="fomo" class="text">
               </div>
               <!-- End of Show More Content -->
             </div>
@@ -350,13 +183,14 @@
                 </div>
                 <div class="col-sm-12 col-md-4 fund-details-right">
                   <ul>
-                    <li><a href="https://app.bishares.finance/#/funds/0x28939911a862bd4E6b10E281F233a5E060114E0B" target="_blank" class="btn-ctm">Launch Dashboard</a></li>
+                    <li><a href="https://app.bishares.finance/#/funds/0x28939911a862bd4E6b10E281F233a5E060114E0B"
+                        target="_blank" class="btn-ctm">Launch Dashboard</a></li>
                   </ul>
                   <button id="toggle" class="btn-morefund">View More ↓</button>
                 </div>
               </div>
               <!-- Show More Content -->
-              <div id="text">
+              <div id="defi" class="text">
                 <div class="row">
                   <div class="col-sm-12 col-md-6">
                     <div class="fund-item-block">
@@ -373,7 +207,8 @@
                       </div>
                     </div>
                     <div class="faddress">
-                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a
+                            href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
                     </div>
                   </div>
 
@@ -392,7 +227,8 @@
                       </div>
                     </div>
                     <div class="faddress">
-                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a
+                            href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
                     </div>
                   </div>
 
@@ -414,7 +250,8 @@
                       </div>
                     </div>
                     <div class="faddress">
-                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a
+                            href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
                     </div>
                   </div>
 
@@ -433,7 +270,8 @@
                       </div>
                     </div>
                     <div class="faddress">
-                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a
+                            href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
                     </div>
                   </div>
 
@@ -455,7 +293,8 @@
                       </div>
                     </div>
                     <div class="faddress">
-                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a
+                            href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
                     </div>
                   </div>
 
@@ -474,7 +313,8 @@
                       </div>
                     </div>
                     <div class="faddress">
-                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a
+                            href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
                     </div>
                   </div>
 
@@ -495,7 +335,8 @@
                       </div>
                     </div>
                     <div class="faddress">
-                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a
+                            href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
                     </div>
                   </div>
 
@@ -514,7 +355,8 @@
                       </div>
                     </div>
                     <div class="faddress">
-                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a
+                            href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
                     </div>
                   </div>
 
@@ -536,7 +378,8 @@
                       </div>
                     </div>
                     <div class="faddress">
-                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a
+                            href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
                     </div>
                   </div>
 
@@ -564,13 +407,14 @@
                 </div>
                 <div class="col-sm-12 col-md-4 fund-details-right">
                   <ul>
-                    <li><a href="https://app.bishares.finance/#/funds/0xFC02D63E44e71D4b8C81a436f19Ce580Eb7bFAda" target="_blank" class="btn-ctm">Launch Dashboard</a></li>
+                    <li><a href="https://app.bishares.finance/#/funds/0xFC02D63E44e71D4b8C81a436f19Ce580Eb7bFAda"
+                        target="_blank" class="btn-ctm">Launch Dashboard</a></li>
                   </ul>
                   <button id="toggle" class="btn-morefund">View More ↓</button>
                 </div>
               </div>
               <!-- Show More Content -->
-              <div id="text">
+              <div id="bitmex" class="text">
                 <div class="row">
                   <div class="col-sm-12 col-md-6">
                     <div class="fund-item-block">
@@ -587,7 +431,8 @@
                       </div>
                     </div>
                     <div class="faddress">
-                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a
+                            href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
                     </div>
                   </div>
 
@@ -606,7 +451,8 @@
                       </div>
                     </div>
                     <div class="faddress">
-                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a
+                            href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
                     </div>
                   </div>
 
@@ -628,7 +474,8 @@
                       </div>
                     </div>
                     <div class="faddress">
-                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a
+                            href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
                     </div>
                   </div>
 
@@ -647,7 +494,8 @@
                       </div>
                     </div>
                     <div class="faddress">
-                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a
+                            href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
                     </div>
                   </div>
 
@@ -669,7 +517,8 @@
                       </div>
                     </div>
                     <div class="faddress">
-                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a
+                            href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
                     </div>
                   </div>
 
@@ -688,7 +537,8 @@
                       </div>
                     </div>
                     <div class="faddress">
-                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a
+                            href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
                     </div>
                   </div>
 
@@ -709,7 +559,8 @@
                       </div>
                     </div>
                     <div class="faddress">
-                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a
+                            href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
                     </div>
                   </div>
 
@@ -728,7 +579,8 @@
                       </div>
                     </div>
                     <div class="faddress">
-                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a
+                            href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
                     </div>
                   </div>
 
@@ -750,7 +602,8 @@
                       </div>
                     </div>
                     <div class="faddress">
-                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a
+                            href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
                     </div>
                   </div>
 
@@ -778,7 +631,8 @@
                 </div>
                 <div class="col-sm-12 col-md-4 fund-details-right">
                   <ul>
-                    <li><a href="https://app.bishares.finance/#/funds/0x8F9f6589C2eB04Ae4A0A737b78353FdBB628ffe8" target="_blank" class="btn-ctm">Launch Dashboard</a></li>
+                    <li><a href="https://app.bishares.finance/#/funds/0x8F9f6589C2eB04Ae4A0A737b78353FdBB628ffe8"
+                        target="_blank" class="btn-ctm">Launch Dashboard</a></li>
                   </ul>
                   <button id="toggle" class="btn-morefund">View More ↓</button>
                 </div>
@@ -800,18 +654,20 @@
                   <div class="fund-details">
                     <h3>Chain Fund <span>biCHAIN</span></h3>
                     <p class="fomono">Total Value Locked: <span>$31,984.22</span></p>
-                    <p>A very flexible fund which includes large-cap native coins from various blockchains. Very useful to use as a hedge.</p>
+                    <p>A very flexible fund which includes large-cap native coins from various blockchains. Very useful
+                      to use as a hedge.</p>
                   </div>
                 </div>
                 <div class="col-sm-12 col-md-4 fund-details-right">
                   <ul>
-                    <li><a href="https://app.bishares.finance/#/funds/0x10A520829C1E9631Ef9E60e37eEA3916092cAa99" target="_blank" class="btn-ctm">Launch Dashboard</a></li>
+                    <li><a href="https://app.bishares.finance/#/funds/0x10A520829C1E9631Ef9E60e37eEA3916092cAa99"
+                        target="_blank" class="btn-ctm">Launch Dashboard</a></li>
                   </ul>
                   <button id="toggle" class="btn-morefund">View More ↓</button>
                 </div>
               </div>
               <!-- Show More Content -->
-                <!------Show More Content section ------>
+              <!------Show More Content section ------>
               <!-- End of Show More Content -->
             </div>
           </div>
@@ -833,13 +689,14 @@
                 </div>
                 <div class="col-sm-12 col-md-4 fund-details-right">
                   <ul>
-                    <li><a href="https://app.bishares.finance/#/funds/0xF19B6746769132926Ee82F47137aEB7A8702c4b9" target="_blank" class="btn-ctm">Launch Dashboard</a></li>
+                    <li><a href="https://app.bishares.finance/#/funds/0xF19B6746769132926Ee82F47137aEB7A8702c4b9"
+                        target="_blank" class="btn-ctm">Launch Dashboard</a></li>
                   </ul>
                   <button id="toggle" class="btn-morefund">View More ↓</button>
                 </div>
               </div>
               <!-- Show More Content -->
-                <!------Show More Content section ------>
+              <!------Show More Content section ------>
               <!-- End of Show More Content -->
             </div>
           </div>
@@ -861,13 +718,14 @@
                 </div>
                 <div class="col-sm-12 col-md-4 fund-details-right">
                   <ul>
-                    <li><a href="https://app.bishares.finance/#/funds/0x2a5F983706b6535ab5d69f003Eb271eC44b5E839" target="_blank" class="btn-ctm">Launch Dashboard</a></li>
+                    <li><a href="https://app.bishares.finance/#/funds/0x2a5F983706b6535ab5d69f003Eb271eC44b5E839"
+                        target="_blank" class="btn-ctm">Launch Dashboard</a></li>
                   </ul>
                   <button id="toggle" class="btn-morefund">View More ↓</button>
                 </div>
               </div>
               <!-- Show More Content -->
-                <!------Show More Content section ------>
+              <!------Show More Content section ------>
               <!-- End of Show More Content -->
             </div>
           </div>
@@ -905,13 +763,14 @@
                 <ul>
                   <li><a href="https://coinmarketcap.com/currencies/bishares/" target="_blank">CoinMarketCap</a></li>
                   <li><a href="https://www.coingecko.com/en/coins/bishares" target="_blank">CoinGocko</a></li>
-                  <li><a href="https://charts.bogged.finance/?token=0x19A6Da6e382b85F827088092a3DBe864d9cCba73" target="_blank">Bogged Finance</a></li>
+                  <li><a href="https://charts.bogged.finance/?token=0x19A6Da6e382b85F827088092a3DBe864d9cCba73"
+                      target="_blank">Bogged Finance</a></li>
                 </ul>
               </div>
             </div>
           </div>
           <div class="col-sm-12 col-md-3 flogo">
-            <a href="/index.html">
+            <a href="./index.html">
               <img src="assets/images/BiShare-LogoWHITE-FINAL.png" alt="BiShares Logo Icon" class="img-fluid">
             </a>
           </div>
@@ -924,7 +783,7 @@
                 <a href="https://twitter.com/BiSharesFinance" target="_blank"><i class="fab fa-twitter"></i></a>
               </li>
               <li>
-                  <a href="https://github.com/bisharesindexfund" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://github.com/bisharesindexfund" target="_blank"><i class="fab fa-github"></i></a>
               </li>
               <li>
                 <a href="https://t.me/bishares" target="_blank"><i class="fab fa-telegram"></i></a>
@@ -939,118 +798,278 @@
           </div>
           <div class="col-sm-12 col-md-5">
             <ul class="footer-txtlink">
-                <li><a href="./assets/docs/bishares-gordian-audit.pdf" target="_blank">Gordian Audit</a></li>
-                <li><a href="./assets/docs/bishares-defiyield-audit.pdf" target="_blank">DefiYield Audit</a></li>
+              <li><a href="./assets/docs/bishares-gordian-audit.pdf" target="_blank">Gordian Audit</a></li>
+              <li><a href="./assets/docs/bishares-defiyield-audit.pdf" target="_blank">DefiYield Audit</a></li>
             </ul>
           </div>
           <div class="col-sm-12 col-md-4 footer-copy">
-              <div>
-                  © 2021 by <a href="#" target="_blank">BiShares Finance</a>
-              </div>
+            <div>
+              © 2021 by <a href="#" target="_blank">BiShares Finance</a>
+            </div>
           </div>
-      </div>
+        </div>
         <!-- END OF SUB FOOTER -->
       </div>
     </footer>
     <!-- END OF FOOTER -->
-  </body>
+</body>
+
 </html>
 <script type="text/javascript">
-$( () => {
-	
-	//On Scroll Functionality
-	$(window).scroll( () => {
-		var windowTop = $(window).scrollTop();
-		windowTop > 100 ? $('nav').addClass('navShadow') : $('nav').removeClass('navShadow');
-	});
-	
-	//Click Logo To Scroll To Top
-	$('#logo').on('click', () => {
-		$('html,body').animate({
-			scrollTop: 0
-		},500);
-	});
-	
-	//Smooth Scrolling Using Navigation Menu
-	$('a[href*="#"]').on('click', function(e){
-		$('html,body').animate({
-			scrollTop: $($(this).attr('href')).offset().top - 100
-		},500);
-		e.preventDefault();
-	});
-	
-	//Toggle Menu
-	$('#menu-toggle').on('click', () => {
-		$('#menu-toggle').toggleClass('closeMenu');
-		$('ul').toggleClass('showMenu');
-		
-		$('li').on('click', () => {
-			$('ul').removeClass('showMenu');
-			$('#menu-toggle').removeClass('closeMenu');
-		});
-	});
-	
-});
+  $(() => {
+
+    //On Scroll Functionality
+    $(window).scroll(() => {
+      var windowTop = $(window).scrollTop();
+      windowTop > 100 ? $('nav').addClass('navShadow') : $('nav').removeClass('navShadow');
+    });
+
+    //Click Logo To Scroll To Top
+    $('#logo').on('click', () => {
+      $('html,body').animate({
+        scrollTop: 0
+      }, 500);
+    });
+
+    //Smooth Scrolling Using Navigation Menu
+    $('a[href*="#"]').on('click', function (e) {
+      $('html,body').animate({
+        scrollTop: $($(this).attr('href')).offset().top - 100
+      }, 500);
+      e.preventDefault();
+    });
+
+    //Toggle Menu
+    $('#menu-toggle').on('click', () => {
+      $('#menu-toggle').toggleClass('closeMenu');
+      $('ul').toggleClass('showMenu');
+
+      $('li').on('click', () => {
+        $('ul').removeClass('showMenu');
+        $('#menu-toggle').removeClass('closeMenu');
+      });
+    });
+
+  });
 </script>
 <script type="text/javascript">
-$(".accordianNav h3.dropArrow").click(function() {
+  $(".accordianNav h3.dropArrow").click(function () {
     $("h3.dropArrow").removeClass("active");
     $(".accordianNav ul ul").slideUp();
     if (!$(this).next().is(":visible")) {
-        $(this).next().slideDown();
-        $(this).addClass("active");
+      $(this).next().slideDown();
+      $(this).addClass("active");
     }
-})
+  })
 
 </script>
 <script type="text/javascript">
-  $(document).ready(function() {
-  $("#toggle").click(function() {
-    var elem = $("#toggle").text();
-    if (elem == "View More ↓") {
-      //Stuff to do when btn is in the read more state
-      $("#toggle").text("View Less ↑");
-      $("#text").slideDown();
-    } else {
-      //Stuff to do when btn is in the read less state
-      $("#toggle").text("View More ↓");
-      $("#text").slideUp();
-    }
+  $(document).ready(function () {
+    $("#toggle").click(function () {
+      var elem = $("#toggle").text();
+      if (elem == "View More ↓") {
+        //Stuff to do when btn is in the read more state
+        $("#toggle").text("View Less ↑");
+        $("#fomo").slideDown();
+      } else {
+        //Stuff to do when btn is in the read less state
+        $("#toggle").text("View More ↓");
+        $("#fomo").slideUp();
+      }
+    });
   });
-});
-  
-  </script>
+
+</script>
 
 
 <script type="text/javascript">
   get_bison_price();
   function get_bison_price() {
-      $.ajax({
-          type: "GET",
-          url: "https://bsc.api.0x.org/swap/v1/quote?buyToken=BUSD&sellToken=0x19A6Da6e382b85F827088092a3DBe864d9cCba73&sellAmount=1000000000000000000&excludedSources=BakerySwap,Belt,DODO,DODO_V2,Ellipsis,Mooniswap,MultiHop,Nerve,SushiSwap,Smoothy,CafeSwap,CheeseSwap,JulSwap,LiquidityProvider&slippagePercentage=0&gasPrice=0",
-          success: function (data) {
-              bison = data["price"];
-              if (bison == "0.00" || bison == "nan" || bison == "inf") {
-                  setTimeout(function () { get_bison_price(); }, 1000);
-              } else if (bison !== "0.00" && bison != "nan" && bison != "inf") {
-                  $('#bison_price').html("<img src='assets/images/bi-icon.svg' /> $" + parseFloat(bison).toFixed(2));
-                  $('#bison_price1').text('$'+ parseFloat(bison).toFixed(2));
-                  setTimeout(function () { get_bison_price(); }, 30000);
-              }
-          }
-      })
-
+    $.ajax({
+      type: "GET",
+      url: "https://bsc.api.0x.org/swap/v1/quote?buyToken=BUSD&sellToken=0x19A6Da6e382b85F827088092a3DBe864d9cCba73&sellAmount=1000000000000000000&excludedSources=BakerySwap,Belt,DODO,DODO_V2,Ellipsis,Mooniswap,MultiHop,Nerve,SushiSwap,Smoothy,CafeSwap,CheeseSwap,JulSwap,LiquidityProvider&slippagePercentage=0&gasPrice=0",
+      success: function (data) {
+        bison = data["price"];
+        if (bison == "0.00" || bison == "nan" || bison == "inf") {
+          setTimeout(function () { get_bison_price(); }, 1000);
+        } else if (bison !== "0.00" && bison != "nan" && bison != "inf") {
+          $('#bison_price').html("<img src='assets/images/bi-icon.svg' /> $" + parseFloat(bison).toFixed(2));
+          $('#bison_price1').text('$' + parseFloat(bison).toFixed(2));
+          setTimeout(function () { get_bison_price(); }, 30000);
+        }
+      }
+    })
   }
 
+
   $(document).ready(function () {
-      $.ajax({
-          url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bishares&order=market_cap_desc&per_page=100&page=1&sparkline=false",
-          success: function (result) {
-              result.forEach(function (entry) {
-                $('#market_cap').text('Mcap: $'+ entry.market_cap.toLocaleString());
-                  console.log(entry);
-              });
-          }
-      });
+    $.ajax({
+      url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bishares&order=market_cap_desc&per_page=100&page=1&sparkline=false",
+      success: function (result) {
+        result.forEach(function (entry) {
+          $('#market_cap').text('Mcap: $' + entry.market_cap.toLocaleString());
+        });
+      }
+    });
   });
+
+
+
+  // FOMO
+  $(document).ready(function () {
+    $.ajax({
+      url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=wanaka-farm%2Cmetahero%2Cmoonpot%2Cmate%2Cpacoca%2Clandshare%2Cbishares%2Ctosdis&order=market_cap_desc&per_page=100&page=1&sparkline=false",
+      success: function (result) {
+        html = ''
+        result.forEach(function (entry, index) {
+          if (index % 2 == 0) {
+            html += `<div class="row">
+                  <div class="col-sm-12 col-md-6">
+                    <div class="fund-item-block">
+                      <div class="fund-bicon">
+                        <img src="${entry.image}" alt="ethereum icon" class="img-fluid">
+                      </div>
+                      <div class="fund-idetails">
+                        <h5><span>${entry.symbol.toUpperCase()}</span>${entry.name}</h5>
+                        ${entry.market_cap !== 0 ? '<p><span> Mcap: $' + entry.market_cap.toLocaleString() + '</span><p>' : ''}
+                      </div>
+                      <div class="fund-ivalue">
+                        <h5>$${entry.current_price}</h5>
+                      </div>
+                    </div>
+                    <div class="faddress">
+                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                    </div>
+                  </div>`
+          } else {
+            html += `<div class="col-sm-12 col-md-6">
+                    <div class="fund-item-block">
+                      <div class="fund-bicon">
+                        <img src="${entry.image}" alt="comp icon" class="img-fluid">
+                      </div>
+                      <div class="fund-idetails">
+                        <h5><span>${entry.symbol.toUpperCase()}</span>${entry.name}</h5>
+                        ${entry.market_cap !== 0 ? '<p><span> Mcap: $' + entry.market_cap.toLocaleString() + '</span><p>' : ''}
+                      </div>
+                      <div class="fund-ivalue">
+                        <h5>$${entry.current_price}</h5>
+                      </div>
+                    </div>
+                    <div class="faddress">
+                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                    </div>
+                  </div>
+                </div>`
+          }
+        });
+        $('#fomo').append(html)
+      }
+    });
+
+
+    thetan_gum = ['Thetan Gem', '0x9fd87aefe02441b123c3c32466cd9db4c578618f', 'assets/images/THG.png', 'THG'];
+    bunny_gum = ['Bunny Token', '0x565b72163f17849832a692a3c5928cc502f46d69', 'assets/images/HUNNY.png', 'BUNNY'];
+    stos_yacht_token = ['Stos Yacht Token', '0x9eab0a93b0cd5d904493694f041bdcedb97b88c6', 'assets/images/SAFESTOS.jpg', 'STOS'];
+
+    fomo_non_supported = [thetan_gum, bunny_gum, stos_yacht_token]
+
+    all_ajax_load = 0;
+
+    fomo_non_supported.forEach(function (item, i) {
+      $.ajax({
+        type: "GET",
+        url: `https://bsc.api.0x.org/swap/v1/quote?buyToken=BUSD&sellToken=${item[1]}&sellAmount=1000000000000000000&excludedSources=BakerySwap,Belt,DODO,DODO_V2,Ellipsis,Mooniswap,MultiHop,Nerve,SushiSwap,Smoothy,CafeSwap,CheeseSwap,JulSwap,LiquidityProvider&slippagePercentage=0&gasPrice=0`,
+        success: function (data) {
+          all_ajax_load += 1;
+          fomo_non_supported[i].push(data['price'])
+          console.log(all_ajax_load)
+          console.log(fomo_non_supported)
+          if(all_ajax_load == fomo_non_supported.length) {
+            html1 = ''
+            fomo_non_supported.forEach(function (item, index) {
+              if (index % 2 == 0) {
+                html1 += `<div class="row">
+                    <div class="col-sm-12 col-md-6">
+                      <div class="fund-item-block">
+                        <div class="fund-bicon">
+                          <img src="${item[2]}" alt="ethereum icon" class="img-fluid">
+                        </div>
+                        <div class="fund-idetails">
+                          <h5><span>${item[3]}</span>${item[0]}</h5>
+                        </div>
+                        <div class="fund-ivalue">
+                          <h5>$${parseFloat(item[4]).toFixed(2)}</h5>
+                        </div>
+                      </div>
+                      <div class="faddress">
+                        <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                      </div>
+                    </div>`
+              } else {
+                html1 += `<div class="col-sm-12 col-md-6">
+                      <div class="fund-item-block">
+                        <div class="fund-bicon">
+                          <img src="${item[2]}" alt="ethereum icon" class="img-fluid">
+                        </div>
+                        <div class="fund-idetails">
+                          <h5><span>${item[3]}</span>${item[0]}</h5>
+                        </div>
+                        <div class="fund-ivalue">
+                          <h5>$${parseFloat(item[4]).toFixed(2)}</h5>
+                        </div>
+                      </div>
+                      <div class="faddress">
+                        <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                      </div>
+                    </div>
+                  </div>`
+              }
+            });
+            $('#fomo').append(html1)
+
+          }
+        },
+        error : function(xhr, textStatus, errorThrown ) {
+          if (textStatus == 'timeout') {
+            this.tryCount++;
+            if (this.tryCount <= this.retryLimit) {
+                //try again
+                setInterval($.ajax(this), 5000);
+                return;
+            }            
+            return;
+          }
+          if (xhr.status == 500) {
+              //try again
+              setInterval($.ajax(this), 5000);
+              return;
+          } else {
+              //try again
+              setInterval($.ajax(this), 5000);
+          }
+        }
+      });
+    });
+
+
+  });
+
+
+
+    // stos API
+  // https://bsc.api.0x.org/swap/v1/quote?buyToken=BUSD&sellToken=0x9eab0a93b0cd5d904493694f041bdcedb97b88c6&sellAmount=1000000000000000000&excludedSources=BakerySwap,Belt,DODO,DODO_V2,Ellipsis,Mooniswap,MultiHop,Nerve,SushiSwap,Smoothy,CafeSwap,CheeseSwap,JulSwap,LiquidityProvider&slippagePercentage=0&gasPrice=0
+
+
+  // thetan gum
+  // https://bsc.api.0x.org/swap/v1/quote?buyToken=BUSD&sellToken=0x9fd87aefe02441b123c3c32466cd9db4c578618f&sellAmount=1000000000000000000&excludedSources=BakerySwap,Belt,DODO,DODO_V2,Ellipsis,Mooniswap,MultiHop,Nerve,SushiSwap,Smoothy,CafeSwap,CheeseSwap,JulSwap,LiquidityProvider&slippagePercentage=0&gasPrice=0
+
+
+  // bunny token
+  // https://bsc.api.0x.org/swap/v1/quote?buyToken=BUSD&sellToken=0x565b72163f17849832a692a3c5928cc502f46d69&sellAmount=1000000000000000000&excludedSources=BakerySwap,Belt,DODO,DODO_V2,Ellipsis,Mooniswap,MultiHop,Nerve,SushiSwap,Smoothy,CafeSwap,CheeseSwap,JulSwap,LiquidityProvider&slippagePercentage=0&gasPrice=0
+
+
+  // 
+
+
+
 </script>

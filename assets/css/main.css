@@ -60,7 +60,6 @@ section .container-fluid{
   background-position-y: bottom;
   background-color: #191919;
 }
-}
 .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link {
   border-radius: 10px;
 }
@@ -958,6 +957,10 @@ p.fomono {
   color: #DAA10E;
 }
 #text{
+  display: none;
+  transition: 300ms ease-in-out;
+}
+.text{
   display: none;
   transition: 300ms ease-in-out;
 }
@@ -2203,7 +2206,13 @@ z-index: 125;
     #text .row {
       flex-direction: column;
     }
+    .text .row {
+      flex-direction: column;
+    }
     #text .row .col-md-6 {
+      width: 100%;
+    }
+    .text .row .col-md-6 {
       width: 100%;
     }
     .fund-bicon {
