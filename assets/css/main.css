@@ -987,6 +987,8 @@ p.fomono {
   margin: 35px 15px 5px 15px;
 }
 .fund-bicon{
+  border-radius: 100%;
+  overflow: hidden;
   width:10%;
 }
 .fund-idetails{
