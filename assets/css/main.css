@@ -193,8 +193,8 @@ section .container-fluid{
 }
 
 .banner-text h1{
-  font-size: 3.2rem;
-  line-height: 4rem;
+  font-size: 3rem;
+  line-height: 3.8rem;
   /*margin-bottom:15px;*/
   font-weight: 400;
 }
