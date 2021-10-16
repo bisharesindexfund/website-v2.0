@@ -340,11 +340,13 @@
                     <li><a href="https://app.bishares.finance/#/funds/0x2a5F983706b6535ab5d69f003Eb271eC44b5E839"
                         target="_blank" class="btn-ctm">Launch Dashboard</a></li>
                   </ul>
-                  <button id="toggle" class="btn-morefund">View More ↓</button>
+                  <button id="toggle-bit10" class="btn-morefund">View More ↓</button>
                 </div>
               </div>
               <!-- Show More Content -->
-              <!------Show More Content section ------>
+              <div id="bit10" class="text">
+                <!-- End of Show More Content -->
+              </div>
               <!-- End of Show More Content -->
             </div>
           </div>
@@ -378,7 +380,7 @@
                 <h5>Resources</h5>
                 <ul>
                   <li><a href="https://coinmarketcap.com/currencies/bishares/" target="_blank">CoinMarketCap</a></li>
-                  <li><a href="https://www.coingecko.com/en/coins/bishares" target="_blank">CoinGocko</a></li>
+                  <li><a href="https://www.coingecko.com/en/coins/bishares" target="_blank">CoinGecko</a></li>
                   <li><a href="https://charts.bogged.finance/?token=0x19A6Da6e382b85F827088092a3DBe864d9cCba73"
                       target="_blank">Bogged Finance</a></li>
                 </ul>
@@ -556,6 +558,19 @@
         //Stuff to do when btn is in the read less state
         $("#toggle-ape").text("View More ↓");
         $("#ape").slideUp();
+      }
+    });
+
+    $("#toggle-bit10").click(function () {
+      var elem = $("#toggle-bit10").text();
+      if (elem == "View More ↓") {
+        //Stuff to do when btn is in the read more state
+        $("#toggle-bit10").text("View Less ↑");
+        $("#bit10").slideDown();
+      } else {
+        //Stuff to do when btn is in the read less state
+        $("#toggle-bit10").text("View More ↓");
+        $("#bit10").slideUp();
       }
     });
   });
@@ -1079,6 +1094,60 @@
           }
         });
         $('#ape').append(html)
+      }
+    });
+
+  });
+
+
+  // bit10
+  $(document).ready(function () {
+    $.ajax({
+      url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=binancecoin%2Cpancakeswap-token%2Capeswap-finance%2Cvenus%2Cbeefy-finance%2Ctrust-wallet-token%2Cbakerytoken%2Csafepal%2Cellipsis%2Cswipe&order=market_cap_desc&per_page=100&page=1&sparkline=false",
+      success: function (result) {
+        html = ''
+        result.forEach(function (entry, index) {
+          if (index % 2 == 0) {
+            html += `<div class="row">
+                  <div class="col-sm-12 col-md-6">
+                    <div class="fund-item-block">
+                      <div class="fund-bicon">
+                        <img src="${entry.image}" alt="ethereum icon" class="img-fluid">
+                      </div>
+                      <div class="fund-idetails">
+                        <h5><span>${entry.symbol.toUpperCase()}</span>${entry.name}</h5>
+                        ${entry.market_cap !== 0 ? '<p><span> Mcap: $' + entry.market_cap.toLocaleString() + '</span><p>' : ''}
+                      </div>
+                      <div class="fund-ivalue">
+                        <h5>$${entry.current_price}</h5>
+                      </div>
+                    </div>
+                    <div class="faddress">
+                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                    </div>
+                  </div>`
+          } else {
+            html += `<div class="col-sm-12 col-md-6">
+                    <div class="fund-item-block">
+                      <div class="fund-bicon">
+                        <img src="${entry.image}" alt="comp icon" class="img-fluid">
+                      </div>
+                      <div class="fund-idetails">
+                        <h5><span>${entry.symbol.toUpperCase()}</span>${entry.name}</h5>
+                        ${entry.market_cap !== 0 ? '<p><span> Mcap: $' + entry.market_cap.toLocaleString() + '</span><p>' : ''}
+                      </div>
+                      <div class="fund-ivalue">
+                        <h5>$${entry.current_price}</h5>
+                      </div>
+                    </div>
+                    <div class="faddress">
+                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                    </div>
+                  </div>
+                </div>`
+          }
+        });
+        $('#bit10').append(html)
       }
     });
 
