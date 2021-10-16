@@ -260,7 +260,13 @@ section .container-fluid{
   font-size: inherit;
   color: #ffffffde;
 }
+.eco-block-wrap{
+  display: flex;
+}
 .eco-block{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   margin-top:30px;
   border: 0.75px solid #DAA10E;
   border-radius: 32px;
@@ -335,7 +341,7 @@ section .container-fluid{
 .platform-fees #address {
   font-family: 'DM Mono', sans-serif;
   font-weight: 300;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 .platform-fees #address i {
   color: #CACACA;
@@ -1857,6 +1863,9 @@ z-index: 125;
     .arbx-rblock {
       display: none;
     }
+    .eco-block-wrap{
+    display: block;
+    }
     .eco-heading h2{
       text-align: center;
       font-size: 1.8rem;
@@ -2161,7 +2170,7 @@ z-index: 125;
       height: unset;
     }
     .platform-fees #address {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
     }
     .ctmtab-menu {
       margin: 50px 0px 50px 0px;
