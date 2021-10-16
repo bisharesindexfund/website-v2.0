@@ -982,8 +982,6 @@
         success: function (data) {
           all_ajax_load += 1;
           fomo_non_supported[i].push(data['price'])
-          console.log(all_ajax_load)
-          console.log(fomo_non_supported)
           if(all_ajax_load == fomo_non_supported.length) {
             html1 = ''
             fomo_non_supported.forEach(function (item, index) {
