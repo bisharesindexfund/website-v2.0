@@ -31,7 +31,7 @@
     <!-- Start of Navigation -->
     <nav class="navbar navbg-ctm navbar-expand-lg navbar-light ">
         <div class="container-fluid">
-          <a class="navbar-brand" href="/index.html"><img src="assets/images/BiShare-LogoWHITE-FINAL.png" alt="BiShare Logo"></a>
+          <a class="navbar-brand" href="./"><img src="assets/images/BiShare-LogoWHITE-FINAL.png" alt="BiShare Logo"></a>
           <div id="menu-toggle" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             <div id="menu-icon">
               <div class="bar"></div>
@@ -45,16 +45,16 @@
           <div class="tp-nav collapse navbar-collapse" id="navbarScroll">
             <ul class="navbar-nav me-auto ms-5 my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+                <a class="nav-link active" aria-current="page" href="./">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/about.html">About</a>
+                <a class="nav-link" href="./about.html">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/bison-token.html">Bison Token</a>
+                <a class="nav-link" href="./bison-token.html">Bison Token</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/funds.html">Funds</a>
+                <a class="nav-link" href="./funds.html">Funds</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="https://farms.bishares.finance/">Farms</a>
@@ -64,7 +64,7 @@
               </li>
             </ul>
             <div class="d-flex tpnav-rsec">
-              <a href="https://charts.bogged.finance/?token=0x19A6Da6e382b85F827088092a3DBe864d9cCba73" target="_blank" title="Bogged Finance"><div class="bi-value"><img src="assets/images/bi-icon.svg" alt="Bi Shares icon" class="img-fluid">$888.88</div></a>
+              <a href="https://charts.bogged.finance/?token=0x19A6Da6e382b85F827088092a3DBe864d9cCba73" target="_blank" title="Bogged Finance"><div class="bi-value" id="bison_price"><img src="assets/images/bi-icon.svg" alt="Bi Shares icon" class="img-fluid">$00.00</div></a>
               <a href="https://app.bishares.finance/"><button class="btn" type="submit">Launch App</button></a>
             </div>
           </div>
@@ -106,9 +106,9 @@
                     <div class="smr-rblock">
                       <div class="smr-detail fund-idetails">
                         <h5><span>BISON</span>BiShares Token</h5>
-                        <p>Mcap: $5,888,000</p>
+                        <p id="market_cap">Mcap: $00</p>
                       </div>
-                      <div class="smr-value">$888.88</div>
+                      <div class="smr-value" id="bison_price1">$00.00</div>
                     </div>
                   </div>
                   <div class="caddress">
@@ -1020,3 +1020,37 @@ $(".accordianNav h3.dropArrow").click(function() {
 });
   
   </script>
+
+
+<script type="text/javascript">
+  get_bison_price();
+  function get_bison_price() {
+      $.ajax({
+          type: "GET",
+          url: "https://bsc.api.0x.org/swap/v1/quote?buyToken=BUSD&sellToken=0x19A6Da6e382b85F827088092a3DBe864d9cCba73&sellAmount=1000000000000000000&excludedSources=BakerySwap,Belt,DODO,DODO_V2,Ellipsis,Mooniswap,MultiHop,Nerve,SushiSwap,Smoothy,CafeSwap,CheeseSwap,JulSwap,LiquidityProvider&slippagePercentage=0&gasPrice=0",
+          success: function (data) {
+              bison = data["price"];
+              if (bison == "0.00" || bison == "nan" || bison == "inf") {
+                  setTimeout(function () { get_bison_price(); }, 1000);
+              } else if (bison !== "0.00" && bison != "nan" && bison != "inf") {
+                  $('#bison_price').html("<img src='assets/images/bi-icon.svg' /> $" + parseFloat(bison).toFixed(2));
+                  $('#bison_price1').text('$'+ parseFloat(bison).toFixed(2));
+                  setTimeout(function () { get_bison_price(); }, 30000);
+              }
+          }
+      })
+
+  }
+
+  $(document).ready(function () {
+      $.ajax({
+          url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bishares&order=market_cap_desc&per_page=100&page=1&sparkline=false",
+          success: function (result) {
+              result.forEach(function (entry) {
+                $('#market_cap').text('Mcap: $'+ entry.market_cap.toLocaleString());
+                  console.log(entry);
+              });
+          }
+      });
+  });
+</script>
