@@ -1543,7 +1543,7 @@ z-index: 125;
     }
     .banner-text h1, .banner-text h1 span {
       font-size: 2.2rem;
-      line-height: 3rem;
+      line-height: 2.7rem;
     }
     .sub-footer{
       text-align: center;
@@ -1851,7 +1851,7 @@ z-index: 125;
       padding: 60px 10px;
     }
     .banner-text h1, .banner-text h1 span {
-      font-size: 2.2rem;
+      font-size: 2.45rem;
       line-height: 2.8rem;
     }
     .bi-yield-block{
@@ -1908,7 +1908,7 @@ z-index: 125;
       height: unset;
     }
     .platform-fees p{
-      font-size:12px;
+      font-size: 1rem;
     }
     .ctmtooltip::before{
       top: 25px;
