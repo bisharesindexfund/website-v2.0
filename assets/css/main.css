@@ -605,6 +605,9 @@ section .container-fluid{
   display: inline-block;
   padding-right:15px;
 }
+.footer-txtlink a:hover {
+  color: #DAA10E;
+}
 .footer-txtlink, .footer-copy, .sub-footer ul{
   margin-top:60px;
 }
@@ -1036,6 +1039,9 @@ p.fomono {
   background: #1E1F20;
   border-radius: 8px;
   text-decoration: none;
+}
+.team-section-menu ul li a:hover{
+  background-color: #2a2a2a;
 }
 .team-banner-sm{
   display: flex;
