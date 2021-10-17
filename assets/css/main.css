@@ -41,7 +41,6 @@ h5 {
   color: #ffffffde;
 }
 nav .container-fluid{
-  background: #191919;
 }
 section .container-fluid{
   padding-right: var(--bs-gutter-x,1.75rem);
@@ -334,7 +333,7 @@ section .container-fluid{
 }
 .platform-fees h1{
   color:#E0AA3A;
-  font-size: 42px;
+  font-size: 3.1rem;
   font-weight: 800;
 }
 .platform-fees P:first-child{
@@ -362,6 +361,8 @@ section .container-fluid{
   font-family: 'DM Mono', sans-serif;
   font-weight: 300;
   font-size: 1rem;
+  color: #CACACA;
+  cursor: pointer;
 }
 .platform-fees .address i {
   color: #CACACA;
