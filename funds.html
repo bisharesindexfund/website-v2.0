@@ -1049,7 +1049,7 @@
     // ape
     $(document).ready(function () {
     $.ajax({
-      url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=apeswap-finance%2Ccoinary-token%2Ctoolape%2Cjdi-token%2Cbitfresh%2Clyptus-token%2Cbishares&order=market_cap_desc&per_page=100&page=1&sparkline=false",
+      url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=apeswap-finance%2Ccoinary-token%2Ctoolape%2Cjdi-token%2Cbitfresh%2Clyptus-token&order=market_cap_desc&per_page=100&page=1&sparkline=false",
       success: function (result) {
         html = ''
         result.forEach(function (entry, index) {
@@ -1095,6 +1095,87 @@
         });
         $('#ape').append(html)
       }
+    });
+
+    hifi = ['HiFi Token', '0x0A38bc18022b0cCB043F7b730B354d554C6230F1', 'assets/images/hifi.jpg', 'HIFI'];
+    bishares = ['Bishares', '0x19a6da6e382b85f827088092a3dbe864d9ccba73', 'assets/images/bzkeIcC.png', 'BISON'];
+
+    ape_non_supported = [hifi, bishares]
+
+    ape_all_ajax_load = 0;
+
+    ape_non_supported.forEach(function (item, i) {
+      $.ajax({
+        type: "GET",
+        url: `https://bsc.api.0x.org/swap/v1/quote?buyToken=BUSD&sellToken=${item[1]}&sellAmount=1000000000000000000&excludedSources=BakerySwap,Belt,DODO,DODO_V2,Ellipsis,Mooniswap,MultiHop,Nerve,SushiSwap,Smoothy,CafeSwap,CheeseSwap,JulSwap,LiquidityProvider&slippagePercentage=0&gasPrice=0`,
+        success: function (data) {
+          ape_all_ajax_load += 1;
+          ape_non_supported[i].push(data['price'])
+          if (ape_all_ajax_load == ape_non_supported.length) {
+            html2 = ''
+            ape_non_supported.forEach(function (item, index) {
+              if (index % 2 == 0) {
+                html2 += `<div class="row">
+                    <div class="col-sm-12 col-md-6">
+                      <div class="fund-item-block">
+                        <div class="fund-bicon">
+                          <img src="${item[2]}" alt="ethereum icon" class="img-fluid">
+                        </div>
+                        <div class="fund-idetails">
+                          <h5><span>${item[3]}</span>${item[0]}</h5>
+                        </div>
+                        <div class="fund-ivalue">
+                          <h5>$${parseFloat(item[4]).toFixed(5)}</h5>
+                        </div>
+                      </div>
+                      <div class="faddress">
+                        <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                      </div>
+                    </div>`
+              } else {
+                html2 += `<div class="col-sm-12 col-md-6">
+                      <div class="fund-item-block">
+                        <div class="fund-bicon">
+                          <img src="${item[2]}" alt="ethereum icon" class="img-fluid">
+                        </div>
+                        <div class="fund-idetails">
+                          <h5><span>${item[3]}</span>${item[0]}</h5>
+                        </div>
+                        <div class="fund-ivalue">
+                          <h5>$${parseFloat(item[4]).toFixed(5)}</h5>
+                        </div>
+                      </div>
+                      <div class="faddress">
+                        <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                      </div>
+                    </div>
+                  </div>`
+              }
+            });
+            $('#ape').append(html2)
+
+          }
+        },
+        error: function (xhr, textStatus, errorThrown) {
+          if (textStatus == 'timeout') {
+            this.tryCount++;
+            if (this.tryCount <= this.retryLimit) {
+              //try again
+              setInterval($.ajax(this), 5000);
+              return;
+            }
+            return;
+          }
+          if (xhr.status == 500) {
+            //try again
+            setInterval($.ajax(this), 5000);
+            return;
+          } else {
+            //try again
+            setInterval($.ajax(this), 5000);
+          }
+        }
+      });
     });
 
   });
