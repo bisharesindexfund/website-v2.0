@@ -948,7 +948,7 @@
       window.getSelection().addRange(range);
       document.execCommand("copy");
     }
-    document.getElementById(copiedid).innerHTML = "<img src='./assets/images/copied-label.svg' style='width:unset;margin-bottom:unset ' alt='Copied' />";
+    document.getElementById(copiedid).innerHTML = "<img src='./assets/images/copied-label.svg' style='width:unset;margin-bottom:unset;margin-left: 8px; ' alt='Copied' />";
 
     setTimeout(function () {
       document.getElementById(copiedid).innerHTML = '<i class="far fa-copy ms-2">';
