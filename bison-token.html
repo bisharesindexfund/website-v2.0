@@ -394,19 +394,38 @@ $( () => {
 <script type="text/javascript">
   get_bison_price();
   function get_bison_price() {
-      $.ajax({
-          type: "GET",
-          url: "https://bsc.api.0x.org/swap/v1/quote?buyToken=BUSD&sellToken=0x19A6Da6e382b85F827088092a3DBe864d9cCba73&sellAmount=1000000000000000000&excludedSources=BakerySwap,Belt,DODO,DODO_V2,Ellipsis,Mooniswap,MultiHop,Nerve,SushiSwap,Smoothy,CafeSwap,CheeseSwap,JulSwap,LiquidityProvider&slippagePercentage=0&gasPrice=0",
-          success: function (data) {
-              bison = data["price"];
-              if (bison == "0.00" || bison == "nan" || bison == "inf") {
-                  setTimeout(function () { get_bison_price(); }, 1000);
-              } else if (bison !== "0.00" && bison != "nan" && bison != "inf") {
-                  $('#bison_price').html("<img src='assets/images/bi-icon.svg' /> $" + parseFloat(bison).toFixed(2));
-                  setTimeout(function () { get_bison_price(); }, 30000);
-              }
+    $.ajax({
+      type: "GET",
+      url: "https://bsc.api.0x.org/swap/v1/quote?buyToken=BUSD&sellToken=0x19A6Da6e382b85F827088092a3DBe864d9cCba73&sellAmount=1000000000000000000&excludedSources=BakerySwap,Belt,DODO,DODO_V2,Ellipsis,Mooniswap,MultiHop,Nerve,SushiSwap,Smoothy,CafeSwap,CheeseSwap,JulSwap,LiquidityProvider&slippagePercentage=0&gasPrice=0",
+      success: function (data) {
+        bison = data["price"];
+        if (bison == "0.00" || bison == "nan" || bison == "inf") {
+          setTimeout(function () { get_bison_price(); }, 1000);
+        } else if (bison !== "0.00" && bison != "nan" && bison != "inf") {
+          $('#bison_price').html("<img src='assets/images/bi-icon.svg' /> $" + parseFloat(bison).toFixed(2));
+          setTimeout(function () { get_bison_price(); }, 30000);
+        }
+      },
+      error: function (xhr, textStatus, errorThrown) {
+          if (textStatus == 'timeout') {
+            this.tryCount++;
+            if (this.tryCount <= this.retryLimit) {
+              //try again
+              setTimeout(get_bison_price, 5000);
+              return;
+            }
+            return;
           }
-      })
-
+          if (xhr.status == 500) {
+            //try again
+            setTimeout(get_bison_price, 5000);
+            return;
+          } else {
+            //try again
+            setTimeout(get_bison_price, 5000);
+            return;
+          }
+        }
+    });
   }
 </script>

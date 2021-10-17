@@ -908,9 +908,28 @@
           $('#bison_price').html("<img src='assets/images/bi-icon.svg' /> $" + parseFloat(bison).toFixed(2));
           setTimeout(function () { get_bison_price(); }, 30000);
         }
-      }
-    })
-
+      },
+      error: function (xhr, textStatus, errorThrown) {
+          if (textStatus == 'timeout') {
+            this.tryCount++;
+            if (this.tryCount <= this.retryLimit) {
+              //try again
+              setTimeout(get_bison_price, 5000);
+              return;
+            }
+            return;
+          }
+          if (xhr.status == 500) {
+            //try again
+            setTimeout(get_bison_price, 5000);
+            return;
+          } else {
+            //try again
+            setTimeout(get_bison_price, 5000);
+            return;
+          }
+        }
+    });
   }
 
   $(document).ready(function () {
