@@ -1,12 +1,16 @@
-<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M60.625 33C63.9062 33 65 34.0937 65 37.375L65 41.75C67.4162 41.75 69.375 43.7088 69.375 46.125L69.375 61.4375C69.375 65.8125 67.1875 68 62.8103 68H36.5625C32.1875 68 30 65.8125 30 61.4375L30 39.5625C30 36.2812 33.2812 33 36.5625 33L60.625 33ZM34.375 39.5625C34.375 38.3544 35.3544 37.375 36.5625 37.375L65 37.375L65 41.75L36.5625 41.75C35.3544 41.75 34.375 40.7706 34.375 39.5625ZM60.625 59.25C62.8125 59.25 65.0022 57.0625 65 54.875C64.9978 52.6875 62.8125 50.5 60.625 50.5C58.4375 50.5 56.25 52.6875 56.25 54.875C56.25 57.0625 58.4375 59.25 60.625 59.25Z" fill="#DAA10E"/>
-<circle cx="50" cy="50" r="49.5" stroke="black"/>
-<circle cx="50" cy="50" r="49.5" stroke="url(#paint0_linear)"/>
+<svg width="102" height="102" viewBox="0 0 102 102" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="8k-icon">
+<g id="Ellipse 1">
+<circle cx="51" cy="51" r="50" stroke="black" stroke-width="2"/>
+<circle cx="51" cy="51" r="50" stroke="url(#paint0_linear_1384:5575)" stroke-width="2"/>
+</g>
+<path id="Vector" fill-rule="evenodd" clip-rule="evenodd" d="M61.625 34C64.9062 34 66 35.0937 66 38.375L66 42.75C68.4162 42.75 70.375 44.7088 70.375 47.125L70.375 62.4375C70.375 66.8125 68.1875 69 63.8103 69H37.5625C33.1875 69 31 66.8125 31 62.4375L31 40.5625C31 37.2812 34.2812 34 37.5625 34L61.625 34ZM35.375 40.5625C35.375 39.3544 36.3544 38.375 37.5625 38.375L66 38.375L66 42.75L37.5625 42.75C36.3544 42.75 35.375 41.7706 35.375 40.5625ZM61.625 60.25C63.8125 60.25 66.0022 58.0625 66 55.875C65.9978 53.6875 63.8125 51.5 61.625 51.5C59.4375 51.5 57.25 53.6875 57.25 55.875C57.25 58.0625 59.4375 60.25 61.625 60.25Z" fill="#E0AA3A"/>
+</g>
 <defs>
-<linearGradient id="paint0_linear" x1="100" y1="50" x2="3.48559e-07" y2="50" gradientUnits="userSpaceOnUse">
-<stop stop-color="#DAA10E" stop-opacity="0.5"/>
-<stop offset="0.369792" stop-color="#DAA10E" stop-opacity="0.21875"/>
-<stop offset="0.6875" stop-color="#DAA10E" stop-opacity="0"/>
+<linearGradient id="paint0_linear_1384:5575" x1="101" y1="51" x2="1" y2="51" gradientUnits="userSpaceOnUse">
+<stop stop-color="#E0AA3A" stop-opacity="0.5"/>
+<stop offset="0.369792" stop-color="#E0AA3A" stop-opacity="0.21875"/>
+<stop offset="0.6875" stop-color="#E0AA3A" stop-opacity="0"/>
 </linearGradient>
 </defs>
 </svg>

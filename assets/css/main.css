@@ -107,21 +107,21 @@ section .container-fluid{
   width:42px;
 }
 .tpnav-rsec{
-  color:#DAA10E;
+  color:#E0AA3A;
 }
 .tpnav-rsec button{
   background: rgba(218, 161, 14, 0.15);
-  border: 1px solid #DAA10E;
+  border: 1px solid #E0AA3A;
   box-sizing: border-box;
   border-radius: 100px;
-  color:#DAA10E;
+  color:#E0AA3A;
   margin-left:24px;
   font-weight: 400;
   padding: 8px 20px;
 }
 .tpnav-rsec button:hover, .btn-ctm:hover{
   background: rgba(218, 161, 14, 0.25);
-  color:#DAA10E;
+  color:#E0AA3A;
 }
   /*** Menu Styles ***/
   #menu {
@@ -131,7 +131,7 @@ section .container-fluid{
   #menu-toggle {
     width: 55px;
     height: 55px;
-    /*background: #DAA10E;*/
+    /*background: #E0AA3A;*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -157,7 +157,7 @@ section .container-fluid{
   .bar {
     width: 25px;
     height: 2px;
-    background: #DAA10E;
+    background: #E0AA3A;
     transition: 0.3s ease-in-out;
   }
   .bar:nth-child(2) {
@@ -180,7 +180,7 @@ section .container-fluid{
     height: 80px;
   }
   .bi-value{
-    color:#DAA10E;
+    color:#E0AA3A;
     margin-top: 4px;
   }
   .tpnav-rsec a{
@@ -201,7 +201,7 @@ section .container-fluid{
 .banner-text h1 span{
   font-size:3.2rem;
   font-weight: 700;
-  color:#daa10e;
+  color:#E0AA3A;
 }
 .banner-text p{
   color:#CACACA;
@@ -270,7 +270,7 @@ section .container-fluid{
   flex-direction: column;
   justify-content: space-around;
   margin-top:30px;
-  border: 0.75px solid #DAA10E;
+  border: 0.75px solid #E0AA3A;
   border-radius: 32px;
   padding:32px;
 }
@@ -281,12 +281,12 @@ section .container-fluid{
 .btn-ctm{
   background: rgba(218, 161, 14, 0.15);
   /* Accent / Gold */
-  border: 1px solid #DAA10E;
+  border: 1px solid #E0AA3A;
   box-sizing: border-box;
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);
   border-radius: 100px;
   padding: 8px 20px;
-  color: #DAA10E;
+  color: #E0AA3A;
   text-decoration: none;
   transition: 300ms ease-in-out;
   display: inline-block;
@@ -304,7 +304,7 @@ section .container-fluid{
 }
 .btn-disabled:hover{
   background: rgba(218, 161, 14, 0.15);
-  color:#DAA10E;
+  color:#E0AA3A;
 }
 /* New Tab CSS */
 .ctmtab-content-wrap{
@@ -330,7 +330,7 @@ section .container-fluid{
   justify-content: center;
 }
 .platform-fees h1{
-  color:#DAA10E;
+  color:#E0AA3A;
   font-size: 42px;
   font-weight: 800;
 }
@@ -372,7 +372,7 @@ section .container-fluid{
   color:#fff;
 }
 .num{
-  border: 1px solid #DAA10E;
+  border: 1px solid #E0AA3A;
   padding: 3px;
   border-radius: 100%;
   font-size: 14px;
@@ -389,7 +389,7 @@ section .container-fluid{
   background-color: #191919;
 }
 .analytic-wrap{
-  border-bottom:2px solid #DAA10E;
+  border-bottom:2px solid #E0AA3A;
   /*margin-right:20px;*/
 }
 .analytic-wrap img{
@@ -484,7 +484,7 @@ section .container-fluid{
 .ctmtooltip:before {
   border-width: 10px 8px 0 8px;
   border-style: solid;
-  border-color: #DAA10E transparent transparent transparent;
+  border-color: #E0AA3A transparent transparent transparent;
   top: 5px;
   left:125px;
   transform: rotate(90deg) !important;
@@ -492,7 +492,7 @@ section .container-fluid{
 
 .ctmtooltip:after {
   content: attr(data-tooltip);
-  background: #DAA10E;
+  background: #E0AA3A;
   color:#191919;
   width: 280px;
   font-size: 14px;
@@ -519,7 +519,7 @@ section .container-fluid{
 }
 .farm-block{
   background: #191919;
-  border: 1px solid #DAA10E;
+  border: 1px solid #E0AA3A;
   box-sizing: border-box;
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);
   border-radius: 32px;
@@ -585,7 +585,7 @@ section .container-fluid{
   line-height: 30px;
 }
 .footer-menu ul li a:hover{
-  color:#DAA10E;
+  color:#E0AA3A;
 }
 .flogo a{
   width:100%;
@@ -606,7 +606,7 @@ section .container-fluid{
   padding-right:15px;
 }
 .footer-txtlink a:hover {
-  color: #DAA10E;
+  color: #E0AA3A;
 }
 .footer-txtlink, .footer-copy, .sub-footer ul{
   margin-top:60px;
@@ -627,7 +627,7 @@ section .container-fluid{
   font-size: 18px;
 }
 .team-banner-sm li a:hover, .team-banner-sm li a i:hover, .sub-footer ul li a i:hover{
-  color:#DAA10E;
+  color:#E0AA3A;
 }
 .footer-txtlink li a, .footer-copy div, .footer-copy div a, .utility-sec p, .heading-center p, .govern-details p, .govern-block div p, .reward-block p, .team-banner-sm li a i, .sub-footer ul li a i{
   color:#CACACA;
@@ -644,7 +644,7 @@ section .container-fluid{
   letter-spacing: 0.2rem;
 }
 .heading-center h6, .governance-details h6, .stake-head h6, .team-banner h6, .detf-wrap h6{
-  color:#DAA10E;
+  color:#E0AA3A;
   font-family: 'DM Mono', sans-serif;
 }
 .heading-center p{
@@ -708,7 +708,7 @@ section .container-fluid{
   left:42%;
 }
 .com-title::after{
-  background: #DAA10E;
+  background: #E0AA3A;
 }
 .ido-title{
   left:45%;
@@ -744,7 +744,7 @@ section .container-fluid{
   border-bottom-left-radius:16px;
 }
 .community-bar, .community-bar::before, .current-bar, .current::before {
-  background: #DAA10E;
+  background: #E0AA3A;
 }
 .ido-bar, .ido::before, .burned-bar, .burned::before {
   background: #F0B90B;
@@ -763,7 +763,7 @@ section .container-fluid{
   border-bottom-right-radius:16px;
 }
 .distribution-details{
-  border-left:1px solid #DAA10E;
+  border-left:1px solid #E0AA3A;
   padding: 16px 32px;
   margin-top:150px;
   margin-left: 15px;
@@ -781,7 +781,7 @@ section .container-fluid{
 }
 .govern-block div{
   background: #1E1F20;
-  border: 0.75px solid #DAA10E;
+  border: 0.75px solid #E0AA3A;
   box-sizing: border-box;
   border-radius: 32px;
   margin: 0px 0px 30px 20px;
@@ -803,7 +803,7 @@ section .container-fluid{
   display: flex;
 }
 .stake-block div{
-  border: 0.75px solid #DAA10E;
+  border: 0.75px solid #E0AA3A;
   box-sizing: border-box;
   border-radius: 32px;
   padding:32px;
@@ -844,7 +844,7 @@ section .container-fluid{
   margin-left:0.8rem;
 }
 .reward-dividend h3{
-  color:#DAA10E;
+  color:#E0AA3A;
   margin-bottom:20px;
   font-family: 'DM Mono';
 }
@@ -853,7 +853,7 @@ section .container-fluid{
 }
 /* Share Token Page */
 .share-block{
-  border: 1px solid #DAA10E;
+  border: 1px solid #E0AA3A;
   box-sizing: border-box;
   border-radius: 32px;
   padding:32px;
@@ -875,7 +875,7 @@ section .container-fluid{
   padding-left:15px;
 }
 .block-lsec h5 span{
-  color:#DAA10E;
+  color:#E0AA3A;
   font-size:inherit;
 }
 .block-lsec h5{
@@ -911,7 +911,7 @@ section .container-fluid{
   text-decoration:none;
 }
 .caddress p a:hover, .faddress span a:hover{
-  color:#DAA10E;
+  color:#E0AA3A;
   transition: 300ms ease-in-out;
 }
 .caddress span, .faddress span{
@@ -950,7 +950,7 @@ p.fomono {
   font-size: 1rem;
 }
 .fund-details p span{
-  color:#DAA10E;
+  color:#E0AA3A;
 }
 .fund-details-right{
   position:relative;
@@ -966,7 +966,7 @@ p.fomono {
   right:8px;
   background:none;
   border:0;
-  color: #DAA10E;
+  color: #E0AA3A;
 }
 #text{
   display: none;
@@ -1061,7 +1061,7 @@ p.fomono {
 }
 .team-heading h1 span, .audio-heading h1 span, .security-heading h1 span, .git-block h1 span {
   font-size: inherit;
-  color:#DAA10E;
+  color:#E0AA3A;
 }
 .team-heading p, .audio-heading p, .security-heading p{
   font-family:'DM MONO';
@@ -1079,7 +1079,7 @@ p.fomono {
 }
 .team-block{
   background: #1E1F20;
-  border: 0.75px solid #DAA10E;
+  border: 0.75px solid #E0AA3A;
   box-sizing: border-box;
   border-radius: 32px;
   padding: 48px 32px;
@@ -1167,7 +1167,7 @@ p.fomono {
 }
 .sub-details a{
   text-decoration:none;
-  color:#DAA10E;
+  color:#E0AA3A;
   margin-left:10px;
 }
 .sub-details div{
@@ -1458,7 +1458,7 @@ z-index: 125;
 }
 /* End of Audio Section */
 .security-block article{
-  border: 1px solid #DAA10E;
+  border: 1px solid #E0AA3A;
   /*background: #1E1F20;*/
   border-radius: 32px;
   padding: 48px 32px;
@@ -1492,7 +1492,7 @@ z-index: 125;
   margin-bottom:20px;
 }
 .community-sec{
-  background:#DAA10E;
+  background:#E0AA3A;
   text-align: center;
 }
 .community-block h1 span{
