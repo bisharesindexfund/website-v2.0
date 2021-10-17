@@ -40,6 +40,9 @@ h4 {
 h5 {
   color: #ffffffde;
 }
+nav .container-fluid{
+  background: radial-gradient(50% 40% at 50% 40%, rgba(218, 161, 14, 0.1) 15%, rgba(25, 25, 25, 0) 100%), rgb(25, 25, 25);
+}
 section .container-fluid{
   padding-right: var(--bs-gutter-x,1.75rem);
   padding-left: var(--bs-gutter-x,1.75rem);
