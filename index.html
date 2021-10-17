@@ -284,8 +284,10 @@
                     <img src="assets/images/BiShare-Logo-RGB-500pxIconOnly.png" alt="BiShares Logo" class="img-fluid">
                     <h1>BISON</h1>
                     <p>BISON is the DAO token of BiShares. This token will be the key to unlocking voting powers, making proposal changes to the protocol, and earn dividends from the use of the platform.</p>
-                    <p id="address" style="margin-bottom: 8px">BSC: 0x19A6Da6e382b85F827088092a3DBe864d9cCba73<span><i class="far fa-copy"></i></span></p>
-                    <p id="address">FTM: 0xd2f38621c3C65300ECabA7020c05d1350f9C265c<i class="far fa-copy"></i></p>
+                    <p class="address" style="margin-bottom: 8px">BSC: <span id="bsc1Address"
+                      onclick="CopyToClipboard('bsc1Address', 'bsc1CopyButton');">0x19A6Da6e382b85F827088092a3DBe864d9cCba73<span><i class="far fa-copy"></i></span></span></p>
+                    <p class="address">FTM: <span id="ftm1Address"
+                      onclick="CopyToClipboard('ftm1Address', 'ftm1CopyButton');">0xd2f38621c3C65300ECabA7020c05d1350f9C265c<i class="far fa-copy"></i></span></p>
                     <a href="/bison-token.html" class="btn-ctm mt-3">Learn More</a>
                   </div>
                 </div>
@@ -293,8 +295,10 @@
                     <img src="assets/images/BiShare-Logo-RGB-500pxIconOnly.png" alt="BiShares Logo" class="img-fluid">
                     <h1>BISON</h1>
                     <p>Stake BISON and earn yield from BiShares platform fees directly to your wallet in the form of a monthly airdrop of BUSD.</p>
-                    <p id="address" style="margin-bottom: 8px">BSC: 0x19A6Da6e382b85F827088092a3DBe864d9cCba73<span><i class="far fa-copy"></i></span></p>
-                    <p id="address">FTM: 0xd2f38621c3C65300ECabA7020c05d1350f9C265c<i class="far fa-copy"></i></p>
+                    <p class="address" style="margin-bottom: 8px">BSC: <span id="bsc2Address"
+                      onclick="CopyToClipboard('bsc2Address', 'bsc2CopyButton');">0x19A6Da6e382b85F827088092a3DBe864d9cCba73<span><i class="far fa-copy"></i></span></span></p>
+                    <p class="address">FTM: <span id="ftm2Address"
+                      onclick="CopyToClipboard('ftm2Address', 'ftm2CopyButton');">0xd2f38621c3C65300ECabA7020c05d1350f9C265c<i class="far fa-copy"></i></span></p>
                     <a href="/bison-token.html" class="btn-ctm mt-3">Learn More</a>
                   </div>
                 </div>
@@ -304,8 +308,10 @@
                     <img src="assets/images/BiShare-Logo-RGB-500pxIconOnly.png" alt="BiShares Logo" class="img-fluid">
                     <h1>BISON</h1>
                     <p>BISON holds the power to decide on the future of the BiShares protocol. Vote on what new funds or crypto assets get added to the platform.</p>
-                    <p id="address" style="margin-bottom: 8px">BSC: 0x19A6Da6e382b85F827088092a3DBe864d9cCba73<span><i class="far fa-copy"></i></span></p>
-                    <p id="address">FTM: 0xd2f38621c3C65300ECabA7020c05d1350f9C265c<i class="far fa-copy"></i></p>
+                    <p class="address" style="margin-bottom: 8px">BSC: <span id="bsc3Address"
+                      onclick="CopyToClipboard('bsc3Address', 'bsc3CopyButton');">0x19A6Da6e382b85F827088092a3DBe864d9cCba73<span><i class="far fa-copy"></i></span></span></p>
+                    <p class="address">FTM: <span id="ftm3Address"
+                      onclick="CopyToClipboard('ftm3Address', 'ftm3CopyButton');">0xd2f38621c3C65300ECabA7020c05d1350f9C265c<i class="far fa-copy"></i></span></p>
                     <a href="#" target="_blank" class="btn-ctm mt-3">Learn More</a>
                   </div>
                 </div>
@@ -314,8 +320,10 @@
                     <img src="assets/images/BiShare-Logo-RGB-500pxIconOnly.png" alt="BiShares Logo" class="img-fluid">
                     <h1>BISON</h1>
                     <p>Buy and swap BISON on both BSC and Fantom. Bridge your asset from either blockchain to gain more utility for your asset.</p>
-                    <p id="address" style="margin-bottom: 8px">BSC: 0x19A6Da6e382b85F827088092a3DBe864d9cCba73<span><i class="far fa-copy"></i></span></p>
-                    <p id="address">FTM: 0xd2f38621c3C65300ECabA7020c05d1350f9C265c<i class="far fa-copy"></i></p>
+                    <p class="address" style="margin-bottom: 8px">BSC: <span id="bscAddress"
+                      onclick="CopyToClipboard('bscAddress', 'bscCopyButton');">0x19A6Da6e382b85F827088092a3DBe864d9cCba73<span><i class="far fa-copy"></i></span></span></p>
+                    <p class="address">FTM: <span id="ftmAddress"
+                      onclick="CopyToClipboard('ftmAddress', 'ftmCopyButton');">0xd2f38621c3C65300ECabA7020c05d1350f9C265c<i class="far fa-copy"></i></span></p>
                     <a href="/bison-token.html" class="btn-ctm mt-3">Learn More</a>
                   </div>
                 </div>
@@ -438,12 +446,12 @@
             </div>
             <div class="bi-yield-inner">
               <h4>Circulating Supply</h4>
-              <h2>500,000</h2>
+              <h2 id="circulating_supply">00,00</h2>
               <p class="deem">BISON</p>
             </div>
             <div class="bi-yield-inner">
               <h4>Market Cap</h4>
-              <h2>$42,006,900</h2>
+              <h2 id="market_cap">$00,00</h2>
               <p class="deem">USD</p>
           </div>
         </div>
@@ -667,5 +675,48 @@ showPage(1);
           }
       })
 
+  }
+
+  $(document).ready(function () {
+    $.ajax({
+      url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bishares&order=market_cap_desc&per_page=100&page=1&sparkline=false",
+      success: function (result) {
+        result.forEach(function (entry) {
+          $('#market_cap').text(entry.market_cap.toLocaleString());
+          $('#circulating_supply').text(entry.circulating_supply.toLocaleString());
+        });
+      }
+    });
+  });
+
+  
+  function CopyToClipboard(containerid, copiedid) {
+      if (window.getSelection) {
+          if (window.getSelection().empty) { // Chrome
+              window.getSelection().empty();
+          } else if (window.getSelection().removeAllRanges) { // Firefox
+              window.getSelection().removeAllRanges();
+          }
+      } else if (document.selection) { // IE?
+          document.selection.empty();
+      }
+
+      if (document.selection) {
+          var range = document.body.createTextRange();
+          range.moveToElementText(document.getElementById(containerid));
+          range.select().createTextRange();
+          document.execCommand("copy");
+      } else if (window.getSelection) {
+          var range = document.createRange();
+          range.selectNode(document.getElementById(containerid));
+          window.getSelection().addRange(range);
+          document.execCommand("copy");
+      }
+      document.getElementById(copiedid).innerHTML = "<img src='./assets/images/copied-label.svg' alt='Copied' />";
+
+      setTimeout(function(){
+          document.getElementById(copiedid).innerHTML = '<i class="far fa-copy ms-2">';
+      }, 1500);
+      return false;
   }
 </script>

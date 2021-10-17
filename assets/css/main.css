@@ -350,6 +350,21 @@ section .container-fluid{
   margin-left: 12px;
   font-size: 0.875rem;
 }
+.platform-fees .address {
+  font-family: 'DM Mono', sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+}
+.platform-fees .address span{
+  font-family: 'DM Mono', sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+}
+.platform-fees .address i {
+  color: #CACACA;
+  margin-left: 12px;
+  font-size: 0.875rem;
+}
 .platform-fees img{
   width: 150px;
   margin-bottom: 1rem;
@@ -1595,6 +1610,19 @@ z-index: 125;
     .platform-fees #address i{
       font-size: 0.5rem;
     }
+    .platform-fees .address{
+      word-break: break-all;
+      line-height: 1.2rem;
+      font-size: 0.5rem;
+    }
+    .platform-fees .address span{
+      word-break: break-all;
+      line-height: 1.2rem;
+      font-size: 0.5rem;
+    }
+    .platform-fees .address i{
+      font-size: 0.5rem;
+    }
     .tab-sec{
       height: unset;
     }
@@ -1900,6 +1928,19 @@ z-index: 125;
     .platform-fees #address i{
       font-size: 0.675rem;
     }
+    .platform-fees .address{
+      word-break: break-all;
+      line-height: 1.2rem;
+      font-size: 0.675rem;
+    }
+    .platform-fees .address span{
+      word-break: break-all;
+      line-height: 1.2rem;
+      font-size: 0.675rem;
+    }
+    .platform-fees .address i{
+      font-size: 0.675rem;
+    }
     .analytic-wrap{
       margin-top: 64px;
       margin-right: 0;
@@ -2184,6 +2225,12 @@ z-index: 125;
       height: unset;
     }
     .platform-fees #address {
+      font-size: 0.75rem;
+    }
+    .platform-fees .address {
+      font-size: 0.75rem;
+    }
+    .platform-fees .address span{
       font-size: 0.75rem;
     }
     .ctmtab-menu {
