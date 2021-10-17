@@ -79,7 +79,8 @@
               <div class="bi-value" id="bison_price"><img src="assets/images/bi-icon.svg" alt="Bi Shares icon"
                   class="img-fluid">$00.00</div>
             </a>
-            <a href="https://app.bishares.finance/" target="_blank"><button class="btn" type="submit">Launch App</button></a>
+            <a href="https://app.bishares.finance/" target="_blank"><button class="btn" type="submit">Launch
+                App</button></a>
           </div>
         </div>
       </div>
@@ -593,8 +594,28 @@
           $('#bison_price1').text('$' + parseFloat(bison).toFixed(2));
           setTimeout(function () { get_bison_price(); }, 30000);
         }
-      }
-    })
+      },
+      error: function (xhr, textStatus, errorThrown) {
+          if (textStatus == 'timeout') {
+            this.tryCount++;
+            if (this.tryCount <= this.retryLimit) {
+              //try again
+              setInterval(get_bison_price, 5000);
+              return;
+            }
+            return;
+          }
+          if (xhr.status == 500) {
+            //try again
+            setInterval(get_bison_price, 5000);
+            return;
+          } else {
+            //try again
+            setInterval(get_bison_price, 5000);
+            return;
+          }
+        }
+    });
   }
 
 
@@ -661,91 +682,7 @@
         $('#fomo').append(html)
       }
     });
-
-
-    thetan_gum = ['Thetan Gem', '0x9fd87aefe02441b123c3c32466cd9db4c578618f', 'assets/images/THG.png', 'THG'];
-    bunny_gum = ['Bunny Token', '0x565b72163f17849832a692a3c5928cc502f46d69', 'assets/images/HUNNY.png', 'BUNNY'];
-    stos_yacht_token = ['Stos Yacht Token', '0x9eab0a93b0cd5d904493694f041bdcedb97b88c6', 'assets/images/SAFESTOS.jpg', 'STOS'];
-
-    fomo_non_supported = [thetan_gum, bunny_gum, stos_yacht_token]
-
-    fomo_all_ajax_load = 0;
-
-    fomo_non_supported.forEach(function (item, i) {
-      $.ajax({
-        type: "GET",
-        url: `https://bsc.api.0x.org/swap/v1/quote?buyToken=BUSD&sellToken=${item[1]}&sellAmount=1000000000000000000&excludedSources=BakerySwap,Belt,DODO,DODO_V2,Ellipsis,Mooniswap,MultiHop,Nerve,SushiSwap,Smoothy,CafeSwap,CheeseSwap,JulSwap,LiquidityProvider&slippagePercentage=0&gasPrice=0`,
-        success: function (data) {
-          fomo_all_ajax_load += 1;
-          fomo_non_supported[i].push(data['price'])
-          if (fomo_all_ajax_load === fomo_non_supported.length) {
-            html1 = ''
-            fomo_non_supported.forEach(function (item, index) {
-              if (index % 2 == 0) {
-                html1 += `<div class="row">
-                    <div class="col-sm-12 col-md-6">
-                      <div class="fund-item-block">
-                        <div class="fund-bicon">
-                          <img src="${item[2]}" alt="ethereum icon" class="img-fluid">
-                        </div>
-                        <div class="fund-idetails">
-                          <h5><span>${item[3]}</span>${item[0]}</h5>
-                        </div>
-                        <div class="fund-ivalue">
-                          <h5>$${parseFloat(item[4]).toFixed(2)}</h5>
-                        </div>
-                      </div>
-                      <div class="faddress">
-                        <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
-                      </div>
-                    </div>`
-              } else {
-                html1 += `<div class="col-sm-12 col-md-6">
-                      <div class="fund-item-block">
-                        <div class="fund-bicon">
-                          <img src="${item[2]}" alt="ethereum icon" class="img-fluid">
-                        </div>
-                        <div class="fund-idetails">
-                          <h5><span>${item[3]}</span>${item[0]}</h5>
-                        </div>
-                        <div class="fund-ivalue">
-                          <h5>$${parseFloat(item[4]).toFixed(2)}</h5>
-                        </div>
-                      </div>
-                      <div class="faddress">
-                        <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
-                      </div>
-                    </div>
-                  </div>`
-              }
-            });
-            $('#fomo').append(html1)
-
-          }
-        },
-        error: function (xhr, textStatus, errorThrown) {
-          if (textStatus == 'timeout') {
-            this.tryCount++;
-            if (this.tryCount <= this.retryLimit) {
-              //try again
-              setInterval($.ajax(this), 5000);
-              return;
-            }
-            return;
-          }
-          if (xhr.status == 500) {
-            //try again
-            setInterval($.ajax(this), 5000);
-            return;
-          } else {
-            //try again
-            setInterval($.ajax(this), 5000);
-          }
-        }
-      });
-    });
-
-
+    fomo_non_coin_gecko();
   });
 
 
@@ -800,88 +737,7 @@
       }
     });
 
-
-    compound_coin = ['Compound Coin', '0x52ce071bd9b1c4b00a0b92d298c512478cad67e8', 'assets/images/COMP.svg', 'COMP'];
-
-    defi_non_supported = [compound_coin]
-
-    defi_all_ajax_load = 0;
-
-    defi_non_supported.forEach(function (item, i) {
-      $.ajax({
-        type: "GET",
-        url: `https://bsc.api.0x.org/swap/v1/quote?buyToken=BUSD&sellToken=${item[1]}&sellAmount=1000000000000000000&excludedSources=BakerySwap,Belt,DODO,DODO_V2,Ellipsis,Mooniswap,MultiHop,Nerve,SushiSwap,Smoothy,CafeSwap,CheeseSwap,JulSwap,LiquidityProvider&slippagePercentage=0&gasPrice=0`,
-        success: function (data) {
-          defi_all_ajax_load += 1;
-          defi_non_supported[i].push(data['price'])
-          if (defi_all_ajax_load == defi_non_supported.length) {
-            html1 = ''
-            defi_non_supported.forEach(function (item, index) {
-              if (index % 2 == 0) {
-                html1 += `<div class="row">
-                    <div class="col-sm-12 col-md-6">
-                      <div class="fund-item-block">
-                        <div class="fund-bicon">
-                          <img src="${item[2]}" alt="ethereum icon" class="img-fluid">
-                        </div>
-                        <div class="fund-idetails">
-                          <h5><span>${item[3]}</span>${item[0]}</h5>
-                        </div>
-                        <div class="fund-ivalue">
-                          <h5>$${parseFloat(item[4]).toFixed(2)}</h5>
-                        </div>
-                      </div>
-                      <div class="faddress">
-                        <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
-                      </div>
-                    </div>`
-              } else {
-                html1 += `<div class="col-sm-12 col-md-6">
-                      <div class="fund-item-block">
-                        <div class="fund-bicon">
-                          <img src="${item[2]}" alt="ethereum icon" class="img-fluid">
-                        </div>
-                        <div class="fund-idetails">
-                          <h5><span>${item[3]}</span>${item[0]}</h5>
-                        </div>
-                        <div class="fund-ivalue">
-                          <h5>$${parseFloat(item[4]).toFixed(2)}</h5>
-                        </div>
-                      </div>
-                      <div class="faddress">
-                        <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
-                      </div>
-                    </div>
-                  </div>`
-              }
-            });
-            $('#defi').append(html1)
-
-          }
-        },
-        error: function (xhr, textStatus, errorThrown) {
-          if (textStatus == 'timeout') {
-            this.tryCount++;
-            if (this.tryCount <= this.retryLimit) {
-              //try again
-              setInterval($.ajax(this), 5000);
-              return;
-            }
-            return;
-          }
-          if (xhr.status == 500) {
-            //try again
-            setInterval($.ajax(this), 5000);
-            return;
-          } else {
-            //try again
-            setInterval($.ajax(this), 5000);
-          }
-        }
-      });
-    });
-
-
+    defi_non_coin_gecko();
   });
 
 
@@ -1046,8 +902,8 @@
 
   });
 
-    // ape
-    $(document).ready(function () {
+  // ape
+  $(document).ready(function () {
     $.ajax({
       url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=apeswap-finance%2Ccoinary-token%2Ctoolape%2Cjdi-token%2Cbitfresh%2Clyptus-token&order=market_cap_desc&per_page=100&page=1&sparkline=false",
       success: function (result) {
@@ -1097,87 +953,7 @@
       }
     });
 
-    hifi = ['HiFi Token', '0x0A38bc18022b0cCB043F7b730B354d554C6230F1', 'assets/images/hifi.jpg', 'HIFI'];
-    bishares = ['Bishares', '0x19a6da6e382b85f827088092a3dbe864d9ccba73', 'assets/images/bzkeIcC.png', 'BISON'];
-
-    ape_non_supported = [hifi, bishares]
-
-    ape_all_ajax_load = 0;
-
-    ape_non_supported.forEach(function (item, i) {
-      $.ajax({
-        type: "GET",
-        url: `https://bsc.api.0x.org/swap/v1/quote?buyToken=BUSD&sellToken=${item[1]}&sellAmount=1000000000000000000&excludedSources=BakerySwap,Belt,DODO,DODO_V2,Ellipsis,Mooniswap,MultiHop,Nerve,SushiSwap,Smoothy,CafeSwap,CheeseSwap,JulSwap,LiquidityProvider&slippagePercentage=0&gasPrice=0`,
-        success: function (data) {
-          ape_all_ajax_load += 1;
-          ape_non_supported[i].push(data['price'])
-          if (ape_all_ajax_load == ape_non_supported.length) {
-            html2 = ''
-            ape_non_supported.forEach(function (item, index) {
-              if (index % 2 == 0) {
-                html2 += `<div class="row">
-                    <div class="col-sm-12 col-md-6">
-                      <div class="fund-item-block">
-                        <div class="fund-bicon">
-                          <img src="${item[2]}" alt="ethereum icon" class="img-fluid">
-                        </div>
-                        <div class="fund-idetails">
-                          <h5><span>${item[3]}</span>${item[0]}</h5>
-                        </div>
-                        <div class="fund-ivalue">
-                          <h5>$${parseFloat(item[4]).toFixed(5)}</h5>
-                        </div>
-                      </div>
-                      <div class="faddress">
-                        <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
-                      </div>
-                    </div>`
-              } else {
-                html2 += `<div class="col-sm-12 col-md-6">
-                      <div class="fund-item-block">
-                        <div class="fund-bicon">
-                          <img src="${item[2]}" alt="ethereum icon" class="img-fluid">
-                        </div>
-                        <div class="fund-idetails">
-                          <h5><span>${item[3]}</span>${item[0]}</h5>
-                        </div>
-                        <div class="fund-ivalue">
-                          <h5>$${parseFloat(item[4]).toFixed(5)}</h5>
-                        </div>
-                      </div>
-                      <div class="faddress">
-                        <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
-                      </div>
-                    </div>
-                  </div>`
-              }
-            });
-            $('#ape').append(html2)
-
-          }
-        },
-        error: function (xhr, textStatus, errorThrown) {
-          if (textStatus == 'timeout') {
-            this.tryCount++;
-            if (this.tryCount <= this.retryLimit) {
-              //try again
-              setInterval($.ajax(this), 5000);
-              return;
-            }
-            return;
-          }
-          if (xhr.status == 500) {
-            //try again
-            setInterval($.ajax(this), 5000);
-            return;
-          } else {
-            //try again
-            setInterval($.ajax(this), 5000);
-          }
-        }
-      });
-    });
-
+    ape_non_coin_gecko();
   });
 
 
@@ -1234,6 +1010,257 @@
 
   });
 
+  function fomo_non_coin_gecko() {
+    thetan_gum = ['Thetan Gem', '0x9fd87aefe02441b123c3c32466cd9db4c578618f', 'assets/images/THG.png', 'THG'];
+    bunny_gum = ['Bunny Token', '0x565b72163f17849832a692a3c5928cc502f46d69', 'assets/images/HUNNY.png', 'BUNNY'];
+    stos_yacht_token = ['Stos Yacht Token', '0x9eab0a93b0cd5d904493694f041bdcedb97b88c6', 'assets/images/SAFESTOS.jpg', 'STOS'];
 
+    fomo_non_supported = [thetan_gum, bunny_gum, stos_yacht_token]
+
+    fomo_all_ajax_load = 0;
+
+    fomo_non_supported.forEach(function (item, i) {
+      $.ajax({
+        type: "GET",
+        url: `https://bsc.api.0x.org/swap/v1/quote?buyToken=BUSD&sellToken=${item[1]}&sellAmount=1000000000000000000&excludedSources=BakerySwap,Belt,DODO,DODO_V2,Ellipsis,Mooniswap,MultiHop,Nerve,SushiSwap,Smoothy,CafeSwap,CheeseSwap,JulSwap,LiquidityProvider&slippagePercentage=0&gasPrice=0`,
+        success: function (data) {
+          fomo_all_ajax_load += 1;
+          fomo_non_supported[i].push(data['price'])
+          if (fomo_all_ajax_load === fomo_non_supported.length) {
+            html1 = ''
+            fomo_non_supported.forEach(function (item, index) {
+              if (index % 2 == 0) {
+                html1 += `<div class="row">
+                    <div class="col-sm-12 col-md-6">
+                      <div class="fund-item-block">
+                        <div class="fund-bicon">
+                          <img src="${item[2]}" alt="ethereum icon" class="img-fluid">
+                        </div>
+                        <div class="fund-idetails">
+                          <h5><span>${item[3]}</span>${item[0]}</h5>
+                        </div>
+                        <div class="fund-ivalue">
+                          <h5>$${parseFloat(item[4]).toFixed(2)}</h5>
+                        </div>
+                      </div>
+                      <div class="faddress">
+                        <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                      </div>
+                    </div>`
+              } else {
+                html1 += `<div class="col-sm-12 col-md-6">
+                      <div class="fund-item-block">
+                        <div class="fund-bicon">
+                          <img src="${item[2]}" alt="ethereum icon" class="img-fluid">
+                        </div>
+                        <div class="fund-idetails">
+                          <h5><span>${item[3]}</span>${item[0]}</h5>
+                        </div>
+                        <div class="fund-ivalue">
+                          <h5>$${parseFloat(item[4]).toFixed(2)}</h5>
+                        </div>
+                      </div>
+                      <div class="faddress">
+                        <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                      </div>
+                    </div>
+                  </div>`
+              }
+            });
+            $('#fomo').append(html1)
+
+          }
+        },
+        error: function (xhr, textStatus, errorThrown) {
+          if (textStatus == 'timeout') {
+            this.tryCount++;
+            if (this.tryCount <= this.retryLimit) {
+              //try again
+              setInterval(fomo_non_coin_gecko, 5000);
+              return;
+            }
+            return;
+          }
+          if (xhr.status == 500) {
+            //try again
+            setInterval(fomo_non_coin_gecko, 5000);
+            return;
+          } else {
+            //try again
+            setInterval(fomo_non_coin_gecko, 5000);
+            return;
+          }
+        }
+      });
+    });
+  }
+
+  function defi_non_coin_gecko() {
+    compound_coin = ['Compound Coin', '0x52ce071bd9b1c4b00a0b92d298c512478cad67e8', 'assets/images/COMP.svg', 'COMP'];
+
+    defi_non_supported = [compound_coin]
+
+    defi_all_ajax_load = 0;
+
+    defi_non_supported.forEach(function (item, i) {
+      $.ajax({
+        type: "GET",
+        url: `https://bsc.api.0x.org/swap/v1/quote?buyToken=BUSD&sellToken=${item[1]}&sellAmount=1000000000000000000&excludedSources=BakerySwap,Belt,DODO,DODO_V2,Ellipsis,Mooniswap,MultiHop,Nerve,SushiSwap,Smoothy,CafeSwap,CheeseSwap,JulSwap,LiquidityProvider&slippagePercentage=0&gasPrice=0`,
+        success: function (data) {
+          defi_all_ajax_load += 1;
+          defi_non_supported[i].push(data['price'])
+          if (defi_all_ajax_load == defi_non_supported.length) {
+            html1 = ''
+            defi_non_supported.forEach(function (item, index) {
+              if (index % 2 == 0) {
+                html1 += `<div class="row">
+                    <div class="col-sm-12 col-md-6">
+                      <div class="fund-item-block">
+                        <div class="fund-bicon">
+                          <img src="${item[2]}" alt="ethereum icon" class="img-fluid">
+                        </div>
+                        <div class="fund-idetails">
+                          <h5><span>${item[3]}</span>${item[0]}</h5>
+                        </div>
+                        <div class="fund-ivalue">
+                          <h5>$${parseFloat(item[4]).toFixed(2)}</h5>
+                        </div>
+                      </div>
+                      <div class="faddress">
+                        <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                      </div>
+                    </div>`
+              } else {
+                html1 += `<div class="col-sm-12 col-md-6">
+                      <div class="fund-item-block">
+                        <div class="fund-bicon">
+                          <img src="${item[2]}" alt="ethereum icon" class="img-fluid">
+                        </div>
+                        <div class="fund-idetails">
+                          <h5><span>${item[3]}</span>${item[0]}</h5>
+                        </div>
+                        <div class="fund-ivalue">
+                          <h5>$${parseFloat(item[4]).toFixed(2)}</h5>
+                        </div>
+                      </div>
+                      <div class="faddress">
+                        <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                      </div>
+                    </div>
+                  </div>`
+              }
+            });
+            $('#defi').append(html1)
+
+          }
+        },
+        error: function (xhr, textStatus, errorThrown) {
+          if (textStatus == 'timeout') {
+            this.tryCount++;
+            if (this.tryCount <= this.retryLimit) {
+              //try again
+              setInterval(defi_non_coin_gecko, 5000);
+              return;
+            }
+            return;
+          }
+          if (xhr.status == 500) {
+            //try again
+            setInterval(defi_non_coin_gecko, 5000);
+            return;
+          } else {
+            //try again
+            setInterval(defi_non_coin_gecko, 5000);
+            return;
+          }
+        }
+      });
+    });
+  }
+
+
+
+  function ape_non_coin_gecko() {
+    hifi = ['HiFi Token', '0x0A38bc18022b0cCB043F7b730B354d554C6230F1', 'assets/images/hifi.jpg', 'HIFI'];
+    bishares = ['Bishares', '0x19a6da6e382b85f827088092a3dbe864d9ccba73', 'assets/images/bzkeIcC.png', 'BISON'];
+
+    ape_non_supported = [hifi, bishares]
+
+    ape_all_ajax_load = 0;
+
+    ape_non_supported.forEach(function (item, i) {
+      $.ajax({
+        type: "GET",
+        url: `https://bsc.api.0x.org/swap/v1/quote?buyToken=BUSD&sellToken=${item[1]}&sellAmount=1000000000000000000&excludedSources=BakerySwap,Belt,DODO,DODO_V2,Ellipsis,Mooniswap,MultiHop,Nerve,SushiSwap,Smoothy,CafeSwap,CheeseSwap,JulSwap,LiquidityProvider&slippagePercentage=0&gasPrice=0`,
+        success: function (data) {
+          ape_all_ajax_load += 1;
+          ape_non_supported[i].push(data['price'])
+          if (ape_all_ajax_load == ape_non_supported.length) {
+            html2 = ''
+            ape_non_supported.forEach(function (item, index) {
+              if (index % 2 == 0) {
+                html2 += `<div class="row">
+                    <div class="col-sm-12 col-md-6">
+                      <div class="fund-item-block">
+                        <div class="fund-bicon">
+                          <img src="${item[2]}" alt="ethereum icon" class="img-fluid">
+                        </div>
+                        <div class="fund-idetails">
+                          <h5><span>${item[3]}</span>${item[0]}</h5>
+                        </div>
+                        <div class="fund-ivalue">
+                          <h5>$${parseFloat(item[4]).toFixed(5)}</h5>
+                        </div>
+                      </div>
+                      <div class="faddress">
+                        <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                      </div>
+                    </div>`
+              } else {
+                html2 += `<div class="col-sm-12 col-md-6">
+                      <div class="fund-item-block">
+                        <div class="fund-bicon">
+                          <img src="${item[2]}" alt="ethereum icon" class="img-fluid">
+                        </div>
+                        <div class="fund-idetails">
+                          <h5><span>${item[3]}</span>${item[0]}</h5>
+                        </div>
+                        <div class="fund-ivalue">
+                          <h5>$${parseFloat(item[4]).toFixed(5)}</h5>
+                        </div>
+                      </div>
+                      <div class="faddress">
+                        <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                      </div>
+                    </div>
+                  </div>`
+              }
+            });
+            $('#ape').append(html2)
+          }
+        },
+        error: function (xhr, textStatus, errorThrown) {
+          if (textStatus == 'timeout') {
+            this.tryCount++;
+            if (this.tryCount <= this.retryLimit) {
+              //try again
+              setInterval(ape_non_coin_gecko, 5000);
+              return;
+            }
+            return;
+          }
+          if (xhr.status == 500) {
+            //try again
+            setInterval(ape_non_coin_gecko, 5000);
+            return;
+          } else {
+            //try again
+            setInterval(ape_non_coin_gecko, 5000);
+            return;
+          }
+        }
+      });
+    });
+  }
 
 </script>
