@@ -41,6 +41,7 @@ h5 {
   color: #ffffffde;
 }
 nav .container-fluid{
+  background: #191919;
 }
 section .container-fluid{
   padding-right: var(--bs-gutter-x,1.75rem);
