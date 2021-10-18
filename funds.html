@@ -744,7 +744,7 @@
   // bimex
   $(document).ready(function () {
     $.ajax({
-      url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=ethereum%2Cuniswap%2CSUSHI%2Cbinance-bitcoin%2Clitecoin%2Cmatic-network%2Ccardano%2Cchainlink%2Cbishares%2Cpolkadot%2Cdogecoin%2Ctron%2Cripple&order=market_cap_desc&per_page=100&page=1&sparkline=false",
+      url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=ethereum%2Cuniswap%2Csushi%2Cbinance-bitcoin%2Clitecoin%2Cmatic-network%2Ccardano%2Cchainlink%2Cbishares%2Cpolkadot%2Cdogecoin%2Ctron%2Cripple&order=market_cap_desc&per_page=100&page=1&sparkline=false",
       success: function (result) {
         html = ''
         result.forEach(function (entry, index) {
