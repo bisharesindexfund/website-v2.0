@@ -271,7 +271,7 @@ section .container-fluid{
 .eco-block{
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-top:30px;
   border: 0.75px solid #E0AA3A;
   border-radius: 32px;
@@ -297,8 +297,10 @@ section .container-fluid{
 }
 .eco-block article p{
   margin: 8px 0px 32px 0px;
-  min-height: 72px;
+  min-height: 90px;
   color: #CACACA;
+  font-size: 1.1rem;
+  line-height: 1.4rem;
 }
 .btn-disabled{
   opacity: 0.35;
