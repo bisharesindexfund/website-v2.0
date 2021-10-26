@@ -943,7 +943,7 @@
 
       $(document).ready(function () {
         $.ajax({
-          url: "http://bishares-api.eba-2upumysj.us-west-2.elasticbeanstalk.com/tvl",
+          url: "https://bishares-api.eba-2upumysj.us-west-2.elasticbeanstalk.com/tvl",
           success: function (result) {
             total = new Intl.NumberFormat().format(parseInt(result.total));
             liquidity = new Intl.NumberFormat().format(parseInt(result.arbex) + parseInt(result.thirdPartyDex));
