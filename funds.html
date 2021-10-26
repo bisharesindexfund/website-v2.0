@@ -431,836 +431,836 @@
       </div>
     </footer>
     <!-- END OF FOOTER -->
+    <script type="text/javascript">
+      $(() => {
+
+        //On Scroll Functionality
+        $(window).scroll(() => {
+          var windowTop = $(window).scrollTop();
+          windowTop > 100 ? $('nav').addClass('navShadow') : $('nav').removeClass('navShadow');
+        });
+
+        //Click Logo To Scroll To Top
+        $('#logo').on('click', () => {
+          $('html,body').animate({
+            scrollTop: 0
+          }, 500);
+        });
+
+        //Smooth Scrolling Using Navigation Menu
+        $('a[href*="#"]').on('click', function (e) {
+          $('html,body').animate({
+            scrollTop: $($(this).attr('href')).offset().top - 100
+          }, 500);
+          e.preventDefault();
+        });
+
+        //Toggle Menu
+        $('#menu-toggle').on('click', () => {
+          $('#menu-toggle').toggleClass('closeMenu');
+          $('ul').toggleClass('showMenu');
+
+          $('li').on('click', () => {
+            $('ul').removeClass('showMenu');
+            $('#menu-toggle').removeClass('closeMenu');
+          });
+        });
+
+      });
+    </script>
+    <script type="text/javascript">
+      $(".accordianNav h3.dropArrow").click(function () {
+        $("h3.dropArrow").removeClass("active");
+        $(".accordianNav ul ul").slideUp();
+        if (!$(this).next().is(":visible")) {
+          $(this).next().slideDown();
+          $(this).addClass("active");
+        }
+      })
+
+    </script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#toggle-fomo").click(function () {
+          var elem = $("#toggle-fomo").text();
+          if (elem == "View More ↓") {
+            //Stuff to do when btn is in the read more state
+            $("#toggle-fomo").text("View Less ↑");
+            $("#fomo").slideDown();
+          } else {
+            //Stuff to do when btn is in the read less state
+            $("#toggle-fomo").text("View More ↓");
+            $("#fomo").slideUp();
+          }
+        });
+
+        $("#toggle-defi").click(function () {
+          var elem = $("#toggle-defi").text();
+          if (elem == "View More ↓") {
+            //Stuff to do when btn is in the read more state
+            $("#toggle-defi").text("View Less ↑");
+            $("#defi").slideDown();
+          } else {
+            //Stuff to do when btn is in the read less state
+            $("#toggle-defi").text("View More ↓");
+            $("#defi").slideUp();
+          }
+        });
+
+        $("#toggle-bimex").click(function () {
+          var elem = $("#toggle-bimex").text();
+          if (elem == "View More ↓") {
+            //Stuff to do when btn is in the read more state
+            $("#toggle-bimex").text("View Less ↑");
+            $("#bimex").slideDown();
+          } else {
+            //Stuff to do when btn is in the read less state
+            $("#toggle-bimex").text("View More ↓");
+            $("#bimex").slideUp();
+          }
+        });
+
+        $("#toggle-bigame").click(function () {
+          var elem = $("#toggle-bigame").text();
+          if (elem == "View More ↓") {
+            //Stuff to do when btn is in the read more state
+            $("#toggle-bigame").text("View Less ↑");
+            $("#bigame").slideDown();
+          } else {
+            //Stuff to do when btn is in the read less state
+            $("#toggle-bigame").text("View More ↓");
+            $("#bigame").slideUp();
+          }
+        });
+
+        $("#toggle-bichain").click(function () {
+          var elem = $("#toggle-bichain").text();
+          if (elem == "View More ↓") {
+            //Stuff to do when btn is in the read more state
+            $("#toggle-bichain").text("View Less ↑");
+            $("#bichain").slideDown();
+          } else {
+            //Stuff to do when btn is in the read less state
+            $("#toggle-bichain").text("View More ↓");
+            $("#bichain").slideUp();
+          }
+        });
+
+        $("#toggle-ape").click(function () {
+          var elem = $("#toggle-ape").text();
+          if (elem == "View More ↓") {
+            //Stuff to do when btn is in the read more state
+            $("#toggle-ape").text("View Less ↑");
+            $("#ape").slideDown();
+          } else {
+            //Stuff to do when btn is in the read less state
+            $("#toggle-ape").text("View More ↓");
+            $("#ape").slideUp();
+          }
+        });
+
+        $("#toggle-bit10").click(function () {
+          var elem = $("#toggle-bit10").text();
+          if (elem == "View More ↓") {
+            //Stuff to do when btn is in the read more state
+            $("#toggle-bit10").text("View Less ↑");
+            $("#bit10").slideDown();
+          } else {
+            //Stuff to do when btn is in the read less state
+            $("#toggle-bit10").text("View More ↓");
+            $("#bit10").slideUp();
+          }
+        });
+      });
+
+    </script>
+
+
+    <script type="text/javascript">
+      get_bison_price();
+      function get_bison_price() {
+        $.ajax({
+          type: "GET",
+          url: "https://bsc.api.0x.org/swap/v1/quote?buyToken=BUSD&sellToken=0x19A6Da6e382b85F827088092a3DBe864d9cCba73&sellAmount=1000000000000000000&excludedSources=BakerySwap,Belt,DODO,DODO_V2,Ellipsis,Mooniswap,MultiHop,Nerve,SushiSwap,Smoothy,CafeSwap,CheeseSwap,JulSwap,LiquidityProvider&slippagePercentage=0&gasPrice=0",
+          success: function (data) {
+            bison = data["price"];
+            if (bison == "0.00" || bison == "nan" || bison == "inf") {
+              setTimeout(function () { get_bison_price(); }, 1000);
+            } else if (bison !== "0.00" && bison != "nan" && bison != "inf") {
+              $('#bison_price').html("<img src='assets/images/bi-icon.svg' /> $" + parseFloat(bison).toFixed(2));
+              $('#bison_price1').text('$' + parseFloat(bison).toFixed(2));
+              setTimeout(function () { get_bison_price(); }, 30000);
+            }
+          },
+          error: function (xhr, textStatus, errorThrown) {
+              if (textStatus == 'timeout') {
+                this.tryCount++;
+                if (this.tryCount <= this.retryLimit) {
+                  //try again
+                  setTimeout(get_bison_price, 5000);
+                  return;
+                }
+                return;
+              }
+              if (xhr.status == 500) {
+                //try again
+                setTimeout(get_bison_price, 5000);
+                return;
+              } else {
+                //try again
+                setTimeout(get_bison_price, 5000);
+                return;
+              }
+            }
+        });
+      }
+
+
+      $(document).ready(function () {
+        $.ajax({
+          url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bishares&order=market_cap_desc&per_page=100&page=1&sparkline=false",
+          success: function (result) {
+            result.forEach(function (entry) {
+              $('#market_cap').text('Mcap: $' + entry.market_cap.toLocaleString());
+            });
+          }
+        });
+      });
+
+
+
+      // FOMO
+      $(document).ready(function () {
+        $.ajax({
+          url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=wanaka-farm%2Cmetahero%2Cmoonpot%2Cmate%2Cpacoca%2Clandshare%2Cbishares%2Ctosdis&order=market_cap_desc&per_page=100&page=1&sparkline=false",
+          success: function (result) {
+            html = ''
+            result.forEach(function (entry, index) {
+              if (index % 2 == 0) {
+                html += `<div class="row">
+                      <div class="col-sm-12 col-md-6">
+                        <div class="fund-item-block">
+                          <div class="fund-bicon">
+                            <img src="${entry.image}" alt="ethereum icon" class="img-fluid">
+                          </div>
+                          <div class="fund-idetails">
+                            <h5><span>${entry.symbol.toUpperCase()}</span>${entry.name}</h5>
+                            ${entry.market_cap !== 0 ? '<p><span> Mcap: $' + entry.market_cap.toLocaleString() + '</span><p>' : ''}
+                          </div>
+                          <div class="fund-ivalue">
+                            <h5>$${entry.current_price}</h5>
+                          </div>
+                        </div>
+                        <div class="faddress">
+                          <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                        </div>
+                      </div>`
+              } else {
+                html += `<div class="col-sm-12 col-md-6">
+                        <div class="fund-item-block">
+                          <div class="fund-bicon">
+                            <img src="${entry.image}" alt="comp icon" class="img-fluid">
+                          </div>
+                          <div class="fund-idetails">
+                            <h5><span>${entry.symbol.toUpperCase()}</span>${entry.name}</h5>
+                            ${entry.market_cap !== 0 ? '<p><span> Mcap: $' + entry.market_cap.toLocaleString() + '</span><p>' : ''}
+                          </div>
+                          <div class="fund-ivalue">
+                            <h5>$${entry.current_price}</h5>
+                          </div>
+                        </div>
+                        <div class="faddress">
+                          <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                        </div>
+                      </div>
+                    </div>`
+              }
+            });
+            $('#fomo').append(html)
+          }
+        });
+        fomo_non_coin_gecko();
+      });
+
+
+      // deFi
+      $(document).ready(function () {
+        $.ajax({
+          url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=ethereum%2Cchainlink%2Capeswap-finance%2Csushi%2Chavven%2Cbishares%2Cyearn-finance%2Caave&order=market_cap_desc&per_page=100&page=1&sparkline=false",
+          success: function (result) {
+            html = ''
+            result.forEach(function (entry, index) {
+              if (index % 2 == 0) {
+                html += `<div class="row">
+                      <div class="col-sm-12 col-md-6">
+                        <div class="fund-item-block">
+                          <div class="fund-bicon">
+                            <img src="${entry.image}" alt="ethereum icon" class="img-fluid">
+                          </div>
+                          <div class="fund-idetails">
+                            <h5><span>${entry.symbol.toUpperCase()}</span>${entry.name}</h5>
+                            ${entry.market_cap !== 0 ? '<p><span> Mcap: $' + entry.market_cap.toLocaleString() + '</span><p>' : ''}
+                          </div>
+                          <div class="fund-ivalue">
+                            <h5>$${entry.current_price}</h5>
+                          </div>
+                        </div>
+                        <div class="faddress">
+                          <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                        </div>
+                      </div>`
+              } else {
+                html += `<div class="col-sm-12 col-md-6">
+                        <div class="fund-item-block">
+                          <div class="fund-bicon">
+                            <img src="${entry.image}" alt="comp icon" class="img-fluid">
+                          </div>
+                          <div class="fund-idetails">
+                            <h5><span>${entry.symbol.toUpperCase()}</span>${entry.name}</h5>
+                            ${entry.market_cap !== 0 ? '<p><span> Mcap: $' + entry.market_cap.toLocaleString() + '</span><p>' : ''}
+                          </div>
+                          <div class="fund-ivalue">
+                            <h5>$${entry.current_price}</h5>
+                          </div>
+                        </div>
+                        <div class="faddress">
+                          <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                        </div>
+                      </div>
+                    </div>`
+              }
+            });
+            $('#defi').append(html)
+          }
+        });
+
+        defi_non_coin_gecko();
+      });
+
+
+      // bimex
+      $(document).ready(function () {
+        $.ajax({
+          url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=ethereum%2Cuniswap%2Csushi%2Cbinance-bitcoin%2Clitecoin%2Cmatic-network%2Ccardano%2Cchainlink%2Cbishares%2Cpolkadot%2Cdogecoin%2Ctron%2Cripple&order=market_cap_desc&per_page=100&page=1&sparkline=false",
+          success: function (result) {
+            html = ''
+            result.forEach(function (entry, index) {
+              if (index % 2 == 0) {
+                html += `<div class="row">
+                      <div class="col-sm-12 col-md-6">
+                        <div class="fund-item-block">
+                          <div class="fund-bicon">
+                            <img src="${entry.image}" alt="ethereum icon" class="img-fluid">
+                          </div>
+                          <div class="fund-idetails">
+                            <h5><span>${entry.symbol.toUpperCase()}</span>${entry.name}</h5>
+                            ${entry.market_cap !== 0 ? '<p><span> Mcap: $' + entry.market_cap.toLocaleString() + '</span><p>' : ''}
+                          </div>
+                          <div class="fund-ivalue">
+                            <h5>$${entry.current_price}</h5>
+                          </div>
+                        </div>
+                        <div class="faddress">
+                          <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                        </div>
+                      </div>`
+              } else {
+                html += `<div class="col-sm-12 col-md-6">
+                        <div class="fund-item-block">
+                          <div class="fund-bicon">
+                            <img src="${entry.image}" alt="comp icon" class="img-fluid">
+                          </div>
+                          <div class="fund-idetails">
+                            <h5><span>${entry.symbol.toUpperCase()}</span>${entry.name}</h5>
+                            ${entry.market_cap !== 0 ? '<p><span> Mcap: $' + entry.market_cap.toLocaleString() + '</span><p>' : ''}
+                          </div>
+                          <div class="fund-ivalue">
+                            <h5>$${entry.current_price}</h5>
+                          </div>
+                        </div>
+                        <div class="faddress">
+                          <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                        </div>
+                      </div>
+                    </div>`
+              }
+            });
+            $('#bimex').append(html)
+          }
+        });
+
+      });
+
+
+      // biGame
+      $(document).ready(function () {
+        $.ajax({
+          url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=mobox%2Caxie-infinity%2Cseedify-fund%2Cmoonpot%2Ccoinary-token%2Ccryptoblades%2Crevv%2Cbishares&order=market_cap_desc&per_page=100&page=1&sparkline=false",
+          success: function (result) {
+            html = ''
+            result.forEach(function (entry, index) {
+              if (index % 2 == 0) {
+                html += `<div class="row">
+                      <div class="col-sm-12 col-md-6">
+                        <div class="fund-item-block">
+                          <div class="fund-bicon">
+                            <img src="${entry.image}" alt="ethereum icon" class="img-fluid">
+                          </div>
+                          <div class="fund-idetails">
+                            <h5><span>${entry.symbol.toUpperCase()}</span>${entry.name}</h5>
+                            ${entry.market_cap !== 0 ? '<p><span> Mcap: $' + entry.market_cap.toLocaleString() + '</span><p>' : ''}
+                          </div>
+                          <div class="fund-ivalue">
+                            <h5>$${entry.current_price}</h5>
+                          </div>
+                        </div>
+                        <div class="faddress">
+                          <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                        </div>
+                      </div>`
+              } else {
+                html += `<div class="col-sm-12 col-md-6">
+                        <div class="fund-item-block">
+                          <div class="fund-bicon">
+                            <img src="${entry.image}" alt="comp icon" class="img-fluid">
+                          </div>
+                          <div class="fund-idetails">
+                            <h5><span>${entry.symbol.toUpperCase()}</span>${entry.name}</h5>
+                            ${entry.market_cap !== 0 ? '<p><span> Mcap: $' + entry.market_cap.toLocaleString() + '</span><p>' : ''}
+                          </div>
+                          <div class="fund-ivalue">
+                            <h5>$${entry.current_price}</h5>
+                          </div>
+                        </div>
+                        <div class="faddress">
+                          <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                        </div>
+                      </div>
+                    </div>`
+              }
+            });
+            $('#bigame').append(html)
+          }
+        });
+
+      });
+
+
+      // biChain
+      $(document).ready(function () {
+        $.ajax({
+          url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=ethereum%2Cbinance-usd%2Cbinance-bitcoin%2Cavalanche-2%2Cmatic-network%2Ccardano%2Cfantom%2Cbishares&order=market_cap_desc&per_page=100&page=1&sparkline=false",
+          success: function (result) {
+            html = ''
+            result.forEach(function (entry, index) {
+              if (index % 2 == 0) {
+                html += `<div class="row">
+                      <div class="col-sm-12 col-md-6">
+                        <div class="fund-item-block">
+                          <div class="fund-bicon">
+                            <img src="${entry.image}" alt="ethereum icon" class="img-fluid">
+                          </div>
+                          <div class="fund-idetails">
+                            <h5><span>${entry.symbol.toUpperCase()}</span>${entry.name}</h5>
+                            ${entry.market_cap !== 0 ? '<p><span> Mcap: $' + entry.market_cap.toLocaleString() + '</span><p>' : ''}
+                          </div>
+                          <div class="fund-ivalue">
+                            <h5>$${entry.current_price}</h5>
+                          </div>
+                        </div>
+                        <div class="faddress">
+                          <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                        </div>
+                      </div>`
+              } else {
+                html += `<div class="col-sm-12 col-md-6">
+                        <div class="fund-item-block">
+                          <div class="fund-bicon">
+                            <img src="${entry.image}" alt="comp icon" class="img-fluid">
+                          </div>
+                          <div class="fund-idetails">
+                            <h5><span>${entry.symbol.toUpperCase()}</span>${entry.name}</h5>
+                            ${entry.market_cap !== 0 ? '<p><span> Mcap: $' + entry.market_cap.toLocaleString() + '</span><p>' : ''}
+                          </div>
+                          <div class="fund-ivalue">
+                            <h5>$${entry.current_price}</h5>
+                          </div>
+                        </div>
+                        <div class="faddress">
+                          <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                        </div>
+                      </div>
+                    </div>`
+              }
+            });
+            $('#bichain').append(html)
+          }
+        });
+
+      });
+
+      // ape
+      $(document).ready(function () {
+        $.ajax({
+          url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=apeswap-finance%2Ccoinary-token%2Ctoolape%2Cjdi-token%2Cbitfresh%2Clyptus-token&order=market_cap_desc&per_page=100&page=1&sparkline=false",
+          success: function (result) {
+            html = ''
+            result.forEach(function (entry, index) {
+              if (index % 2 == 0) {
+                html += `<div class="row">
+                      <div class="col-sm-12 col-md-6">
+                        <div class="fund-item-block">
+                          <div class="fund-bicon">
+                            <img src="${entry.image}" alt="ethereum icon" class="img-fluid">
+                          </div>
+                          <div class="fund-idetails">
+                            <h5><span>${entry.symbol.toUpperCase()}</span>${entry.name}</h5>
+                            ${entry.market_cap !== 0 ? '<p><span> Mcap: $' + entry.market_cap.toLocaleString() + '</span><p>' : ''}
+                          </div>
+                          <div class="fund-ivalue">
+                            <h5>$${entry.current_price}</h5>
+                          </div>
+                        </div>
+                        <div class="faddress">
+                          <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                        </div>
+                      </div>`
+              } else {
+                html += `<div class="col-sm-12 col-md-6">
+                        <div class="fund-item-block">
+                          <div class="fund-bicon">
+                            <img src="${entry.image}" alt="comp icon" class="img-fluid">
+                          </div>
+                          <div class="fund-idetails">
+                            <h5><span>${entry.symbol.toUpperCase()}</span>${entry.name}</h5>
+                            ${entry.market_cap !== 0 ? '<p><span> Mcap: $' + entry.market_cap.toLocaleString() + '</span><p>' : ''}
+                          </div>
+                          <div class="fund-ivalue">
+                            <h5>$${entry.current_price}</h5>
+                          </div>
+                        </div>
+                        <div class="faddress">
+                          <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                        </div>
+                      </div>
+                    </div>`
+              }
+            });
+            $('#ape').append(html)
+          }
+        });
+
+        ape_non_coin_gecko();
+      });
+
+
+      // bit10
+      $(document).ready(function () {
+        $.ajax({
+          url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=binancecoin%2Cpancakeswap-token%2Capeswap-finance%2Cvenus%2Cbeefy-finance%2Ctrust-wallet-token%2Cbakerytoken%2Csafepal%2Cellipsis%2Cswipe&order=market_cap_desc&per_page=100&page=1&sparkline=false",
+          success: function (result) {
+            html = ''
+            result.forEach(function (entry, index) {
+              if (index % 2 == 0) {
+                html += `<div class="row">
+                      <div class="col-sm-12 col-md-6">
+                        <div class="fund-item-block">
+                          <div class="fund-bicon">
+                            <img src="${entry.image}" alt="ethereum icon" class="img-fluid">
+                          </div>
+                          <div class="fund-idetails">
+                            <h5><span>${entry.symbol.toUpperCase()}</span>${entry.name}</h5>
+                            ${entry.market_cap !== 0 ? '<p><span> Mcap: $' + entry.market_cap.toLocaleString() + '</span><p>' : ''}
+                          </div>
+                          <div class="fund-ivalue">
+                            <h5>$${entry.current_price}</h5>
+                          </div>
+                        </div>
+                        <div class="faddress">
+                          <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                        </div>
+                      </div>`
+              } else {
+                html += `<div class="col-sm-12 col-md-6">
+                        <div class="fund-item-block">
+                          <div class="fund-bicon">
+                            <img src="${entry.image}" alt="comp icon" class="img-fluid">
+                          </div>
+                          <div class="fund-idetails">
+                            <h5><span>${entry.symbol.toUpperCase()}</span>${entry.name}</h5>
+                            ${entry.market_cap !== 0 ? '<p><span> Mcap: $' + entry.market_cap.toLocaleString() + '</span><p>' : ''}
+                          </div>
+                          <div class="fund-ivalue">
+                            <h5>$${entry.current_price}</h5>
+                          </div>
+                        </div>
+                        <div class="faddress">
+                          <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                        </div>
+                      </div>
+                    </div>`
+              }
+            });
+            $('#bit10').append(html)
+          }
+        });
+
+      });
+
+      function fomo_non_coin_gecko() {
+        thetan_gum = ['Thetan Gem', '0x9fd87aefe02441b123c3c32466cd9db4c578618f', 'assets/images/THG.png', 'THG'];
+        bunny_gum = ['Bunny Token', '0x565b72163f17849832a692a3c5928cc502f46d69', 'assets/images/HUNNY.png', 'BUNNY'];
+        stos_yacht_token = ['Stos Yacht Token', '0x9eab0a93b0cd5d904493694f041bdcedb97b88c6', 'assets/images/SAFESTOS.jpg', 'STOS'];
+
+        fomo_non_supported = [thetan_gum, bunny_gum, stos_yacht_token]
+
+        fomo_all_ajax_load = 0;
+
+        fomo_non_supported.forEach(function (item, i) {
+          $.ajax({
+            type: "GET",
+            url: `https://bsc.api.0x.org/swap/v1/quote?buyToken=BUSD&sellToken=${item[1]}&sellAmount=1000000000000000000&excludedSources=BakerySwap,Belt,DODO,DODO_V2,Ellipsis,Mooniswap,MultiHop,Nerve,SushiSwap,Smoothy,CafeSwap,CheeseSwap,JulSwap,LiquidityProvider&slippagePercentage=0&gasPrice=0`,
+            success: function (data) {
+              fomo_all_ajax_load += 1;
+              fomo_non_supported[i].push(data['price'])
+              if (fomo_all_ajax_load === fomo_non_supported.length) {
+                html1 = ''
+                fomo_non_supported.forEach(function (item, index) {
+                  if (index % 2 == 0) {
+                    html1 += `<div class="row">
+                        <div class="col-sm-12 col-md-6">
+                          <div class="fund-item-block">
+                            <div class="fund-bicon">
+                              <img src="${item[2]}" alt="ethereum icon" class="img-fluid">
+                            </div>
+                            <div class="fund-idetails">
+                              <h5><span>${item[3]}</span>${item[0]}</h5>
+                            </div>
+                            <div class="fund-ivalue">
+                              <h5>$${parseFloat(item[4]).toFixed(2)}</h5>
+                            </div>
+                          </div>
+                          <div class="faddress">
+                            <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                          </div>
+                        </div>`
+                  } else {
+                    html1 += `<div class="col-sm-12 col-md-6">
+                          <div class="fund-item-block">
+                            <div class="fund-bicon">
+                              <img src="${item[2]}" alt="ethereum icon" class="img-fluid">
+                            </div>
+                            <div class="fund-idetails">
+                              <h5><span>${item[3]}</span>${item[0]}</h5>
+                            </div>
+                            <div class="fund-ivalue">
+                              <h5>$${parseFloat(item[4]).toFixed(2)}</h5>
+                            </div>
+                          </div>
+                          <div class="faddress">
+                            <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                          </div>
+                        </div>
+                      </div>`
+                  }
+                });
+                $('#fomo').append(html1)
+
+              }
+            },
+            error: function (xhr, textStatus, errorThrown) {
+              if (textStatus == 'timeout') {
+                this.tryCount++;
+                if (this.tryCount <= this.retryLimit) {
+                  //try again
+                  setTimeout(fomo_non_coin_gecko, 5000);
+                  return;
+                }
+                return;
+              }
+              if (xhr.status == 500) {
+                //try again
+                setTimeout(fomo_non_coin_gecko, 5000);
+                return;
+              } else {
+                //try again
+                setTimeout(fomo_non_coin_gecko, 5000);
+                return;
+              }
+            }
+          });
+        });
+      }
+
+      function defi_non_coin_gecko() {
+        compound_coin = ['Compound Coin', '0x52ce071bd9b1c4b00a0b92d298c512478cad67e8', 'assets/images/COMP.svg', 'COMP'];
+
+        defi_non_supported = [compound_coin]
+
+        defi_all_ajax_load = 0;
+
+        defi_non_supported.forEach(function (item, i) {
+          $.ajax({
+            type: "GET",
+            url: `https://bsc.api.0x.org/swap/v1/quote?buyToken=BUSD&sellToken=${item[1]}&sellAmount=1000000000000000000&excludedSources=BakerySwap,Belt,DODO,DODO_V2,Ellipsis,Mooniswap,MultiHop,Nerve,SushiSwap,Smoothy,CafeSwap,CheeseSwap,JulSwap,LiquidityProvider&slippagePercentage=0&gasPrice=0`,
+            success: function (data) {
+              defi_all_ajax_load += 1;
+              defi_non_supported[i].push(data['price'])
+              if (defi_all_ajax_load == defi_non_supported.length) {
+                html1 = ''
+                defi_non_supported.forEach(function (item, index) {
+                  if (index % 2 == 0) {
+                    html1 += `<div class="row">
+                        <div class="col-sm-12 col-md-6">
+                          <div class="fund-item-block">
+                            <div class="fund-bicon">
+                              <img src="${item[2]}" alt="ethereum icon" class="img-fluid">
+                            </div>
+                            <div class="fund-idetails">
+                              <h5><span>${item[3]}</span>${item[0]}</h5>
+                            </div>
+                            <div class="fund-ivalue">
+                              <h5>$${parseFloat(item[4]).toFixed(2)}</h5>
+                            </div>
+                          </div>
+                          <div class="faddress">
+                            <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                          </div>
+                        </div>`
+                  } else {
+                    html1 += `<div class="col-sm-12 col-md-6">
+                          <div class="fund-item-block">
+                            <div class="fund-bicon">
+                              <img src="${item[2]}" alt="ethereum icon" class="img-fluid">
+                            </div>
+                            <div class="fund-idetails">
+                              <h5><span>${item[3]}</span>${item[0]}</h5>
+                            </div>
+                            <div class="fund-ivalue">
+                              <h5>$${parseFloat(item[4]).toFixed(2)}</h5>
+                            </div>
+                          </div>
+                          <div class="faddress">
+                            <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                          </div>
+                        </div>
+                      </div>`
+                  }
+                });
+                $('#defi').append(html1)
+
+              }
+            },
+            error: function (xhr, textStatus, errorThrown) {
+              if (textStatus == 'timeout') {
+                this.tryCount++;
+                if (this.tryCount <= this.retryLimit) {
+                  //try again
+                  setTimeout(defi_non_coin_gecko, 5000);
+                  return;
+                }
+                return;
+              }
+              if (xhr.status == 500) {
+                //try again
+                setTimeout(defi_non_coin_gecko, 5000);
+                return;
+              } else {
+                //try again
+                setTimeout(defi_non_coin_gecko, 5000);
+                return;
+              }
+            }
+          });
+        });
+      }
+
+
+
+      function ape_non_coin_gecko() {
+        hifi = ['HiFi Token', '0x0A38bc18022b0cCB043F7b730B354d554C6230F1', 'assets/images/hifi.jpg', 'HIFI'];
+        bishares = ['Bishares', '0x19a6da6e382b85f827088092a3dbe864d9ccba73', 'assets/images/bzkeIcC.png', 'BISON'];
+
+        ape_non_supported = [hifi, bishares]
+
+        ape_all_ajax_load = 0;
+
+        ape_non_supported.forEach(function (item, i) {
+          $.ajax({
+            type: "GET",
+            url: `https://bsc.api.0x.org/swap/v1/quote?buyToken=BUSD&sellToken=${item[1]}&sellAmount=1000000000000000000&excludedSources=BakerySwap,Belt,DODO,DODO_V2,Ellipsis,Mooniswap,MultiHop,Nerve,SushiSwap,Smoothy,CafeSwap,CheeseSwap,JulSwap,LiquidityProvider&slippagePercentage=0&gasPrice=0`,
+            success: function (data) {
+              ape_all_ajax_load += 1;
+              ape_non_supported[i].push(data['price'])
+              if (ape_all_ajax_load == ape_non_supported.length) {
+                html2 = ''
+                ape_non_supported.forEach(function (item, index) {
+                  if (index % 2 == 0) {
+                    html2 += `<div class="row">
+                        <div class="col-sm-12 col-md-6">
+                          <div class="fund-item-block">
+                            <div class="fund-bicon">
+                              <img src="${item[2]}" alt="ethereum icon" class="img-fluid">
+                            </div>
+                            <div class="fund-idetails">
+                              <h5><span>${item[3]}</span>${item[0]}</h5>
+                            </div>
+                            <div class="fund-ivalue">
+                              <h5>$${parseFloat(item[4]).toFixed(5)}</h5>
+                            </div>
+                          </div>
+                          <div class="faddress">
+                            <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                          </div>
+                        </div>`
+                  } else {
+                    html2 += `<div class="col-sm-12 col-md-6">
+                          <div class="fund-item-block">
+                            <div class="fund-bicon">
+                              <img src="${item[2]}" alt="ethereum icon" class="img-fluid">
+                            </div>
+                            <div class="fund-idetails">
+                              <h5><span>${item[3]}</span>${item[0]}</h5>
+                            </div>
+                            <div class="fund-ivalue">
+                              <h5>$${parseFloat(item[4]).toFixed(5)}</h5>
+                            </div>
+                          </div>
+                          <div class="faddress">
+                            <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
+                          </div>
+                        </div>
+                      </div>`
+                  }
+                });
+                $('#ape').append(html2)
+              }
+            },
+            error: function (xhr, textStatus, errorThrown) {
+              if (textStatus == 'timeout') {
+                this.tryCount++;
+                if (this.tryCount <= this.retryLimit) {
+                  //try again
+                  setTimeout(ape_non_coin_gecko, 5000);
+                  return;
+                }
+                return;
+              }
+              if (xhr.status == 500) {
+                //try again
+                setTimeout(ape_non_coin_gecko, 5000);
+                return;
+              } else {
+                //try again
+                setTimeout(ape_non_coin_gecko, 5000);
+                return;
+              }
+            }
+          });
+        });
+      }
+
+    </script>
 </body>
 
 </html>
-<script type="text/javascript">
-  $(() => {
-
-    //On Scroll Functionality
-    $(window).scroll(() => {
-      var windowTop = $(window).scrollTop();
-      windowTop > 100 ? $('nav').addClass('navShadow') : $('nav').removeClass('navShadow');
-    });
-
-    //Click Logo To Scroll To Top
-    $('#logo').on('click', () => {
-      $('html,body').animate({
-        scrollTop: 0
-      }, 500);
-    });
-
-    //Smooth Scrolling Using Navigation Menu
-    $('a[href*="#"]').on('click', function (e) {
-      $('html,body').animate({
-        scrollTop: $($(this).attr('href')).offset().top - 100
-      }, 500);
-      e.preventDefault();
-    });
-
-    //Toggle Menu
-    $('#menu-toggle').on('click', () => {
-      $('#menu-toggle').toggleClass('closeMenu');
-      $('ul').toggleClass('showMenu');
-
-      $('li').on('click', () => {
-        $('ul').removeClass('showMenu');
-        $('#menu-toggle').removeClass('closeMenu');
-      });
-    });
-
-  });
-</script>
-<script type="text/javascript">
-  $(".accordianNav h3.dropArrow").click(function () {
-    $("h3.dropArrow").removeClass("active");
-    $(".accordianNav ul ul").slideUp();
-    if (!$(this).next().is(":visible")) {
-      $(this).next().slideDown();
-      $(this).addClass("active");
-    }
-  })
-
-</script>
-<script type="text/javascript">
-  $(document).ready(function () {
-    $("#toggle-fomo").click(function () {
-      var elem = $("#toggle-fomo").text();
-      if (elem == "View More ↓") {
-        //Stuff to do when btn is in the read more state
-        $("#toggle-fomo").text("View Less ↑");
-        $("#fomo").slideDown();
-      } else {
-        //Stuff to do when btn is in the read less state
-        $("#toggle-fomo").text("View More ↓");
-        $("#fomo").slideUp();
-      }
-    });
-
-    $("#toggle-defi").click(function () {
-      var elem = $("#toggle-defi").text();
-      if (elem == "View More ↓") {
-        //Stuff to do when btn is in the read more state
-        $("#toggle-defi").text("View Less ↑");
-        $("#defi").slideDown();
-      } else {
-        //Stuff to do when btn is in the read less state
-        $("#toggle-defi").text("View More ↓");
-        $("#defi").slideUp();
-      }
-    });
-
-    $("#toggle-bimex").click(function () {
-      var elem = $("#toggle-bimex").text();
-      if (elem == "View More ↓") {
-        //Stuff to do when btn is in the read more state
-        $("#toggle-bimex").text("View Less ↑");
-        $("#bimex").slideDown();
-      } else {
-        //Stuff to do when btn is in the read less state
-        $("#toggle-bimex").text("View More ↓");
-        $("#bimex").slideUp();
-      }
-    });
-
-    $("#toggle-bigame").click(function () {
-      var elem = $("#toggle-bigame").text();
-      if (elem == "View More ↓") {
-        //Stuff to do when btn is in the read more state
-        $("#toggle-bigame").text("View Less ↑");
-        $("#bigame").slideDown();
-      } else {
-        //Stuff to do when btn is in the read less state
-        $("#toggle-bigame").text("View More ↓");
-        $("#bigame").slideUp();
-      }
-    });
-
-    $("#toggle-bichain").click(function () {
-      var elem = $("#toggle-bichain").text();
-      if (elem == "View More ↓") {
-        //Stuff to do when btn is in the read more state
-        $("#toggle-bichain").text("View Less ↑");
-        $("#bichain").slideDown();
-      } else {
-        //Stuff to do when btn is in the read less state
-        $("#toggle-bichain").text("View More ↓");
-        $("#bichain").slideUp();
-      }
-    });
-
-    $("#toggle-ape").click(function () {
-      var elem = $("#toggle-ape").text();
-      if (elem == "View More ↓") {
-        //Stuff to do when btn is in the read more state
-        $("#toggle-ape").text("View Less ↑");
-        $("#ape").slideDown();
-      } else {
-        //Stuff to do when btn is in the read less state
-        $("#toggle-ape").text("View More ↓");
-        $("#ape").slideUp();
-      }
-    });
-
-    $("#toggle-bit10").click(function () {
-      var elem = $("#toggle-bit10").text();
-      if (elem == "View More ↓") {
-        //Stuff to do when btn is in the read more state
-        $("#toggle-bit10").text("View Less ↑");
-        $("#bit10").slideDown();
-      } else {
-        //Stuff to do when btn is in the read less state
-        $("#toggle-bit10").text("View More ↓");
-        $("#bit10").slideUp();
-      }
-    });
-  });
-
-</script>
-
-
-<script type="text/javascript">
-  get_bison_price();
-  function get_bison_price() {
-    $.ajax({
-      type: "GET",
-      url: "https://bsc.api.0x.org/swap/v1/quote?buyToken=BUSD&sellToken=0x19A6Da6e382b85F827088092a3DBe864d9cCba73&sellAmount=1000000000000000000&excludedSources=BakerySwap,Belt,DODO,DODO_V2,Ellipsis,Mooniswap,MultiHop,Nerve,SushiSwap,Smoothy,CafeSwap,CheeseSwap,JulSwap,LiquidityProvider&slippagePercentage=0&gasPrice=0",
-      success: function (data) {
-        bison = data["price"];
-        if (bison == "0.00" || bison == "nan" || bison == "inf") {
-          setTimeout(function () { get_bison_price(); }, 1000);
-        } else if (bison !== "0.00" && bison != "nan" && bison != "inf") {
-          $('#bison_price').html("<img src='assets/images/bi-icon.svg' /> $" + parseFloat(bison).toFixed(2));
-          $('#bison_price1').text('$' + parseFloat(bison).toFixed(2));
-          setTimeout(function () { get_bison_price(); }, 30000);
-        }
-      },
-      error: function (xhr, textStatus, errorThrown) {
-          if (textStatus == 'timeout') {
-            this.tryCount++;
-            if (this.tryCount <= this.retryLimit) {
-              //try again
-              setTimeout(get_bison_price, 5000);
-              return;
-            }
-            return;
-          }
-          if (xhr.status == 500) {
-            //try again
-            setTimeout(get_bison_price, 5000);
-            return;
-          } else {
-            //try again
-            setTimeout(get_bison_price, 5000);
-            return;
-          }
-        }
-    });
-  }
-
-
-  $(document).ready(function () {
-    $.ajax({
-      url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bishares&order=market_cap_desc&per_page=100&page=1&sparkline=false",
-      success: function (result) {
-        result.forEach(function (entry) {
-          $('#market_cap').text('Mcap: $' + entry.market_cap.toLocaleString());
-        });
-      }
-    });
-  });
-
-
-
-  // FOMO
-  $(document).ready(function () {
-    $.ajax({
-      url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=wanaka-farm%2Cmetahero%2Cmoonpot%2Cmate%2Cpacoca%2Clandshare%2Cbishares%2Ctosdis&order=market_cap_desc&per_page=100&page=1&sparkline=false",
-      success: function (result) {
-        html = ''
-        result.forEach(function (entry, index) {
-          if (index % 2 == 0) {
-            html += `<div class="row">
-                  <div class="col-sm-12 col-md-6">
-                    <div class="fund-item-block">
-                      <div class="fund-bicon">
-                        <img src="${entry.image}" alt="ethereum icon" class="img-fluid">
-                      </div>
-                      <div class="fund-idetails">
-                        <h5><span>${entry.symbol.toUpperCase()}</span>${entry.name}</h5>
-                        ${entry.market_cap !== 0 ? '<p><span> Mcap: $' + entry.market_cap.toLocaleString() + '</span><p>' : ''}
-                      </div>
-                      <div class="fund-ivalue">
-                        <h5>$${entry.current_price}</h5>
-                      </div>
-                    </div>
-                    <div class="faddress">
-                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
-                    </div>
-                  </div>`
-          } else {
-            html += `<div class="col-sm-12 col-md-6">
-                    <div class="fund-item-block">
-                      <div class="fund-bicon">
-                        <img src="${entry.image}" alt="comp icon" class="img-fluid">
-                      </div>
-                      <div class="fund-idetails">
-                        <h5><span>${entry.symbol.toUpperCase()}</span>${entry.name}</h5>
-                        ${entry.market_cap !== 0 ? '<p><span> Mcap: $' + entry.market_cap.toLocaleString() + '</span><p>' : ''}
-                      </div>
-                      <div class="fund-ivalue">
-                        <h5>$${entry.current_price}</h5>
-                      </div>
-                    </div>
-                    <div class="faddress">
-                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
-                    </div>
-                  </div>
-                </div>`
-          }
-        });
-        $('#fomo').append(html)
-      }
-    });
-    fomo_non_coin_gecko();
-  });
-
-
-  // deFi
-  $(document).ready(function () {
-    $.ajax({
-      url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=ethereum%2Cchainlink%2Capeswap-finance%2Csushi%2Chavven%2Cbishares%2Cyearn-finance%2Caave&order=market_cap_desc&per_page=100&page=1&sparkline=false",
-      success: function (result) {
-        html = ''
-        result.forEach(function (entry, index) {
-          if (index % 2 == 0) {
-            html += `<div class="row">
-                  <div class="col-sm-12 col-md-6">
-                    <div class="fund-item-block">
-                      <div class="fund-bicon">
-                        <img src="${entry.image}" alt="ethereum icon" class="img-fluid">
-                      </div>
-                      <div class="fund-idetails">
-                        <h5><span>${entry.symbol.toUpperCase()}</span>${entry.name}</h5>
-                        ${entry.market_cap !== 0 ? '<p><span> Mcap: $' + entry.market_cap.toLocaleString() + '</span><p>' : ''}
-                      </div>
-                      <div class="fund-ivalue">
-                        <h5>$${entry.current_price}</h5>
-                      </div>
-                    </div>
-                    <div class="faddress">
-                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
-                    </div>
-                  </div>`
-          } else {
-            html += `<div class="col-sm-12 col-md-6">
-                    <div class="fund-item-block">
-                      <div class="fund-bicon">
-                        <img src="${entry.image}" alt="comp icon" class="img-fluid">
-                      </div>
-                      <div class="fund-idetails">
-                        <h5><span>${entry.symbol.toUpperCase()}</span>${entry.name}</h5>
-                        ${entry.market_cap !== 0 ? '<p><span> Mcap: $' + entry.market_cap.toLocaleString() + '</span><p>' : ''}
-                      </div>
-                      <div class="fund-ivalue">
-                        <h5>$${entry.current_price}</h5>
-                      </div>
-                    </div>
-                    <div class="faddress">
-                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
-                    </div>
-                  </div>
-                </div>`
-          }
-        });
-        $('#defi').append(html)
-      }
-    });
-
-    defi_non_coin_gecko();
-  });
-
-
-  // bimex
-  $(document).ready(function () {
-    $.ajax({
-      url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=ethereum%2Cuniswap%2Csushi%2Cbinance-bitcoin%2Clitecoin%2Cmatic-network%2Ccardano%2Cchainlink%2Cbishares%2Cpolkadot%2Cdogecoin%2Ctron%2Cripple&order=market_cap_desc&per_page=100&page=1&sparkline=false",
-      success: function (result) {
-        html = ''
-        result.forEach(function (entry, index) {
-          if (index % 2 == 0) {
-            html += `<div class="row">
-                  <div class="col-sm-12 col-md-6">
-                    <div class="fund-item-block">
-                      <div class="fund-bicon">
-                        <img src="${entry.image}" alt="ethereum icon" class="img-fluid">
-                      </div>
-                      <div class="fund-idetails">
-                        <h5><span>${entry.symbol.toUpperCase()}</span>${entry.name}</h5>
-                        ${entry.market_cap !== 0 ? '<p><span> Mcap: $' + entry.market_cap.toLocaleString() + '</span><p>' : ''}
-                      </div>
-                      <div class="fund-ivalue">
-                        <h5>$${entry.current_price}</h5>
-                      </div>
-                    </div>
-                    <div class="faddress">
-                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
-                    </div>
-                  </div>`
-          } else {
-            html += `<div class="col-sm-12 col-md-6">
-                    <div class="fund-item-block">
-                      <div class="fund-bicon">
-                        <img src="${entry.image}" alt="comp icon" class="img-fluid">
-                      </div>
-                      <div class="fund-idetails">
-                        <h5><span>${entry.symbol.toUpperCase()}</span>${entry.name}</h5>
-                        ${entry.market_cap !== 0 ? '<p><span> Mcap: $' + entry.market_cap.toLocaleString() + '</span><p>' : ''}
-                      </div>
-                      <div class="fund-ivalue">
-                        <h5>$${entry.current_price}</h5>
-                      </div>
-                    </div>
-                    <div class="faddress">
-                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
-                    </div>
-                  </div>
-                </div>`
-          }
-        });
-        $('#bimex').append(html)
-      }
-    });
-
-  });
-
-
-  // biGame
-  $(document).ready(function () {
-    $.ajax({
-      url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=mobox%2Caxie-infinity%2Cseedify-fund%2Cmoonpot%2Ccoinary-token%2Ccryptoblades%2Crevv%2Cbishares&order=market_cap_desc&per_page=100&page=1&sparkline=false",
-      success: function (result) {
-        html = ''
-        result.forEach(function (entry, index) {
-          if (index % 2 == 0) {
-            html += `<div class="row">
-                  <div class="col-sm-12 col-md-6">
-                    <div class="fund-item-block">
-                      <div class="fund-bicon">
-                        <img src="${entry.image}" alt="ethereum icon" class="img-fluid">
-                      </div>
-                      <div class="fund-idetails">
-                        <h5><span>${entry.symbol.toUpperCase()}</span>${entry.name}</h5>
-                        ${entry.market_cap !== 0 ? '<p><span> Mcap: $' + entry.market_cap.toLocaleString() + '</span><p>' : ''}
-                      </div>
-                      <div class="fund-ivalue">
-                        <h5>$${entry.current_price}</h5>
-                      </div>
-                    </div>
-                    <div class="faddress">
-                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
-                    </div>
-                  </div>`
-          } else {
-            html += `<div class="col-sm-12 col-md-6">
-                    <div class="fund-item-block">
-                      <div class="fund-bicon">
-                        <img src="${entry.image}" alt="comp icon" class="img-fluid">
-                      </div>
-                      <div class="fund-idetails">
-                        <h5><span>${entry.symbol.toUpperCase()}</span>${entry.name}</h5>
-                        ${entry.market_cap !== 0 ? '<p><span> Mcap: $' + entry.market_cap.toLocaleString() + '</span><p>' : ''}
-                      </div>
-                      <div class="fund-ivalue">
-                        <h5>$${entry.current_price}</h5>
-                      </div>
-                    </div>
-                    <div class="faddress">
-                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
-                    </div>
-                  </div>
-                </div>`
-          }
-        });
-        $('#bigame').append(html)
-      }
-    });
-
-  });
-
-
-  // biChain
-  $(document).ready(function () {
-    $.ajax({
-      url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=ethereum%2Cbinance-usd%2Cbinance-bitcoin%2Cavalanche-2%2Cmatic-network%2Ccardano%2Cfantom%2Cbishares&order=market_cap_desc&per_page=100&page=1&sparkline=false",
-      success: function (result) {
-        html = ''
-        result.forEach(function (entry, index) {
-          if (index % 2 == 0) {
-            html += `<div class="row">
-                  <div class="col-sm-12 col-md-6">
-                    <div class="fund-item-block">
-                      <div class="fund-bicon">
-                        <img src="${entry.image}" alt="ethereum icon" class="img-fluid">
-                      </div>
-                      <div class="fund-idetails">
-                        <h5><span>${entry.symbol.toUpperCase()}</span>${entry.name}</h5>
-                        ${entry.market_cap !== 0 ? '<p><span> Mcap: $' + entry.market_cap.toLocaleString() + '</span><p>' : ''}
-                      </div>
-                      <div class="fund-ivalue">
-                        <h5>$${entry.current_price}</h5>
-                      </div>
-                    </div>
-                    <div class="faddress">
-                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
-                    </div>
-                  </div>`
-          } else {
-            html += `<div class="col-sm-12 col-md-6">
-                    <div class="fund-item-block">
-                      <div class="fund-bicon">
-                        <img src="${entry.image}" alt="comp icon" class="img-fluid">
-                      </div>
-                      <div class="fund-idetails">
-                        <h5><span>${entry.symbol.toUpperCase()}</span>${entry.name}</h5>
-                        ${entry.market_cap !== 0 ? '<p><span> Mcap: $' + entry.market_cap.toLocaleString() + '</span><p>' : ''}
-                      </div>
-                      <div class="fund-ivalue">
-                        <h5>$${entry.current_price}</h5>
-                      </div>
-                    </div>
-                    <div class="faddress">
-                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
-                    </div>
-                  </div>
-                </div>`
-          }
-        });
-        $('#bichain').append(html)
-      }
-    });
-
-  });
-
-  // ape
-  $(document).ready(function () {
-    $.ajax({
-      url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=apeswap-finance%2Ccoinary-token%2Ctoolape%2Cjdi-token%2Cbitfresh%2Clyptus-token&order=market_cap_desc&per_page=100&page=1&sparkline=false",
-      success: function (result) {
-        html = ''
-        result.forEach(function (entry, index) {
-          if (index % 2 == 0) {
-            html += `<div class="row">
-                  <div class="col-sm-12 col-md-6">
-                    <div class="fund-item-block">
-                      <div class="fund-bicon">
-                        <img src="${entry.image}" alt="ethereum icon" class="img-fluid">
-                      </div>
-                      <div class="fund-idetails">
-                        <h5><span>${entry.symbol.toUpperCase()}</span>${entry.name}</h5>
-                        ${entry.market_cap !== 0 ? '<p><span> Mcap: $' + entry.market_cap.toLocaleString() + '</span><p>' : ''}
-                      </div>
-                      <div class="fund-ivalue">
-                        <h5>$${entry.current_price}</h5>
-                      </div>
-                    </div>
-                    <div class="faddress">
-                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
-                    </div>
-                  </div>`
-          } else {
-            html += `<div class="col-sm-12 col-md-6">
-                    <div class="fund-item-block">
-                      <div class="fund-bicon">
-                        <img src="${entry.image}" alt="comp icon" class="img-fluid">
-                      </div>
-                      <div class="fund-idetails">
-                        <h5><span>${entry.symbol.toUpperCase()}</span>${entry.name}</h5>
-                        ${entry.market_cap !== 0 ? '<p><span> Mcap: $' + entry.market_cap.toLocaleString() + '</span><p>' : ''}
-                      </div>
-                      <div class="fund-ivalue">
-                        <h5>$${entry.current_price}</h5>
-                      </div>
-                    </div>
-                    <div class="faddress">
-                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
-                    </div>
-                  </div>
-                </div>`
-          }
-        });
-        $('#ape').append(html)
-      }
-    });
-
-    ape_non_coin_gecko();
-  });
-
-
-  // bit10
-  $(document).ready(function () {
-    $.ajax({
-      url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=binancecoin%2Cpancakeswap-token%2Capeswap-finance%2Cvenus%2Cbeefy-finance%2Ctrust-wallet-token%2Cbakerytoken%2Csafepal%2Cellipsis%2Cswipe&order=market_cap_desc&per_page=100&page=1&sparkline=false",
-      success: function (result) {
-        html = ''
-        result.forEach(function (entry, index) {
-          if (index % 2 == 0) {
-            html += `<div class="row">
-                  <div class="col-sm-12 col-md-6">
-                    <div class="fund-item-block">
-                      <div class="fund-bicon">
-                        <img src="${entry.image}" alt="ethereum icon" class="img-fluid">
-                      </div>
-                      <div class="fund-idetails">
-                        <h5><span>${entry.symbol.toUpperCase()}</span>${entry.name}</h5>
-                        ${entry.market_cap !== 0 ? '<p><span> Mcap: $' + entry.market_cap.toLocaleString() + '</span><p>' : ''}
-                      </div>
-                      <div class="fund-ivalue">
-                        <h5>$${entry.current_price}</h5>
-                      </div>
-                    </div>
-                    <div class="faddress">
-                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
-                    </div>
-                  </div>`
-          } else {
-            html += `<div class="col-sm-12 col-md-6">
-                    <div class="fund-item-block">
-                      <div class="fund-bicon">
-                        <img src="${entry.image}" alt="comp icon" class="img-fluid">
-                      </div>
-                      <div class="fund-idetails">
-                        <h5><span>${entry.symbol.toUpperCase()}</span>${entry.name}</h5>
-                        ${entry.market_cap !== 0 ? '<p><span> Mcap: $' + entry.market_cap.toLocaleString() + '</span><p>' : ''}
-                      </div>
-                      <div class="fund-ivalue">
-                        <h5>$${entry.current_price}</h5>
-                      </div>
-                    </div>
-                    <div class="faddress">
-                      <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
-                    </div>
-                  </div>
-                </div>`
-          }
-        });
-        $('#bit10').append(html)
-      }
-    });
-
-  });
-
-  function fomo_non_coin_gecko() {
-    thetan_gum = ['Thetan Gem', '0x9fd87aefe02441b123c3c32466cd9db4c578618f', 'assets/images/THG.png', 'THG'];
-    bunny_gum = ['Bunny Token', '0x565b72163f17849832a692a3c5928cc502f46d69', 'assets/images/HUNNY.png', 'BUNNY'];
-    stos_yacht_token = ['Stos Yacht Token', '0x9eab0a93b0cd5d904493694f041bdcedb97b88c6', 'assets/images/SAFESTOS.jpg', 'STOS'];
-
-    fomo_non_supported = [thetan_gum, bunny_gum, stos_yacht_token]
-
-    fomo_all_ajax_load = 0;
-
-    fomo_non_supported.forEach(function (item, i) {
-      $.ajax({
-        type: "GET",
-        url: `https://bsc.api.0x.org/swap/v1/quote?buyToken=BUSD&sellToken=${item[1]}&sellAmount=1000000000000000000&excludedSources=BakerySwap,Belt,DODO,DODO_V2,Ellipsis,Mooniswap,MultiHop,Nerve,SushiSwap,Smoothy,CafeSwap,CheeseSwap,JulSwap,LiquidityProvider&slippagePercentage=0&gasPrice=0`,
-        success: function (data) {
-          fomo_all_ajax_load += 1;
-          fomo_non_supported[i].push(data['price'])
-          if (fomo_all_ajax_load === fomo_non_supported.length) {
-            html1 = ''
-            fomo_non_supported.forEach(function (item, index) {
-              if (index % 2 == 0) {
-                html1 += `<div class="row">
-                    <div class="col-sm-12 col-md-6">
-                      <div class="fund-item-block">
-                        <div class="fund-bicon">
-                          <img src="${item[2]}" alt="ethereum icon" class="img-fluid">
-                        </div>
-                        <div class="fund-idetails">
-                          <h5><span>${item[3]}</span>${item[0]}</h5>
-                        </div>
-                        <div class="fund-ivalue">
-                          <h5>$${parseFloat(item[4]).toFixed(2)}</h5>
-                        </div>
-                      </div>
-                      <div class="faddress">
-                        <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
-                      </div>
-                    </div>`
-              } else {
-                html1 += `<div class="col-sm-12 col-md-6">
-                      <div class="fund-item-block">
-                        <div class="fund-bicon">
-                          <img src="${item[2]}" alt="ethereum icon" class="img-fluid">
-                        </div>
-                        <div class="fund-idetails">
-                          <h5><span>${item[3]}</span>${item[0]}</h5>
-                        </div>
-                        <div class="fund-ivalue">
-                          <h5>$${parseFloat(item[4]).toFixed(2)}</h5>
-                        </div>
-                      </div>
-                      <div class="faddress">
-                        <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
-                      </div>
-                    </div>
-                  </div>`
-              }
-            });
-            $('#fomo').append(html1)
-
-          }
-        },
-        error: function (xhr, textStatus, errorThrown) {
-          if (textStatus == 'timeout') {
-            this.tryCount++;
-            if (this.tryCount <= this.retryLimit) {
-              //try again
-              setTimeout(fomo_non_coin_gecko, 5000);
-              return;
-            }
-            return;
-          }
-          if (xhr.status == 500) {
-            //try again
-            setTimeout(fomo_non_coin_gecko, 5000);
-            return;
-          } else {
-            //try again
-            setTimeout(fomo_non_coin_gecko, 5000);
-            return;
-          }
-        }
-      });
-    });
-  }
-
-  function defi_non_coin_gecko() {
-    compound_coin = ['Compound Coin', '0x52ce071bd9b1c4b00a0b92d298c512478cad67e8', 'assets/images/COMP.svg', 'COMP'];
-
-    defi_non_supported = [compound_coin]
-
-    defi_all_ajax_load = 0;
-
-    defi_non_supported.forEach(function (item, i) {
-      $.ajax({
-        type: "GET",
-        url: `https://bsc.api.0x.org/swap/v1/quote?buyToken=BUSD&sellToken=${item[1]}&sellAmount=1000000000000000000&excludedSources=BakerySwap,Belt,DODO,DODO_V2,Ellipsis,Mooniswap,MultiHop,Nerve,SushiSwap,Smoothy,CafeSwap,CheeseSwap,JulSwap,LiquidityProvider&slippagePercentage=0&gasPrice=0`,
-        success: function (data) {
-          defi_all_ajax_load += 1;
-          defi_non_supported[i].push(data['price'])
-          if (defi_all_ajax_load == defi_non_supported.length) {
-            html1 = ''
-            defi_non_supported.forEach(function (item, index) {
-              if (index % 2 == 0) {
-                html1 += `<div class="row">
-                    <div class="col-sm-12 col-md-6">
-                      <div class="fund-item-block">
-                        <div class="fund-bicon">
-                          <img src="${item[2]}" alt="ethereum icon" class="img-fluid">
-                        </div>
-                        <div class="fund-idetails">
-                          <h5><span>${item[3]}</span>${item[0]}</h5>
-                        </div>
-                        <div class="fund-ivalue">
-                          <h5>$${parseFloat(item[4]).toFixed(2)}</h5>
-                        </div>
-                      </div>
-                      <div class="faddress">
-                        <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
-                      </div>
-                    </div>`
-              } else {
-                html1 += `<div class="col-sm-12 col-md-6">
-                      <div class="fund-item-block">
-                        <div class="fund-bicon">
-                          <img src="${item[2]}" alt="ethereum icon" class="img-fluid">
-                        </div>
-                        <div class="fund-idetails">
-                          <h5><span>${item[3]}</span>${item[0]}</h5>
-                        </div>
-                        <div class="fund-ivalue">
-                          <h5>$${parseFloat(item[4]).toFixed(2)}</h5>
-                        </div>
-                      </div>
-                      <div class="faddress">
-                        <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
-                      </div>
-                    </div>
-                  </div>`
-              }
-            });
-            $('#defi').append(html1)
-
-          }
-        },
-        error: function (xhr, textStatus, errorThrown) {
-          if (textStatus == 'timeout') {
-            this.tryCount++;
-            if (this.tryCount <= this.retryLimit) {
-              //try again
-              setTimeout(defi_non_coin_gecko, 5000);
-              return;
-            }
-            return;
-          }
-          if (xhr.status == 500) {
-            //try again
-            setTimeout(defi_non_coin_gecko, 5000);
-            return;
-          } else {
-            //try again
-            setTimeout(defi_non_coin_gecko, 5000);
-            return;
-          }
-        }
-      });
-    });
-  }
-
-
-
-  function ape_non_coin_gecko() {
-    hifi = ['HiFi Token', '0x0A38bc18022b0cCB043F7b730B354d554C6230F1', 'assets/images/hifi.jpg', 'HIFI'];
-    bishares = ['Bishares', '0x19a6da6e382b85f827088092a3dbe864d9ccba73', 'assets/images/bzkeIcC.png', 'BISON'];
-
-    ape_non_supported = [hifi, bishares]
-
-    ape_all_ajax_load = 0;
-
-    ape_non_supported.forEach(function (item, i) {
-      $.ajax({
-        type: "GET",
-        url: `https://bsc.api.0x.org/swap/v1/quote?buyToken=BUSD&sellToken=${item[1]}&sellAmount=1000000000000000000&excludedSources=BakerySwap,Belt,DODO,DODO_V2,Ellipsis,Mooniswap,MultiHop,Nerve,SushiSwap,Smoothy,CafeSwap,CheeseSwap,JulSwap,LiquidityProvider&slippagePercentage=0&gasPrice=0`,
-        success: function (data) {
-          ape_all_ajax_load += 1;
-          ape_non_supported[i].push(data['price'])
-          if (ape_all_ajax_load == ape_non_supported.length) {
-            html2 = ''
-            ape_non_supported.forEach(function (item, index) {
-              if (index % 2 == 0) {
-                html2 += `<div class="row">
-                    <div class="col-sm-12 col-md-6">
-                      <div class="fund-item-block">
-                        <div class="fund-bicon">
-                          <img src="${item[2]}" alt="ethereum icon" class="img-fluid">
-                        </div>
-                        <div class="fund-idetails">
-                          <h5><span>${item[3]}</span>${item[0]}</h5>
-                        </div>
-                        <div class="fund-ivalue">
-                          <h5>$${parseFloat(item[4]).toFixed(5)}</h5>
-                        </div>
-                      </div>
-                      <div class="faddress">
-                        <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
-                      </div>
-                    </div>`
-              } else {
-                html2 += `<div class="col-sm-12 col-md-6">
-                      <div class="fund-item-block">
-                        <div class="fund-bicon">
-                          <img src="${item[2]}" alt="ethereum icon" class="img-fluid">
-                        </div>
-                        <div class="fund-idetails">
-                          <h5><span>${item[3]}</span>${item[0]}</h5>
-                        </div>
-                        <div class="fund-ivalue">
-                          <h5>$${parseFloat(item[4]).toFixed(5)}</h5>
-                        </div>
-                      </div>
-                      <div class="faddress">
-                        <p>0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c<span><i class="far fa-copy"></i></span><span><a href="#" target="_blank" class="fas fa-arrow-right arrow-rotate"></a></span></p>
-                      </div>
-                    </div>
-                  </div>`
-              }
-            });
-            $('#ape').append(html2)
-          }
-        },
-        error: function (xhr, textStatus, errorThrown) {
-          if (textStatus == 'timeout') {
-            this.tryCount++;
-            if (this.tryCount <= this.retryLimit) {
-              //try again
-              setTimeout(ape_non_coin_gecko, 5000);
-              return;
-            }
-            return;
-          }
-          if (xhr.status == 500) {
-            //try again
-            setTimeout(ape_non_coin_gecko, 5000);
-            return;
-          } else {
-            //try again
-            setTimeout(ape_non_coin_gecko, 5000);
-            return;
-          }
-        }
-      });
-    });
-  }
-
-</script>

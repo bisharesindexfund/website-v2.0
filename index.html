@@ -108,17 +108,17 @@
           <div class="col-sm-12 bi-yield-block">
             <div class="bi-yield-inner">
               <h4>Total in Farms/dETF</h4>
-              <h2>$<span>2,200,000+</span></h2>
+              <h2><span id="farmsdetf">0.00</span>+</h2>
               <P>USD</P>
             </div>
             <div class="bi-yield-inner">
               <h4>Total Liquidity</h4>
-              <h2>$<span>2,600,000+</span></h2>
+              <h2><span id="liquidity">0.00</span>+</h2>
               <P>USD</P>
             </div>
             <div class="bi-yield-inner">
               <h4>Total Locked</h4>
-              <h2>$<span>5,100,000+</span></h2>
+              <h2><span id="totallocked">0.00</span>+</h2>
               <P>USD</P>
             </div>
           </div>
@@ -834,144 +834,160 @@
       </div>
     </footer>
     <!-- END OF FOOTER -->
+    <script type="text/javascript">
+      $(() => {
+
+        //On Scroll Functionality
+        $(window).scroll(() => {
+          var windowTop = $(window).scrollTop();
+          windowTop > 100 ? $('nav').addClass('navShadow') : $('nav').removeClass('navShadow');
+          windowTop > 100 ? $('ul').css('top', '100px') : $('ul').css('top', '160px');
+        });
+
+        //Click Logo To Scroll To Top
+        $('#logo').on('click', () => {
+          $('html,body').animate({
+            scrollTop: 0
+          }, 500);
+        });
+
+        //Smooth Scrolling Using Navigation Menu
+        $('a[href*="#"]').on('click', function (e) {
+          $('html,body').animate({
+            scrollTop: $($(this).attr('href')).offset().top - 100
+          }, 500);
+          e.preventDefault();
+        });
+
+        //Toggle Menu
+        $('#menu-toggle').on('click', () => {
+          $('#menu-toggle').toggleClass('closeMenu');
+          $('ul').toggleClass('showMenu');
+
+          $('li').on('click', () => {
+            $('ul').removeClass('showMenu');
+            $('#menu-toggle').removeClass('closeMenu');
+          });
+        });
+
+      });
+    </script>
+
+    <!-- Change Content of click -->
+    <script type="text/javascript">
+      function showPage(pid) {
+        $(".page").addClass("hidden").filter("[data-id='" + pid + "']").removeClass("hidden");
+        return this;
+      }
+
+      $(".button").on("click", function (evt) {
+        evt.preventDefault();
+        evt.stopPropagation();
+        var $this = $(this);
+        showPage($this.attr("data-page-id"));
+        return;
+      });
+
+      showPage(1);
+    </script>
+
+    <script type="text/javascript">
+      get_bison_price();
+      function get_bison_price() {
+        $.ajax({
+          type: "GET",
+          url: "https://bsc.api.0x.org/swap/v1/quote?buyToken=BUSD&sellToken=0x19A6Da6e382b85F827088092a3DBe864d9cCba73&sellAmount=1000000000000000000&excludedSources=BakerySwap,Belt,DODO,DODO_V2,Ellipsis,Mooniswap,MultiHop,Nerve,SushiSwap,Smoothy,CafeSwap,CheeseSwap,JulSwap,LiquidityProvider&slippagePercentage=0&gasPrice=0",
+          success: function (data) {
+            bison = data["price"];
+            if (bison == "0.00" || bison == "nan" || bison == "inf") {
+              setTimeout(function () { get_bison_price(); }, 1000);
+            } else if (bison !== "0.00" && bison != "nan" && bison != "inf") {
+              $('#bison_price').html("<img src='assets/images/bi-icon.svg' /> $" + parseFloat(bison).toFixed(2));
+              setTimeout(function () { get_bison_price(); }, 30000);
+            }
+          },
+          error: function (xhr, textStatus, errorThrown) {
+              if (textStatus == 'timeout') {
+                this.tryCount++;
+                if (this.tryCount <= this.retryLimit) {
+                  //try again
+                  setTimeout(get_bison_price, 5000);
+                  return;
+                }
+                return;
+              }
+              if (xhr.status == 500) {
+                //try again
+                setTimeout(get_bison_price, 5000);
+                return;
+              } else {
+                //try again
+                setTimeout(get_bison_price, 5000);
+                return;
+              }
+            }
+        });
+      }
+
+      $(document).ready(function () {
+        $.ajax({
+          url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bishares&order=market_cap_desc&per_page=100&page=1&sparkline=false",
+          success: function (result) {
+            result.forEach(function (entry) {
+              $('#market_cap').text(entry.market_cap.toLocaleString());
+              $('#circulating_supply').text(entry.circulating_supply.toLocaleString());
+            });
+          }
+        });
+      });
+
+      $(document).ready(function () {
+        $.ajax({
+          url: "http://bishares-api.eba-2upumysj.us-west-2.elasticbeanstalk.com/tvl",
+          success: function (result) {
+            total = new Intl.NumberFormat().format(parseInt(result.total));
+            liquidity = new Intl.NumberFormat().format(parseInt(result.arbex) + parseInt(result.thirdPartyDex));
+            totalstaked = new Intl.NumberFormat().format(parseInt(result.farmsTvl) + parseInt(result.funds));
+            $('#farmsdetf').text(totalstaked);
+            $('#liquidity').text(liquidity);
+            $('#totallocked').text(total);
+            //console.log(total+" "+liquidity+" "+totalstaked);
+          }
+        });
+      });
+
+
+      function CopyToClipboard(containerid, copiedid) {
+        if (window.getSelection) {
+          if (window.getSelection().empty) { // Chrome
+            window.getSelection().empty();
+          } else if (window.getSelection().removeAllRanges) { // Firefox
+            window.getSelection().removeAllRanges();
+          }
+        } else if (document.selection) { // IE?
+          document.selection.empty();
+        }
+
+        if (document.selection) {
+          var range = document.body.createTextRange();
+          range.moveToElementText(document.getElementById(containerid));
+          range.select().createTextRange();
+          document.execCommand("copy");
+        } else if (window.getSelection) {
+          var range = document.createRange();
+          range.selectNode(document.getElementById(containerid));
+          window.getSelection().addRange(range);
+          document.execCommand("copy");
+        }
+        document.getElementById(copiedid).innerHTML = "<img src='./assets/images/copied-label.svg' style='width:unset;margin-bottom:unset;margin-left: 8px; ' alt='Copied' />";
+
+        setTimeout(function () {
+          document.getElementById(copiedid).innerHTML = '<i class="far fa-copy ms-2">';
+        }, 1500);
+        return false;
+      }
+    </script>
+
 </body>
 
 </html>
-<script type="text/javascript">
-  $(() => {
-
-    //On Scroll Functionality
-    $(window).scroll(() => {
-      var windowTop = $(window).scrollTop();
-      windowTop > 100 ? $('nav').addClass('navShadow') : $('nav').removeClass('navShadow');
-      windowTop > 100 ? $('ul').css('top', '100px') : $('ul').css('top', '160px');
-    });
-
-    //Click Logo To Scroll To Top
-    $('#logo').on('click', () => {
-      $('html,body').animate({
-        scrollTop: 0
-      }, 500);
-    });
-
-    //Smooth Scrolling Using Navigation Menu
-    $('a[href*="#"]').on('click', function (e) {
-      $('html,body').animate({
-        scrollTop: $($(this).attr('href')).offset().top - 100
-      }, 500);
-      e.preventDefault();
-    });
-
-    //Toggle Menu
-    $('#menu-toggle').on('click', () => {
-      $('#menu-toggle').toggleClass('closeMenu');
-      $('ul').toggleClass('showMenu');
-
-      $('li').on('click', () => {
-        $('ul').removeClass('showMenu');
-        $('#menu-toggle').removeClass('closeMenu');
-      });
-    });
-
-  });
-</script>
-
-<!-- Change Content of click -->
-<script type="text/javascript">
-  function showPage(pid) {
-    $(".page").addClass("hidden").filter("[data-id='" + pid + "']").removeClass("hidden");
-    return this;
-  }
-
-  $(".button").on("click", function (evt) {
-    evt.preventDefault();
-    evt.stopPropagation();
-    var $this = $(this);
-    showPage($this.attr("data-page-id"));
-    return;
-  });
-
-  showPage(1);
-</script>
-
-<script type="text/javascript">
-  get_bison_price();
-  function get_bison_price() {
-    $.ajax({
-      type: "GET",
-      url: "https://bsc.api.0x.org/swap/v1/quote?buyToken=BUSD&sellToken=0x19A6Da6e382b85F827088092a3DBe864d9cCba73&sellAmount=1000000000000000000&excludedSources=BakerySwap,Belt,DODO,DODO_V2,Ellipsis,Mooniswap,MultiHop,Nerve,SushiSwap,Smoothy,CafeSwap,CheeseSwap,JulSwap,LiquidityProvider&slippagePercentage=0&gasPrice=0",
-      success: function (data) {
-        bison = data["price"];
-        if (bison == "0.00" || bison == "nan" || bison == "inf") {
-          setTimeout(function () { get_bison_price(); }, 1000);
-        } else if (bison !== "0.00" && bison != "nan" && bison != "inf") {
-          $('#bison_price').html("<img src='assets/images/bi-icon.svg' /> $" + parseFloat(bison).toFixed(2));
-          setTimeout(function () { get_bison_price(); }, 30000);
-        }
-      },
-      error: function (xhr, textStatus, errorThrown) {
-          if (textStatus == 'timeout') {
-            this.tryCount++;
-            if (this.tryCount <= this.retryLimit) {
-              //try again
-              setTimeout(get_bison_price, 5000);
-              return;
-            }
-            return;
-          }
-          if (xhr.status == 500) {
-            //try again
-            setTimeout(get_bison_price, 5000);
-            return;
-          } else {
-            //try again
-            setTimeout(get_bison_price, 5000);
-            return;
-          }
-        }
-    });
-  }
-
-  $(document).ready(function () {
-    $.ajax({
-      url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bishares&order=market_cap_desc&per_page=100&page=1&sparkline=false",
-      success: function (result) {
-        result.forEach(function (entry) {
-          $('#market_cap').text(entry.market_cap.toLocaleString());
-          $('#circulating_supply').text(entry.circulating_supply.toLocaleString());
-        });
-      }
-    });
-  });
-
-
-  function CopyToClipboard(containerid, copiedid) {
-    if (window.getSelection) {
-      if (window.getSelection().empty) { // Chrome
-        window.getSelection().empty();
-      } else if (window.getSelection().removeAllRanges) { // Firefox
-        window.getSelection().removeAllRanges();
-      }
-    } else if (document.selection) { // IE?
-      document.selection.empty();
-    }
-
-    if (document.selection) {
-      var range = document.body.createTextRange();
-      range.moveToElementText(document.getElementById(containerid));
-      range.select().createTextRange();
-      document.execCommand("copy");
-    } else if (window.getSelection) {
-      var range = document.createRange();
-      range.selectNode(document.getElementById(containerid));
-      window.getSelection().addRange(range);
-      document.execCommand("copy");
-    }
-    document.getElementById(copiedid).innerHTML = "<img src='./assets/images/copied-label.svg' style='width:unset;margin-bottom:unset;margin-left: 8px; ' alt='Copied' />";
-
-    setTimeout(function () {
-      document.getElementById(copiedid).innerHTML = '<i class="far fa-copy ms-2">';
-    }, 1500);
-    return false;
-  }
-</script>

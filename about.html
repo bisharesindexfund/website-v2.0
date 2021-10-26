@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>BiShares - BSC dETF's</title>
     <link rel="shortcut icon" type="image/jpg" href="assets/images/favicon.png" />
-    
+
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="assets/font-awesome/css/fontawesome-all.min.css">
@@ -26,7 +26,7 @@
 
   </head>
   <body>
-      
+
 <header>
     <!-- Start of Navigation -->
     <nav class="navbar navbg-ctm navbar-expand-lg navbar-light ">
@@ -374,7 +374,7 @@
       </div>
     </section>
     <!-- END OF SECURITY SECTION -->
-    
+
     <!-- START OF FOOTER -->
     <footer class="footer-sec">
       <div class="container-fluid">
@@ -451,345 +451,345 @@
       </div>
     </footer>
     <!-- END OF FOOTER -->
-  </body>
-</html>
-<script type="text/javascript">
-$( () => {
-	
-	//On Scroll Functionality
-	$(window).scroll( () => {
-		var windowTop = $(window).scrollTop();
-		windowTop > 100 ? $('nav').addClass('navShadow') : $('nav').removeClass('navShadow');
-	});
-	
-	//Click Logo To Scroll To Top
-	$('#logo').on('click', () => {
-		$('html,body').animate({
-			scrollTop: 0
-		},500);
-	});
-	
-	//Smooth Scrolling Using Navigation Menu
-	$('a[href*="#"]').on('click', function(e){
-		$('html,body').animate({
-			scrollTop: $($(this).attr('href')).offset().top - 100
-		},500);
-		e.preventDefault();
-	});
-	
-	//Toggle Menu
-	$('#menu-toggle').on('click', () => {
-		$('#menu-toggle').toggleClass('closeMenu');
-		$('ul').toggleClass('showMenu');
-		
-		$('li').on('click', () => {
-			$('ul').removeClass('showMenu');
-			$('#menu-toggle').removeClass('closeMenu');
-		});
-	});
-	
-});
-</script>
-<script type="text/javascript">
-$(".accordianNav h3.dropArrow").click(function() {
-    $("h3.dropArrow").removeClass("active");
-    $(".accordianNav ul ul").slideUp();
-    if (!$(this).next().is(":visible")) {
-        $(this).next().slideDown();
-        $(this).addClass("active");
-    }
-})
+    <script type="text/javascript">
+    $( () => {
 
-</script>
-<script type="text/javascript">
-  $(document).ready(function() {
-  $("#toggle").click(function() {
-    var elem = $("#toggle").text();
-    if (elem == "View More ↓") {
-      //Stuff to do when btn is in the read more state
-      $("#toggle").text("View Less ↑");
-      $("#text").slideDown();
-    } else {
-      //Stuff to do when btn is in the read less state
-      $("#toggle").text("View More ↓");
-      $("#text").slideUp();
-    }
-  });
-});
-  
-  </script>
+    	//On Scroll Functionality
+    	$(window).scroll( () => {
+    		var windowTop = $(window).scrollTop();
+    		windowTop > 100 ? $('nav').addClass('navShadow') : $('nav').removeClass('navShadow');
+    	});
 
-  <!-- Audio Script -->
-  <script type="text/javascript">
-    $(function()
-        {
-            var playerTrack = $("#player-track"), bgArtwork = $('#bg-artwork'), bgArtworkUrl, albumName = $('#album-name'), trackName = $('#track-name'), albumArt = $('#album-art'), sArea = $('#s-area'), seekBar = $('#seek-bar'), trackTime = $('#track-time'), insTime = $('#ins-time'), sHover = $('#s-hover'), playPauseButton = $("#play-pause-button"),  i = playPauseButton.find('i'), tProgress = $('#current-time'), tTime = $('#track-length'), seekT, seekLoc, seekBarPos, cM, ctMinutes, ctSeconds, curMinutes, curSeconds, durMinutes, durSeconds, playProgress, bTime, nTime = 0, buffInterval = null, tFlag = false, albums = ['BSC News interview with DeFi Vlad, BiShares Co-Founder'], trackNames = [''], albumArtworks = ['_1'], trackUrl = ['https://anchor.fm/s/41a2f56c/podcast/play/40148311/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2021-8-11%2Fd1dd198d-125f-8527-7283-780ffdfe79a8.mp3'], playPreviousTrackButton = $('#play-previous'), playNextTrackButton = $('#play-next'), currIndex = -1;
+    	//Click Logo To Scroll To Top
+    	$('#logo').on('click', () => {
+    		$('html,body').animate({
+    			scrollTop: 0
+    		},500);
+    	});
 
-            function playPause()
+    	//Smooth Scrolling Using Navigation Menu
+    	$('a[href*="#"]').on('click', function(e){
+    		$('html,body').animate({
+    			scrollTop: $($(this).attr('href')).offset().top - 100
+    		},500);
+    		e.preventDefault();
+    	});
+
+    	//Toggle Menu
+    	$('#menu-toggle').on('click', () => {
+    		$('#menu-toggle').toggleClass('closeMenu');
+    		$('ul').toggleClass('showMenu');
+
+    		$('li').on('click', () => {
+    			$('ul').removeClass('showMenu');
+    			$('#menu-toggle').removeClass('closeMenu');
+    		});
+    	});
+
+    });
+    </script>
+    <script type="text/javascript">
+    $(".accordianNav h3.dropArrow").click(function() {
+        $("h3.dropArrow").removeClass("active");
+        $(".accordianNav ul ul").slideUp();
+        if (!$(this).next().is(":visible")) {
+            $(this).next().slideDown();
+            $(this).addClass("active");
+        }
+    })
+
+    </script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+      $("#toggle").click(function() {
+        var elem = $("#toggle").text();
+        if (elem == "View More ↓") {
+          //Stuff to do when btn is in the read more state
+          $("#toggle").text("View Less ↑");
+          $("#text").slideDown();
+        } else {
+          //Stuff to do when btn is in the read less state
+          $("#toggle").text("View More ↓");
+          $("#text").slideUp();
+        }
+      });
+    });
+
+      </script>
+
+      <!-- Audio Script -->
+      <script type="text/javascript">
+        $(function()
             {
-                setTimeout(function()
+                var playerTrack = $("#player-track"), bgArtwork = $('#bg-artwork'), bgArtworkUrl, albumName = $('#album-name'), trackName = $('#track-name'), albumArt = $('#album-art'), sArea = $('#s-area'), seekBar = $('#seek-bar'), trackTime = $('#track-time'), insTime = $('#ins-time'), sHover = $('#s-hover'), playPauseButton = $("#play-pause-button"),  i = playPauseButton.find('i'), tProgress = $('#current-time'), tTime = $('#track-length'), seekT, seekLoc, seekBarPos, cM, ctMinutes, ctSeconds, curMinutes, curSeconds, durMinutes, durSeconds, playProgress, bTime, nTime = 0, buffInterval = null, tFlag = false, albums = ['BSC News interview with DeFi Vlad, BiShares Co-Founder'], trackNames = [''], albumArtworks = ['_1'], trackUrl = ['https://anchor.fm/s/41a2f56c/podcast/play/40148311/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2021-8-11%2Fd1dd198d-125f-8527-7283-780ffdfe79a8.mp3'], playPreviousTrackButton = $('#play-previous'), playNextTrackButton = $('#play-next'), currIndex = -1;
+
+                function playPause()
                 {
-                    if(audio.paused)
+                    setTimeout(function()
                     {
-                        playerTrack.addClass('activeaudio');
-                        albumArt.addClass('activeaudio');
-                        checkBuffering();
-                        i.attr('class','fas fa-pause');
-                        audio.play();
-                    }
-                    else
-                    {
-                        playerTrack.removeClass('activeaudio');
-                        albumArt.removeClass('activeaudio');
-                        clearInterval(buffInterval);
-                        albumArt.removeClass('buffering');
-                        i.attr('class','fas fa-play');
-                        audio.pause();
-                    }
-                },300);
-            }
-
-                
-            function showHover(event)
-            {
-                seekBarPos = sArea.offset(); 
-                seekT = event.clientX - seekBarPos.left;
-                seekLoc = audio.duration * (seekT / sArea.outerWidth());
-                
-                sHover.width(seekT);
-                
-                cM = seekLoc / 60;
-                
-                ctMinutes = Math.floor(cM);
-                ctSeconds = Math.floor(seekLoc - ctMinutes * 60);
-                
-                if( (ctMinutes < 0) || (ctSeconds < 0) )
-                    return;
-                
-                if( (ctMinutes < 0) || (ctSeconds < 0) )
-                    return;
-                
-                if(ctMinutes < 10)
-                    ctMinutes = '0'+ctMinutes;
-                if(ctSeconds < 10)
-                    ctSeconds = '0'+ctSeconds;
-                
-                if( isNaN(ctMinutes) || isNaN(ctSeconds) )
-                    insTime.text('--:--');
-                else
-                    insTime.text(ctMinutes+':'+ctSeconds);
-                    
-                insTime.css({'left':seekT,'margin-left':'-21px'}).fadeIn(0);
-                
-            }
-
-            function hideHover()
-            {
-                sHover.width(0);
-                insTime.text('00:00').css({'left':'0px','margin-left':'0px'}).fadeOut(0);		
-            }
-            
-            function playFromClickedPos()
-            {
-                audio.currentTime = seekLoc;
-                seekBar.width(seekT);
-                hideHover();
-            }
-
-            function updateCurrTime()
-            {
-                nTime = new Date();
-                nTime = nTime.getTime();
-
-                if( !tFlag )
-                {
-                    tFlag = true;
-                    trackTime.addClass('activeaudio');
+                        if(audio.paused)
+                        {
+                            playerTrack.addClass('activeaudio');
+                            albumArt.addClass('activeaudio');
+                            checkBuffering();
+                            i.attr('class','fas fa-pause');
+                            audio.play();
+                        }
+                        else
+                        {
+                            playerTrack.removeClass('activeaudio');
+                            albumArt.removeClass('activeaudio');
+                            clearInterval(buffInterval);
+                            albumArt.removeClass('buffering');
+                            i.attr('class','fas fa-play');
+                            audio.pause();
+                        }
+                    },300);
                 }
 
-                curMinutes = Math.floor(audio.currentTime / 60);
-                curSeconds = Math.floor(audio.currentTime - curMinutes * 60);
-                
-                durMinutes = Math.floor(audio.duration / 60);
-                durSeconds = Math.floor(audio.duration - durMinutes * 60);
-                
-                playProgress = (audio.currentTime / audio.duration) * 100;
-                
-                if(curMinutes < 10)
-                    curMinutes = '0'+curMinutes;
-                if(curSeconds < 10)
-                    curSeconds = '0'+curSeconds;
-                
-                if(durMinutes < 10)
-                    durMinutes = '0'+durMinutes;
-                if(durSeconds < 10)
-                    durSeconds = '0'+durSeconds;
-                
-                if( isNaN(curMinutes) || isNaN(curSeconds) )
-                    tProgress.text('00:00');
-                else
-                    tProgress.text(curMinutes+':'+curSeconds);
-                
-                if( isNaN(durMinutes) || isNaN(durSeconds) )
-                    tTime.text('00:00');
-                else
-                    tTime.text(durMinutes+':'+durSeconds);
-                
-                if( isNaN(curMinutes) || isNaN(curSeconds) || isNaN(durMinutes) || isNaN(durSeconds) )
-                    trackTime.removeClass('activeaudio');
-                else
-                    trackTime.addClass('activeaudio');
 
-                
-                seekBar.width(playProgress+'%');
-                
-                if( playProgress == 100 )
+                function showHover(event)
                 {
-                    i.attr('class','fa fa-play');
-                    seekBar.width(0);
-                    tProgress.text('00:00');
-                    albumArt.removeClass('buffering').removeClass('activeaudio');
-                    clearInterval(buffInterval);
-                }
-            }
-            
-            function checkBuffering()
-            {
-                clearInterval(buffInterval);
-                buffInterval = setInterval(function()
-                { 
-                    if( (nTime == 0) || (bTime - nTime) > 1000  )
-                        albumArt.addClass('buffering');
+                    seekBarPos = sArea.offset();
+                    seekT = event.clientX - seekBarPos.left;
+                    seekLoc = audio.duration * (seekT / sArea.outerWidth());
+
+                    sHover.width(seekT);
+
+                    cM = seekLoc / 60;
+
+                    ctMinutes = Math.floor(cM);
+                    ctSeconds = Math.floor(seekLoc - ctMinutes * 60);
+
+                    if( (ctMinutes < 0) || (ctSeconds < 0) )
+                        return;
+
+                    if( (ctMinutes < 0) || (ctSeconds < 0) )
+                        return;
+
+                    if(ctMinutes < 10)
+                        ctMinutes = '0'+ctMinutes;
+                    if(ctSeconds < 10)
+                        ctSeconds = '0'+ctSeconds;
+
+                    if( isNaN(ctMinutes) || isNaN(ctSeconds) )
+                        insTime.text('--:--');
                     else
-                        albumArt.removeClass('buffering');
+                        insTime.text(ctMinutes+':'+ctSeconds);
 
-                    bTime = new Date();
-                    bTime = bTime.getTime();
+                    insTime.css({'left':seekT,'margin-left':'-21px'}).fadeIn(0);
 
-                },100);
-            }
+                }
 
-            function selectTrack(flag)
-            {
-                if( flag == 0 || flag == 1 )
-                    ++currIndex;
-                else
-                    --currIndex;
-
-                if( (currIndex > -1) && (currIndex < albumArtworks.length) )
+                function hideHover()
                 {
-                    if( flag == 0 )
+                    sHover.width(0);
+                    insTime.text('00:00').css({'left':'0px','margin-left':'0px'}).fadeOut(0);
+                }
+
+                function playFromClickedPos()
+                {
+                    audio.currentTime = seekLoc;
+                    seekBar.width(seekT);
+                    hideHover();
+                }
+
+                function updateCurrTime()
+                {
+                    nTime = new Date();
+                    nTime = nTime.getTime();
+
+                    if( !tFlag )
+                    {
+                        tFlag = true;
+                        trackTime.addClass('activeaudio');
+                    }
+
+                    curMinutes = Math.floor(audio.currentTime / 60);
+                    curSeconds = Math.floor(audio.currentTime - curMinutes * 60);
+
+                    durMinutes = Math.floor(audio.duration / 60);
+                    durSeconds = Math.floor(audio.duration - durMinutes * 60);
+
+                    playProgress = (audio.currentTime / audio.duration) * 100;
+
+                    if(curMinutes < 10)
+                        curMinutes = '0'+curMinutes;
+                    if(curSeconds < 10)
+                        curSeconds = '0'+curSeconds;
+
+                    if(durMinutes < 10)
+                        durMinutes = '0'+durMinutes;
+                    if(durSeconds < 10)
+                        durSeconds = '0'+durSeconds;
+
+                    if( isNaN(curMinutes) || isNaN(curSeconds) )
+                        tProgress.text('00:00');
+                    else
+                        tProgress.text(curMinutes+':'+curSeconds);
+
+                    if( isNaN(durMinutes) || isNaN(durSeconds) )
+                        tTime.text('00:00');
+                    else
+                        tTime.text(durMinutes+':'+durSeconds);
+
+                    if( isNaN(curMinutes) || isNaN(curSeconds) || isNaN(durMinutes) || isNaN(durSeconds) )
+                        trackTime.removeClass('activeaudio');
+                    else
+                        trackTime.addClass('activeaudio');
+
+
+                    seekBar.width(playProgress+'%');
+
+                    if( playProgress == 100 )
+                    {
                         i.attr('class','fa fa-play');
-                    else
-                    {
-                        albumArt.removeClass('buffering');
-                        i.attr('class','fa fa-pause');
-                    }
-
-                    seekBar.width(0);
-                    trackTime.removeClass('activeaudio');
-                    tProgress.text('00:00');
-                    tTime.text('00:00');
-
-                    currAlbum = albums[currIndex];
-                    currTrackName = trackNames[currIndex];
-                    currArtwork = albumArtworks[currIndex];
-
-                    audio.src = trackUrl[currIndex];
-                    
-                    nTime = 0;
-                    bTime = new Date();
-                    bTime = bTime.getTime();
-
-                    if(flag != 0)
-                    {
-                        audio.play();
-                        playerTrack.addClass('activeaudio');
-                        albumArt.addClass('activeaudio');
-                    
+                        seekBar.width(0);
+                        tProgress.text('00:00');
+                        albumArt.removeClass('buffering').removeClass('activeaudio');
                         clearInterval(buffInterval);
-                        checkBuffering();
                     }
-
-                    albumName.text(currAlbum);
-                    trackName.text(currTrackName);
-                    albumArt.find('img.activeaudio').removeClass('activeaudio');
-                    $('#'+currArtwork).addClass('activeaudio');
-                    
-                    bgArtworkUrl = $('#'+currArtwork).attr('src');
-
-                    bgArtwork.css({'background-image':'url('+bgArtworkUrl+')'});
                 }
-                else
+
+                function checkBuffering()
+                {
+                    clearInterval(buffInterval);
+                    buffInterval = setInterval(function()
+                    {
+                        if( (nTime == 0) || (bTime - nTime) > 1000  )
+                            albumArt.addClass('buffering');
+                        else
+                            albumArt.removeClass('buffering');
+
+                        bTime = new Date();
+                        bTime = bTime.getTime();
+
+                    },100);
+                }
+
+                function selectTrack(flag)
                 {
                     if( flag == 0 || flag == 1 )
-                        --currIndex;
-                    else
                         ++currIndex;
+                    else
+                        --currIndex;
+
+                    if( (currIndex > -1) && (currIndex < albumArtworks.length) )
+                    {
+                        if( flag == 0 )
+                            i.attr('class','fa fa-play');
+                        else
+                        {
+                            albumArt.removeClass('buffering');
+                            i.attr('class','fa fa-pause');
+                        }
+
+                        seekBar.width(0);
+                        trackTime.removeClass('activeaudio');
+                        tProgress.text('00:00');
+                        tTime.text('00:00');
+
+                        currAlbum = albums[currIndex];
+                        currTrackName = trackNames[currIndex];
+                        currArtwork = albumArtworks[currIndex];
+
+                        audio.src = trackUrl[currIndex];
+
+                        nTime = 0;
+                        bTime = new Date();
+                        bTime = bTime.getTime();
+
+                        if(flag != 0)
+                        {
+                            audio.play();
+                            playerTrack.addClass('activeaudio');
+                            albumArt.addClass('activeaudio');
+
+                            clearInterval(buffInterval);
+                            checkBuffering();
+                        }
+
+                        albumName.text(currAlbum);
+                        trackName.text(currTrackName);
+                        albumArt.find('img.activeaudio').removeClass('activeaudio');
+                        $('#'+currArtwork).addClass('activeaudio');
+
+                        bgArtworkUrl = $('#'+currArtwork).attr('src');
+
+                        bgArtwork.css({'background-image':'url('+bgArtworkUrl+')'});
+                    }
+                    else
+                    {
+                        if( flag == 0 || flag == 1 )
+                            --currIndex;
+                        else
+                            ++currIndex;
+                    }
                 }
+
+                function initPlayer()
+                {
+                    audio = new Audio();
+
+                    selectTrack(0);
+
+                    audio.loop = false;
+
+                    playPauseButton.on('click',playPause);
+
+                    sArea.mousemove(function(event){ showHover(event); });
+
+                    sArea.mouseout(hideHover);
+
+                    sArea.on('click',playFromClickedPos);
+
+                    $(audio).on('timeupdate',updateCurrTime);
+
+                    playPreviousTrackButton.on('click',function(){ selectTrack(-1);} );
+                    playNextTrackButton.on('click',function(){ selectTrack(1);});
+                }
+
+                initPlayer();
+            });
+    </script>
+
+    <script type="text/javascript">
+      get_bison_price();
+      function get_bison_price() {
+        $.ajax({
+          type: "GET",
+          url: "https://bsc.api.0x.org/swap/v1/quote?buyToken=BUSD&sellToken=0x19A6Da6e382b85F827088092a3DBe864d9cCba73&sellAmount=1000000000000000000&excludedSources=BakerySwap,Belt,DODO,DODO_V2,Ellipsis,Mooniswap,MultiHop,Nerve,SushiSwap,Smoothy,CafeSwap,CheeseSwap,JulSwap,LiquidityProvider&slippagePercentage=0&gasPrice=0",
+          success: function (data) {
+            bison = data["price"];
+            if (bison == "0.00" || bison == "nan" || bison == "inf") {
+              setTimeout(function () { get_bison_price(); }, 1000);
+            } else if (bison !== "0.00" && bison != "nan" && bison != "inf") {
+              $('#bison_price').html("<img src='assets/images/bi-icon.svg' /> $" + parseFloat(bison).toFixed(2));
+              setTimeout(function () { get_bison_price(); }, 30000);
             }
-
-            function initPlayer()
-            {	
-                audio = new Audio();
-
-                selectTrack(0);
-                
-                audio.loop = false;
-                
-                playPauseButton.on('click',playPause);
-                
-                sArea.mousemove(function(event){ showHover(event); });
-                
-                sArea.mouseout(hideHover);
-                
-                sArea.on('click',playFromClickedPos);
-                
-                $(audio).on('timeupdate',updateCurrTime);
-
-                playPreviousTrackButton.on('click',function(){ selectTrack(-1);} );
-                playNextTrackButton.on('click',function(){ selectTrack(1);});
+          },
+          error: function (xhr, textStatus, errorThrown) {
+              if (textStatus == 'timeout') {
+                this.tryCount++;
+                if (this.tryCount <= this.retryLimit) {
+                  //try again
+                  setTimeout(get_bison_price, 5000);
+                  return;
+                }
+                return;
+              }
+              if (xhr.status == 500) {
+                //try again
+                setTimeout(get_bison_price, 5000);
+                return;
+              } else {
+                //try again
+                setTimeout(get_bison_price, 5000);
+                return;
+              }
             }
-            
-            initPlayer();
         });
-</script>
-
-<script type="text/javascript">
-  get_bison_price();
-  function get_bison_price() {
-    $.ajax({
-      type: "GET",
-      url: "https://bsc.api.0x.org/swap/v1/quote?buyToken=BUSD&sellToken=0x19A6Da6e382b85F827088092a3DBe864d9cCba73&sellAmount=1000000000000000000&excludedSources=BakerySwap,Belt,DODO,DODO_V2,Ellipsis,Mooniswap,MultiHop,Nerve,SushiSwap,Smoothy,CafeSwap,CheeseSwap,JulSwap,LiquidityProvider&slippagePercentage=0&gasPrice=0",
-      success: function (data) {
-        bison = data["price"];
-        if (bison == "0.00" || bison == "nan" || bison == "inf") {
-          setTimeout(function () { get_bison_price(); }, 1000);
-        } else if (bison !== "0.00" && bison != "nan" && bison != "inf") {
-          $('#bison_price').html("<img src='assets/images/bi-icon.svg' /> $" + parseFloat(bison).toFixed(2));
-          setTimeout(function () { get_bison_price(); }, 30000);
-        }
-      },
-      error: function (xhr, textStatus, errorThrown) {
-          if (textStatus == 'timeout') {
-            this.tryCount++;
-            if (this.tryCount <= this.retryLimit) {
-              //try again
-              setTimeout(get_bison_price, 5000);
-              return;
-            }
-            return;
-          }
-          if (xhr.status == 500) {
-            //try again
-            setTimeout(get_bison_price, 5000);
-            return;
-          } else {
-            //try again
-            setTimeout(get_bison_price, 5000);
-            return;
-          }
-        }
-    });
-  }
-</script>
+      }
+    </script>
+  </body>
+</html>
