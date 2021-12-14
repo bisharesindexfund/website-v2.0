@@ -253,8 +253,8 @@
               <div id="app-cover">
                   <div id="player">
                       <div id="player-track" class="active">
-                          <div id="album-name">BiShares brings dETFs</div>
-                          <div id="track-name">Episode 70</div>
+                          <div id="album-name">Bishares is expanding to Cronos</div>
+                          <div id="track-name">Episode 82</div>
                           <div id="track-time" class="active">
                               <div id="current-time">03:14</div>
                               <div id="track-length">34:45</div>
@@ -294,8 +294,8 @@
           </div>
           <!-- Audio Details -->
           <div class="col-sm-12 col-md-7 aud-wrap">
-            <p class="production-date">September 16, 2021</p>
-            <h2>BiShares brings dETFs to Binance Smart Chain</h2>
+            <p class="production-date" id="track-ddate">December 13, 2021</p>
+            <h2 id="track-dname">Bishares is expanding to Cronos</h2>
             <div class="sub-details">Featuring:<a href="https://twitter.com/DeFiVlad" target="_blank">DeFi Vlad</a></div>
             <!-- <div>
                 <a href="#" target="_blank" class="spotify-link">
@@ -533,7 +533,8 @@
       <script type="text/javascript">
         $(function()
             {
-                var playerTrack = $("#player-track"), bgArtwork = $('#bg-artwork'), bgArtworkUrl, albumName = $('#album-name'), trackName = $('#track-name'), albumArt = $('#album-art'), sArea = $('#s-area'), seekBar = $('#seek-bar'), trackTime = $('#track-time'), insTime = $('#ins-time'), sHover = $('#s-hover'), playPauseButton = $("#play-pause-button"),  i = playPauseButton.find('i'), tProgress = $('#current-time'), tTime = $('#track-length'), seekT, seekLoc, seekBarPos, cM, ctMinutes, ctSeconds, curMinutes, curSeconds, durMinutes, durSeconds, playProgress, bTime, nTime = 0, buffInterval = null, tFlag = false, albums = ['BSC News interview with DeFi Vlad, BiShares Co-Founder'], trackNames = [''], albumArtworks = ['_1'], trackUrl = ['https://anchor.fm/s/41a2f56c/podcast/play/40148311/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2021-8-11%2Fd1dd198d-125f-8527-7283-780ffdfe79a8.mp3'], playPreviousTrackButton = $('#play-previous'), playNextTrackButton = $('#play-next'), currIndex = -1;
+                var playerTrack = $("#player-track"), bgArtwork = $('#bg-artwork'), bgArtworkUrl, albumName = $('#album-name'), trackName = $('#track-name'), trackDName = $('#track-dname'), trackDDate = $('#track-ddate'), albumArt = $('#album-art'), sArea = $('#s-area'), seekBar = $('#seek-bar'), trackTime = $('#track-time'), insTime = $('#ins-time'), sHover = $('#s-hover'), playPauseButton = $("#play-pause-button"),  i = playPauseButton.find('i'), tProgress = $('#current-time'), tTime = $('#track-length'), seekT, seekLoc, seekBarPos, cM, ctMinutes, ctSeconds, curMinutes, curSeconds, durMinutes, durSeconds, playProgress, bTime, nTime = 0, buffInterval = null, tFlag = false, albums = ['BSC News interview with DeFi Vlad, BiShares Co-Founder'], trackNames = ['Bishares is expanding to Cronos', 'BiShares brings dETFs to Binance Smart Chain'], trackDNames = ['Bishares is expanding to Cronos', 'BiShares brings dETFs to Binance Smart Chain'],
+                trackDDates = ['Dec 13, 2021', 'Sep 13, 2021'], albumArtworks = ['_1', '_1'], trackUrl = ['https://d3ctxlq1ktw2nl.cloudfront.net/staging/2021-11-13/60c6b65d-377e-5cf8-ba4f-3eea74ea2f2e.mp3', 'https://d3ctxlq1ktw2nl.cloudfront.net/staging/2021-8-11/d1dd198d-125f-8527-7283-780ffdfe79a8.mp3'], playPreviousTrackButton = $('#play-previous'), playNextTrackButton = $('#play-next'), currIndex = -1;
 
                 function playPause()
                 {
@@ -704,6 +705,8 @@
                         currAlbum = albums[currIndex];
                         currTrackName = trackNames[currIndex];
                         currArtwork = albumArtworks[currIndex];
+                        currDName = trackDNames[currIndex];
+                        currDDate = trackDDates[currIndex];
 
                         audio.src = trackUrl[currIndex];
 
@@ -723,6 +726,12 @@
 
                         albumName.text(currAlbum);
                         trackName.text(currTrackName);
+
+                        trackDName.text(currDName);
+                        trackDDate.text(currDDate);
+
+
+
                         albumArt.find('img.activeaudio').removeClass('activeaudio');
                         $('#'+currArtwork).addClass('activeaudio');
 
